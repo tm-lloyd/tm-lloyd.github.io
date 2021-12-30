@@ -1,10 +1,11 @@
 relativeURLs = true
-title = "Afras Sial"
+title = "AFRAS SIAL"
 theme = "academimal"
 sectionPagesMenu = "main"
 defaultContentLanguage = "en"
 ignorefiles = [ "hugo_travis_ci", ".travis.yml" ]
 
 [params]
-    shortbio = "Economics PhD Student, University of California, Berkeley"
+    shortbioline1 = "Economics PhD Student,"
+    shortbioline2 = "University of California, Berkeley"
     logo = "ays.jpg"
