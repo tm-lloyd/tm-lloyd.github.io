@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sections on Afras Sial</title>
+    <title>Sections on AFRAS SIAL</title>
     <link>/sections/</link>
-    <description>Recent content in Sections on Afras Sial</description>
+    <description>Recent content in Sections on AFRAS SIAL</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="/sections/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
@@ -11,9 +11,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/sections/aboutme/</guid>
-      <description>I&amp;rsquo;m a PhD student in the Department of Economics at the University of California, Berkeley. I&amp;rsquo;m interested in understanding how insights from psychology and behavioral economics can inform our understanding and the design of public policies.
-I previously worked as a research coordinator in the Business Economics and Public Policy Department at Wharton, and I completed my undergraduate studies in economics at Georgetown University in 2019.
-You can contact me at afras@berkeley.</description>
+      <description>I&amp;rsquo;m a first-year PhD student in the Department of Economics at UC Berkeley. I&amp;rsquo;m generally interested in studying how insights from psychology and behavioral economics can inform our understanding and the design of public policies.
+I previously worked as a research coordinator in the Business Economics and Public Policy Department at Wharton, and I completed my undergraduate studies at Georgetown University in 2019.
+Curriculum Vitae (Updated December 2021)</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@ You can contact me at afras@berkeley.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/sections/attribution/</guid>
-      <description>Website: I used the code from Gautam Rao&amp;rsquo;s website, built by Xinyue Lin, to build this website. You can find the code for his website at his GitHub repository.</description>
+      <description>I used code from Gautam Rao&amp;rsquo;s website, created by Xinyue Lin, to build this website. You can find the code for his website at his GitHub repository. I also used instructions from Jonathan Old&amp;rsquo;s website GitHub repository.</description>
     </item>
     
   </channel>
