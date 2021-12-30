@@ -1,0 +1,10 @@
+works:
+- title: "What Drives Demand for State-Run Lotteries? Evidence and Welfare Implications"
+  pdflink: "/pdf/Allcott_Taubinsky_Sial_Lotteries.pdf"
+  coauthors: "Hunt Allcott, Benjamin B. Lockwood, and Dmitry Taubinsky"
+  note: "Current Version: June 2021"
+  links:
+    - url: "https://www.nber.org/papers/w28975"
+      text: "NBER webpage"
+  abstract: >
+      We use a series of natural experiments embedded in the administration of state-run lotto games, as well as a new nationally-representative survey linking lottery expenditures to behavioral biases, to provide reduced-form and structural estimates of people’s risk preferences in this domain. In new data on prizes and sales, we find that sales respond more to the expected value of the jackpot than to price, but are unresponsive to variation in the second prize—a pattern that implies probability weighting but is inconsistent with typically-used parameterizations. In our survey, we find that individual-level lottery spending decreases modestly with income and is strongly associated with survey measures of innumeracy, poor statistical reasoning, and other proxies for behavioral bias. These bias proxies decline with income and account for 43 percent of lottery purchases. This suggests that the measured probability weighting is at least in part due to biases rather than wishful thinking, entertainment utility, or other “non-standard” preferences. We illustrate the policy relevance of the empirical estimates by setting them in a model of optimal lottery design. In the model, current multi-state lottery designs increase welfare but may harm heavy-spending low-income people.
