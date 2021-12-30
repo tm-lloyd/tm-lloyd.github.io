@@ -1,0 +1,10 @@
+<p class="contactinfo"><a href="{{ "#bio" | relURL }}">About Me</a></p>
+{{ with .Site.Data.publications }}
+<p class="contactinfo"><a href="{{ "#publications" | relURL }}">Publications</a></p>
+{{ end }}
+{{ with .Site.Data.working_papers }}
+<p class="contactinfo"><a href="{{ "#workingpapers" | relURL }}">Working Papers</a></p>
+{{ end }}
+{{ with .Site.Data.work_in_progress }}
+<p class="contactinfo"><a href="{{ "#workinprogress" | relURL }}">Work in Progress</a></p>
+{{ end }}
