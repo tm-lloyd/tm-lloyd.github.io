@@ -1,7 +1,7 @@
 {{ define "main" -}}
 {{ with .GetPage "/sections/aboutme.md" }}
 <p id="bio">{{ .Content }}</p>
-<button class="button-2" role="button" onclick="window.open('/pdf/Sial_CV.pdf')"><strong>Curriculum Vitae</strong></button>
+<button class="button-2" role="button" onclick="window.open('/pdf/Sial_CV.pdf')" style="font: 13.5px Noto Sans"><strong>Curriculum Vitae</strong></button>
 &nbsp;<span style="font-size:80%;">(Updated December 2021)</span>
 {{ end }}
 
@@ -13,8 +13,8 @@
     color: #333333;
     cursor: pointer;
     display: inline-block;
-    font-family: Noto Sans, "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: "Adobe Caslon Pro", "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16.5px;
     font-weight: 500;
     line-height: 20px;
     list-style: none;

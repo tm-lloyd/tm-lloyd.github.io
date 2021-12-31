@@ -1,4 +1,29 @@
 @font-face {
+  font-family: 'Adobe Caslon Pro';
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/Adobe-Caslon-Pro-Regular/Adobe-Caslon-Pro-Regular.eot");
+  src: url("../fonts/Adobe-Caslon-Pro-Regular/Adobe-Caslon-Pro-Regular.eot?#iefix") format("embedded-opentype"), local("Adobe Caslon Pro"), local("Adobe-Caslon-Pro-Regular"), url("../fonts/Adobe-Caslon-Pro-Regular/Adobe-Caslon-Pro-Regular.woff2") format("woff2"), url("../fonts/Adobe-Caslon-Pro-Regular/Adobe-Caslon-Pro-Regular.woff") format("woff"), url("../fonts/Adobe-Caslon-Pro-Regular/Adobe-Caslon-Pro-Regular.ttf") format("truetype"), url("../fonts/Adobe-Caslon-Pro-Regular/Adobe-Caslon-Pro-Regular.svg#svgAdobeCaslonPro") format("svg"); }
+@font-face {
+  font-family: 'Adobe Caslon Pro';
+  font-weight: bold;
+  font-style: normal;
+  src: url("../fonts/Adobe-Caslon-Pro-Semibold/Adobe-Caslon-Pro-Semibold.eot");
+  src: url("../fonts/Adobe-Caslon-Pro-Semibold/Adobe-Caslon-Pro-Semibold.eot?#iefix") format("embedded-opentype"), local("Adobe Caslon Pro Bold"), local("Adobe-Caslon-Pro-Semibold"), url("../fonts/Adobe-Caslon-Pro-Semibold/Adobe-Caslon-Pro-Semibold.woff2") format("woff2"), url("../fonts/Adobe-Caslon-Pro-Semibold/Adobe-Caslon-Pro-Semibold.woff") format("woff"), url("../fonts/Adobe-Caslon-Pro-Semibold/Adobe-Caslon-Pro-Semibold.ttf") format("truetype"), url("../fonts/Adobe-Caslon-Pro-Semibold/Adobe-Caslon-Pro-Semibold.svg#svgAdobeCaslonPro") format("svg"); }
+@font-face {
+  font-family: 'Adobe Caslon Pro';
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/Adobe-Caslon-Pro-Italic/Adobe-Caslon-Pro-Italic.eot");
+  src: url("../fonts/Adobe-Caslon-Pro-Italic/Adobe-Caslon-Pro-Italic.eot?#iefix") format("embedded-opentype"), local("Adobe-Caslon-Pro-Italic"), local("Adobe-Caslon-Pro-Italic"), url("../fonts/Adobe-Caslon-Pro-Italic/Adobe-Caslon-Pro-Italic.woff2") format("woff2"), url("../fonts/Adobe-Caslon-Pro-Italic/Adobe-Caslon-Pro-Italic.woff") format("woff"), url("../fonts/Adobe-Caslon-Pro-Italic/Adobe-Caslon-Pro-Italic.ttf") format("truetype"), url("../fonts/Adobe-Caslon-Pro-Italic/Adobe-Caslon-Pro-Italic.svg#svgAdobeCaslonPro") format("svg"); }
+@font-face {
+  font-family: 'Adobe Caslon Pro';
+  font-weight: bold;
+  font-style: italic;
+  src: url("../fonts/Adobe-Caslon-Pro-Semibold-Italic/Adobe-Caslon-Pro-Semibold-Italic.eot");
+  src: url("../fonts/Adobe-Caslon-Pro-Semibold-Italic/Adobe-Caslon-Pro-Semibold-Italic.eot?#iefix") format("embedded-opentype"), local("Adobe Caslon Pro Bold Italic"), local("Adobe-Caslon-Pro-Semibold-Italic"), url("../fonts/Adobe-Caslon-Pro-Semibold-Italic/Adobe-Caslon-Pro-Semibold-Italic.woff2") format("woff2"), url("../fonts/Adobe-Caslon-Pro-Semibold-Italic/Adobe-Caslon-Pro-Semibold-Italic.woff") format("woff"), url("../fonts/Adobe-Caslon-Pro-Semibold-Italic/Adobe-Caslon-Pro-Semibold-Italic.ttf") format("truetype"), url("../fonts/Adobe-Caslon-Pro-Semibold-Italic/Adobe-Caslon-Pro-Semibold-Italic.svg#svgAdobeCaslonPro") format("svg"); }
+
+@font-face {
   font-family: 'Noto Sans';
   font-weight: 400;
   font-style: normal;
@@ -22,6 +47,7 @@
   font-style: italic;
   src: url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.eot");
   src: url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.eot?#iefix") format("embedded-opentype"), local("Noto Sans Bold Italic"), local("Noto-Sans-700italic"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.woff2") format("woff2"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.woff") format("woff"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.ttf") format("truetype"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.svg#NotoSans") format("svg"); }
+
 .highlight table td {
   padding: 5px; }
 
@@ -235,16 +261,24 @@
 .highlight {
   background-color: #f8f8f8; }
 
+h2 {
+  font-family: "Adobe Caslon Pro";
+  font-size: 190%;
+  color: #222;
+  margin: 0 0 20px; }
+
+h1, h3, h4, h5, h6 {
+  font-family: "Adobe Caslon Pro";
+  font-size: 140%;
+  color: #222;
+  margin: 0 0 20px; }
+
 body {
   background-color: #fff;
   padding: 50px;
-  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px/1.5 "Noto Sans", "Adobe Caslon Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #727272;
   font-weight: 400; }
-
-h1, h2, h3, h4, h5, h6 {
-  color: #222;
-  margin: 0 0 20px; }
 
 p, ul, ol, table, pre, dl {
   margin: 0 0 20px; }
