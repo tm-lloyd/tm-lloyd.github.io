@@ -1,10 +1,18 @@
 works:
 - title: "What Drives Demand for State-Run Lotteries? Evidence and Welfare Implications"
-  pdflink: "/pdf/Allcott_Taubinsky_Sial_Lotteries.pdf"
+  book: "Revise and Resubmit at The Review of Economic Studies"
+  pdflink: "/pdf/Lockwood_Allcott_Taubinsky_Sial_Lotteries.pdf"
   coauthors: "Hunt Allcott, Benjamin Lockwood, and Dmitry Taubinsky"
-  note: "Current Version: March 2022"
+  note: "Current version: March 2022"
   links:
     - url: "https://www.nber.org/papers/w28975"
       text: "NBER webpage"
   abstract: >
       We use natural experiments embedded in state-run lotteries and a new nationally representative survey to provide reduced-form and structural estimates of risk preferences and behavioral biases in lottery demand. We ﬁnd that sales respond more to the expected value of the jackpot than to price, but are unresponsive to variation in the second prize—a pattern that implies probability weighting but is inconsistent with standard parameterizations. In the survey, we ﬁnd that lottery spending decreases modestly with income and is strongly associated with measures of innumeracy, poor statistical reasoning, and other proxies for behavioral bias. These bias proxies decline with income and statistically account for 43 percent of lottery purchases, suggesting that at least some of lottery demand is due to behavioral bias, not just anticipatory utility or entertainment value. We use these empirical moments to estimate a model of socially optimal lottery design. In the model, current multi-state lottery designs increase welfare but may harm heavy spenders.
+      
+- title: "Biased Memory and Perceptions of Self-Control"
+  coauthors: "Justin Sydnor and Dmitry Taubinsky"
+  pdflink: "/pdf/Sial_Sydnor_Taubinsky_Memory.pdf"
+  note: "Current version: December 2022"
+  abstract: >
+      Using data from a field experiment on exercise, we analyze the relationship between im- perfect memory and people’s awareness of their limited self-control. We find that people overestimate past gym attendance, and that larger overestimation of past attendance is as- sociated with (i) more overestimation of future attendance, (ii) a lower willingness to pay to motivate higher future gym attendance, and (iii) a smaller gap between goal and forecasted attendance. We organize these facts with a structural model of quasi-hyperbolic discount- ing and naivete, estimating that people with more biased memories are more naive about their time inconsistency, but not more time-inconsistent.
