@@ -8,4 +8,4 @@ ignorefiles = [ "hugo_travis_ci", ".travis.yml" ]
 [params]
     shortbioline1 = "Economics PhD Student,"
     shortbioline2 = "University of California, Berkeley"
-    logo = "ays.jpg"
+    logo = "afras.jpg"
