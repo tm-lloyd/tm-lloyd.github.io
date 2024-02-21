@@ -1,12 +1,19 @@
 works:
-- title: "Designing, not Checking, for Policy Robustness: An Example with Optimal Taxation"
+- title: " Are People Willing to Pay for Reduced Inequality?"
   book: "Tax Policy and the Economy, 2021"
-  pdflink: "https://www.journals.uchicago.edu/doi/10.1086/713492"
-  coauthors: " Benjamin Lockwood and Matthew Weinzierl"
+  pdflink: "https://people.hec.edu/hill/wp-content/uploads/sites/25/2021/11/WTPRII_0623.pdf"
+  coauthors: "with Brian Hill"
   links:
-    - url: "https://www.nber.org/papers/w28098"
+    - url: "/"
       text: "NBER webpage"
-    - url: "/datacode/RobustTaxes_Replication.zip"
-      text: "Replication folder (.zip file)"
+    - url: "/
   abstract: >
-    Economists typically check the robustness of their results by comparing them across plausible ranges of parameter values and model structures. A preferable approach to robustness—for the purposes of policymaking and evaluation—is to design policy that takes these ranges into account. We modify the standard optimal income tax model to include the policymaker’s subjective uncertainty over parameter values, and we characterize robust optimal policy as that which maximizes expected social welfare. After calibrating uncertainty over the elasticity of taxable income from past empirical work and novel survey data on economists’ beliefs, we compare the implied robust optimal marginal tax rates to the alternative benchmark policy based on the best point estimates of relevant parameters. Our results suggest that robust optimal marginal tax rates are typically more progressive than in benchmark analyses, raising top marginal tax rates by between 5 and 7 percentage points, and generating modest expected welfare gains.
+Would consumers be willing to pay more for goods for which there is less inequality in
+wages across those involved in their production? In incentive-compatible behavioural
+choice studies on representative samples of the English and US populations, we find significantly positive willingness to pay for such inequality reductions in over 80% of subjects.
+Whilst it varies with political leaning and the extent of the inequality reduction, willingness
+to pay is positive across the political spectrum and for all studied inequality differences. It
+is higher for more intuitive and informative inequality-reporting formats. Our findings
+have policy implications for both governments and firms. On the one hand, they suggest the promise of universal provision of product-level inequality information as a tool
+for moderating income inequality. On the other, they highlight the potential relevance of
+inequality reporting for firms’ marketing strategies.
