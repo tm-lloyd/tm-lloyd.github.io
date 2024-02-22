@@ -1,21 +1,23 @@
 <nav
-    style="background-color: #fff; padding: 20px; display: flex; justify-content: space-between; position: fixed; top: 0; left: 0; width: 100%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-    <h3 style="margin: 0; color: #333; font: bold;"><a href="index.html"
-        style="text-decoration: none; color: inherit;  margin-left: 40px;">Thomas Lloyd</a></h3>
+<nav style="background-color: #fff; padding: 20px; display: flex; justify-content: space-between; position: fixed; top: 0; left: 0; width: 100%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <h3 style="margin: 0; color: #333; font: bold;"><a href="index.html" style="text-decoration: none; color: inherit;  margin-left: 40px;">Thomas Lloyd</a></h3>
+    <ul id="navbar" style="list-style-type: none; margin: 0; padding: 0; display: flex; align-items: center; padding-right: 100px;">
+        <li style="margin-right: 10px;"><a href="index.html" style="text-decoration: none; color: inherit;">Home</a></li>
+        <li style="margin-right: 10px;"><a href="./research.html" style="text-decoration: none; color: inherit;">Research</a></li>
+        <li style="margin-right: 10px;"><a href="./teaching.html" style="text-decoration: none; color: inherit;">Teaching</a></li>
+        <li style="margin-right: 10px;"><a href="/pdf/CV_Thomas_Lloyd_022024.pdf" target="_blank" style="text-decoration: none; color: inherit;">CV</a></li>
+    </ul>
+</nav>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var navbarLinks = document.getElementById('navbar').getElementsByTagName('a');
+    var currentPath = window.location.pathname.split('/').pop();
 
-        <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; align-items: center; padding-right: 100px;">
-          <li style="margin-right: 10px; border-bottom: 4px solid #267CB9;"><a class="active" href="index.html"
-              style="text-decoration: none; color: inherit;">Home</a></li>
-          <li style="margin-right: 10px; "><a class="" href="./research.html"
-              style="text-decoration: none; color: inherit;">Research</a></li>
-          <li style="margin-right: 10px;"><a href="./teaching.html" style="text-decoration: none; color: inherit; transition: color 0.3s;">Teaching</a></li>
-          <li style="margin-right: 10px;">
-            <a href="/pdf/CV_Thomas_Lloyd_022024.pdf" target="_blank"
-               style="text-decoration: none; color: inherit; transition: color 0.3s;">
-                CV
-            </a>
-        </li>
-        </ul>
-        
-
-  </nav>
+    for (var i = 0; i < navbarLinks.length; i++) {
+        if (navbarLinks[i].getAttribute('href') === currentPath) {
+            navbarLinks[i].style.borderBottom = '4px solid #267CB9'; // Apply the active style
+            navbarLinks[i].style.color = '#267CB9'; // Optional: Change the text color for active link
+        }
+    }
+});
+</script>
