@@ -11,26 +11,29 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     var navbarLinks = document.querySelectorAll('#navbar a');
-    var currentPath = window.location.pathname.endsWith('/') 
-        ? window.location.pathname.slice(0, -1) 
-        : window.location.pathname;
-    // Normalize the currentPath for the root
-    currentPath = currentPath === '' || currentPath === '/index.html' ? '/' : currentPath;
+    var currentURL = window.location.href; // Full URL of the current page
+    var indexPath = "https://tm-lloyd.github.io/index.html";
+    var rootPath = "https://tm-lloyd.github.io/";
 
     navbarLinks.forEach(function(link) {
-        var linkHref = link.getAttribute('href');
-        // Normalize the linkHref for comparison
-        var linkPath = linkHref === 'index.html' || linkHref === './' || linkHref === '/' ? '/' : linkHref;
+        var linkHref = link.href;
 
-        if (currentPath.endsWith(linkPath)) {
-            link.style.borderBottom = '4px solid #267CB9'; // Apply the active style
-            link.style.color = '#267CB9'; // Optional: Change the text color for active link
+        // Special handling for the homepage links
+        if ((currentURL === rootPath || currentURL === indexPath) && (linkHref === rootPath || linkHref.endsWith('index.html'))) {
+            // Highlight the Home link
+            link.style.borderBottom = '4px solid #267CB9';
+            link.style.color = '#267CB9';
+        } else if (currentURL.includes(linkHref) && linkHref !== rootPath) {
+            // Highlight the current page link, excluding the scenario where the root path is considered for non-home pages
+            link.style.borderBottom = '4px solid #267CB9';
+            link.style.color = '#267CB9';
         } else {
-            // Optionally reset styles if you want to ensure active state is only shown when matched
-            link.style.borderBottom = ''; // Remove specific active style
-            link.style.color = ''; // Reset to default color
+            // Optionally, reset styles for non-active links
+            link.style.borderBottom = '';
+            link.style.color = ''; // Reset to default color or specify it explicitly
         }
     });
 });
 </script>
+
 
