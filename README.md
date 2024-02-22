@@ -1,4 +1,4 @@
-## How to Edit Each Section
+## Inspiration for the code and design of this website: 
 
 ### Attribution
 
