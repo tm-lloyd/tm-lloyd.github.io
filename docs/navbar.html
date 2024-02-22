@@ -10,14 +10,27 @@
 </nav>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    var navbarLinks = document.getElementById('navbar').getElementsByTagName('a');
-    var currentPath = window.location.pathname.split('/').pop();
+    var navbarLinks = document.querySelectorAll('#navbar a');
+    var currentPath = window.location.pathname.endsWith('/') 
+        ? window.location.pathname.slice(0, -1) 
+        : window.location.pathname;
+    // Normalize the currentPath for the root
+    currentPath = currentPath === '' || currentPath === '/index.html' ? '/' : currentPath;
 
-    for (var i = 0; i < navbarLinks.length; i++) {
-        if (navbarLinks[i].getAttribute('href') === currentPath) {
-            navbarLinks[i].style.borderBottom = '4px solid #267CB9'; // Apply the active style
-            navbarLinks[i].style.color = '#267CB9'; // Optional: Change the text color for active link
+    navbarLinks.forEach(function(link) {
+        var linkHref = link.getAttribute('href');
+        // Normalize the linkHref for comparison
+        var linkPath = linkHref === 'index.html' || linkHref === './' || linkHref === '/' ? '/' : linkHref;
+
+        if (currentPath.endsWith(linkPath)) {
+            link.style.borderBottom = '4px solid #267CB9'; // Apply the active style
+            link.style.color = '#267CB9'; // Optional: Change the text color for active link
+        } else {
+            // Optionally reset styles if you want to ensure active state is only shown when matched
+            link.style.borderBottom = ''; // Remove specific active style
+            link.style.color = ''; // Reset to default color
         }
-    }
+    });
 });
 </script>
+
