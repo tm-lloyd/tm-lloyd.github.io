@@ -1,1 +1,0 @@
-*I'm grateful to Gautam Rao for sharing the code for his website, created by [Xinyue Lin](https://xinyue-lin.com/), in his [GitHub repository](https://github.com/gautamrao/gautamrao.github.io). I also thank Jonathan Old for the instructions provided in the [GitHub repository](https://github.com/jonathanold/jonathanold.github.io) for his website.*
