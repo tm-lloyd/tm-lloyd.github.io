@@ -18,21 +18,7 @@
 </head>
 
 <body>
-  <nav style="background-color: #fff; padding: 20px; display: flex; justify-content: space-between; position: fixed; top: 0; left: 0; width: 100%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-    <h3 style="margin: 0; color: #333; font: bold;"><a href="index.html" style="text-decoration: none; color: inherit;  margin-left: 40px;"></a></h3>
-
-    <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; align-items: center; padding-right: 100px;">
-        <li style="margin-right: 10px;"><a class="active" href="index.html"
-            style="text-decoration: none; color: inherit;">Home</a></li>
-        <li style="margin-right: 10px;"><a class="" href="./research.html" style="text-decoration: none; color: inherit;">Research</a></li>
-        <li style="margin-right: 10px; border-bottom: 4px solid #267CB9;"><a class="active" href="./teaching.html" style="text-decoration: none; color: inherit;">Teaching</a></li>
-        <li style="margin-right: 10px;">
-          <a href="/pdf/CV_Thomas_Lloyd_022024.pdf" target="_blank"
-             style="text-decoration: none; color: inherit; transition: color 0.3s;">
-              CV
-          </a>
-      </li>    </ul>
-</nav>
+  <div id="navbar-placeholder"></div>
 
 
 
@@ -43,34 +29,7 @@
 
 
   <div class="wrapper" style="margin-top: 30px;">
-    <header>
-      <h1 style="font-size:250%;">Thomas Lloyd</h1>
-      <img src="./Thomas.jpg" style="border-radius: 100px; margin-bottom: 10px;" alt="Logo" width="200" />
-
-      <p>Economics PhD Student,<br>
-        University of Michigan</p>
-
-
-
-      <p class="contactinfo">
-        tmlloyd@umich.edu
-      </p>
-
-
-      <hr />
-
-      <p class="contactinfo"><a href="https://www.linkedin.com/in/tml-lloyd/" style="letter-spacing:.175em; font-size:12px"><i
-        class="bi bi-linkedin"></i> Linkedin</a></p>
-
-  <p class="contactinfo"><a href="https://twitter.com/tml_lloyd" style="letter-spacing:.175em; font-size:12px"><i
-        class="bi bi-twitter"></i> Twitter</a></p>
-  </p>
-
-
-
-      <br>
-
-    </header>
+    <div id="sidebar-placeholder"></div>
 
     <section>
 
@@ -156,6 +115,18 @@
       }
     }
   </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(text => document.getElementById('navbar-placeholder').innerHTML = text);
+  fetch('sidebar.html')
+    .then(response => response.text())
+    .then(text => document.getElementById('sidebar-placeholder').innerHTML = text);
+});
+</script>
+
 </body>
 
 </html>
