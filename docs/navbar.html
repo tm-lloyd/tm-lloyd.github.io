@@ -8,32 +8,13 @@
         <li style="margin-right: 10px;"><a href="/pdf/CV_Thomas_Lloyd_022024.pdf" target="_blank" style="text-decoration: none; color: inherit;">CV</a></li>
     </ul>
 </nav>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var navbarLinks = document.querySelectorAll('#navbar a');
-    var currentURL = window.location.href; // Full URL of the current page
-    var indexPath = "https://tm-lloyd.github.io/index.html";
-    var rootPath = "https://tm-lloyd.github.io/";
 
-    navbarLinks.forEach(function(link) {
-        var linkHref = link.href;
-
-        // Special handling for the homepage links
-        if ((currentURL === rootPath || currentURL === indexPath) && (linkHref === rootPath || linkHref.endsWith('index.html'))) {
-            // Highlight the Home link
-            link.style.borderBottom = '4px solid #267CB9';
-            link.style.color = '#267CB9';
-        } else if (currentURL.includes(linkHref) && linkHref !== rootPath) {
-            // Highlight the current page link, excluding the scenario where the root path is considered for non-home pages
-            link.style.borderBottom = '4px solid #267CB9';
-            link.style.color = '#267CB9';
-        } else {
-            // Optionally, reset styles for non-active links
-            link.style.borderBottom = '';
-            link.style.color = ''; // Reset to default color or specify it explicitly
-        }
-    });
-});
-</script>
-
-
+<style>
+    #navbar a:hover {
+        font-weight: bold; /* Makes text bold */
+        text-decoration: underline; /* Adds underline */
+        text-decoration-color: blue; /* Changes underline color to blue */
+        text-decoration-thickness: 2px; /* Makes underline thicker */
+        transition: font-weight 0.3s, text-decoration-color 0.3s; /* Smooth transition for bold text and underline color */
+    }
+</style>
