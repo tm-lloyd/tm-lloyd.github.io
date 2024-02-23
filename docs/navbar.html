@@ -9,25 +9,36 @@
     </ul>
 </nav>
 
-<style>
-        #navbar a {
-            position: relative; /* Necessary for positioning pseudo-elements */
-            display: inline-block; /* Ensures correct alignment and animation */
-            overflow: hidden; /* Ensures the pseudo-element is clipped to the link’s dimensions */
+    <style>
+        /* Simple breadcrumb styles */
+        .breadcrumbs ol {
+            padding: 0;
+            list-style: none;
+            font-family: sans-serif; /* Example font */
         }
-
-        #navbar a::before {
-            content: ''; /* Necessary for pseudo-elements */
-            position: absolute; /* Positions the pseudo-element in relation to its parent */
-            width: 0; /* Start width of the underline */
-            height: 2px; /* Height (thickness) of the underline */
-            background-color: blue; /* Color of the underline */
-            bottom: -5px; /* Position of the underline below the text */
+        .breadcrumbs li {
+            display: inline;
+            margin-right: 10px; /* Adjust spacing between breadcrumb items */
+        }
+        .breadcrumbs a {
+            text-decoration: none;
+            color: black; /* Adjust link color */
+            position: relative;
+        }
+        .breadcrumbs a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -3px; /* Adjust underline position */
             left: 0;
-            transition: width 0.5s ease; /* Animation effect timing */
+            background-color: blue; /* Underline color */
+            transition: width 0.3s ease; /* Smooth transition for the underline */
         }
-
-        #navbar a:hover::before {
-            width: 100%; /* End width of the underline */
+        .breadcrumbs a:hover {
+            font-weight: bold; /* Bold text on hover */
+        }
+        .breadcrumbs a:hover::after {
+            width: 100%; /* Full width underline on hover */
         }
     </style>
