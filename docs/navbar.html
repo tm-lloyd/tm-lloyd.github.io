@@ -10,11 +10,24 @@
 </nav>
 
 <style>
-    #navbar a:hover {
-        font-weight: bold; /* Makes text bold */
-        text-decoration: underline; /* Adds underline */
-        text-decoration-color: blue; /* Changes underline color to blue */
-        text-decoration-thickness: 2px; /* Makes underline thicker */
-        transition: font-weight 0.3s, text-decoration-color 0.3s; /* Smooth transition for bold text and underline color */
-    }
-</style>
+        #navbar a {
+            position: relative; /* Necessary for positioning pseudo-elements */
+            display: inline-block; /* Ensures correct alignment and animation */
+            overflow: hidden; /* Ensures the pseudo-element is clipped to the link’s dimensions */
+        }
+
+        #navbar a::before {
+            content: ''; /* Necessary for pseudo-elements */
+            position: absolute; /* Positions the pseudo-element in relation to its parent */
+            width: 0; /* Start width of the underline */
+            height: 2px; /* Height (thickness) of the underline */
+            background-color: blue; /* Color of the underline */
+            bottom: -5px; /* Position of the underline below the text */
+            left: 0;
+            transition: width 0.5s ease; /* Animation effect timing */
+        }
+
+        #navbar a:hover::before {
+            width: 100%; /* End width of the underline */
+        }
+    </style>
