@@ -1,32 +1,4 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .breadcrumbs a {
-            text-decoration: none; /* Removes underline */
-            color: black; /* Text color */
-            position: relative; /* For pseudo-element positioning */
-            padding-bottom: 2px; /* Space for the underline */
-        }
 
-        .breadcrumbs a::before {
-            content: ''; /* Necessary for the pseudo-element */
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 2px; /* Height of the underline */
-            background-color: blue; /* Color of the underline */
-            width: 0%; /* Initial width of the underline */
-            transition: width 0.5s ease-in-out; /* Animation duration and effect */
-        }
-
-        .breadcrumbs a:hover::before {
-            width: 100%; /* Full width on hover */
-        }
-    </style>
-</head>
 <nav
 <nav style="background-color: #fff; padding: 20px; display: flex; justify-content: space-between; position: fixed; top: 0; left: 0; width: 100%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
     <h3 style="margin: 0; color: #333; font: bold;"><a href="index.html" style="text-decoration: none; color: inherit;  margin-left: 40px;">Thomas Lloyd</a></h3>
@@ -37,3 +9,13 @@
         <li style="margin-right: 10px;"><a href="/pdf/CV_Thomas_Lloyd_022024.pdf" target="_blank" style="text-decoration: none; color: inherit;">CV</a></li>
     </ul>
 </nav>
+
+<style>
+    #navbar a:hover {
+        font-weight: bold; /* Makes text bold */
+        text-decoration: underline; /* Adds underline */
+        text-decoration-color: blue; /* Changes underline color to blue */
+        text-decoration-thickness: 2px; /* Makes underline thicker */
+        transition: font-weight 0.3s, text-decoration-color 0.3s; /* Smooth transition for bold text and underline color */
+    }
+</style>
