@@ -37,6 +37,60 @@
   }
 }
 
+/* General styles for header and its contents */
+header {
+  text-align: center;
+}
+
+#profile-pic {
+  border-radius: 100px;
+  margin-bottom: 10px;
+  width: 200px; /* Responsive width can be set in media queries if needed */
+}
+
+h1 {
+  font-size: 200%;
+}
+
+hr {
+  margin: auto;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.contact-container {
+  text-align: left;
+  margin: 0 auto;
+  width: 50%; /* Adjust width in media queries for responsiveness */
+}
+
+.contactinfo a {
+  text-decoration: none;
+  letter-spacing: .175em;
+  font-size: 12px;
+}
+
+.contactinfo a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  header {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-container {
+    width: 75%; /* Slightly wider on medium screens */
+  }
+}
+
 @font-face {
   font-family: 'Adobe Caslon Pro';
   font-weight: 400;
