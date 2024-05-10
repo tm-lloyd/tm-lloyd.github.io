@@ -132,7 +132,7 @@ hr {
 }
 
 .contact-container {
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
   width: 50%; /* Adjust width in media queries for responsiveness */
 }
