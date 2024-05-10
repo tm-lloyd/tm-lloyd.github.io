@@ -42,11 +42,11 @@
     }
 
     .navbar h3 a {
-        margin-left: 10px; /* Reduced left margin */
+        margin-left: 5px; /* Reduced left margin */
     }
 
     .navbar ul {
-        padding-right: 10px; /* Reduced right padding */
+        padding-right: 5px; /* Reduced right padding */
     }
 
     .navbar ul li {
@@ -94,19 +94,19 @@
 
 @media (max-width: 768px) {
   .sidebar h1, .navbar h3 {
-    font-size: 16px; /* Smaller text on tablets */
+    font-size: 14px; /* Smaller text on mobile */
   }
   .sidebar p, .navbar p {
     font-size: 10px; /* Smaller base font size for paragraphs */
   }
   .sidebar li, .navbar li {
-    font-size: 12px; /* Base font size for list items */
+    font-size: 8px; /* Base font size for list items */
   }
   .sidebar img, .navbar img {
-    width: 100px; /* Smaller images on tablets */
+    width: 100px; /* Smaller images on mobile */
   }
   .fas, .fab {
-    font-size: 12px; /* Smaller icons on tablets */
+    font-size: 12px; /* Smaller icons on mobile */
   }
 }
 
