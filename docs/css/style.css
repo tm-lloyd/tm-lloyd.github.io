@@ -1,6 +1,12 @@
 /* Base styles */
-.sidebar h1, .navbar h1, .sidebar p, .navbar p {
-  font-size: 16px; /* Adjust base font size as necessary */
+.sidebar h1, .navbar h3 {
+  font-size: 24px; /* Larger base font size for headers */
+}
+.sidebar p, .navbar p {
+  font-size: 12px; /* Smaller base font size for paragraphs */
+}
+.sidebar li, .navbar li {
+  font-size: 10px; /* Base font size for list items */
 }
 
 .sidebar img, .navbar img {
@@ -8,34 +14,39 @@
 }
 
 .fas, .fab { /* Font Awesome icons */
-  font-size: 24px; /* Adjust base icon size */
+  font-size: 16px; /* Adjust base icon size */
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .sidebar h1, .navbar h1, .sidebar p, .navbar p {
-    font-size: 14px; /* Smaller text on tablets */
+  .sidebar h1, .navbar h3 {
+    font-size: 16px; /* Smaller text on tablets */
+  }
+  .sidebar p, .navbar p, .sidebar li, .navbar li {
+    font-size: 10px; /* Smaller text on tablets */
   }
   .sidebar img, .navbar img {
     width: 150px; /* Smaller images on tablets */
   }
   .fas, .fab {
-    font-size: 20px; /* Smaller icons on tablets */
+    font-size: 16px; /* Smaller icons on tablets */
   }
 }
 
 @media (max-width: 768px) {
-  .sidebar h1, .sidebar p, .navbar h1, .navbar p {
+  .sidebar h1, .navbar h3 {
     font-size: 12px; /* Even smaller text on mobiles */
+  }
+  .sidebar p, .navbar p, .sidebar li, .navbar li {
+    font-size: 8px; /* Even smaller text on mobiles */
   }
   .sidebar img, .navbar img {
     width: 100px; /* Smaller images on mobiles */
   }
   .fas, .fab {
-    font-size: 16px; /* Smaller icons on mobiles */
+    font-size: 12px; /* Smaller icons on mobiles */
   }
 }
-
 
 /* General styles for header and its contents */
 header {
