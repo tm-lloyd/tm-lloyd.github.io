@@ -1,41 +1,41 @@
-/* Base styles for desktop */
-.navbar, .sidebar {
-  width: 250px;
-  float: left;
+/* Base styles */
+.sidebar h1, .navbar h1, .sidebar p, .navbar p {
+  font-size: 16px; /* Adjust base font size as necessary */
 }
 
-.navbar ul, .sidebar ul {
-  list-style-type: none;
-  padding: 0;
+.sidebar img, .navbar img {
+  width: 200px; /* Adjust base image size */
 }
 
-/* Styles for tablets */
+.fas, .fab { /* Font Awesome icons */
+  font-size: 24px; /* Adjust base icon size */
+}
+
+/* Responsive adjustments */
 @media (max-width: 1024px) {
-  .navbar, .sidebar {
-    width: 200px;
+  .sidebar h1, .navbar h1, .sidebar p, .navbar p {
+    font-size: 14px; /* Smaller text on tablets */
+  }
+  .sidebar img, .navbar img {
+    width: 150px; /* Smaller images on tablets */
+  }
+  .fas, .fab {
+    font-size: 20px; /* Smaller icons on tablets */
   }
 }
 
-/* Styles for mobile */
 @media (max-width: 768px) {
-  .navbar, .sidebar {
-    width: 100%;
-    float: none;
+  .sidebar h1, .sidebar p, .navbar h1, .navbar p {
+    font-size: 12px; /* Even smaller text on mobiles */
   }
-
-  .navbar ul, .sidebar ul {
-    text-align: center;
+  .sidebar img, .navbar img {
+    width: 100px; /* Smaller images on mobiles */
   }
-
-  /* Optional: Toggle navbar visibility */
-  .navbar {
-    display: none;
-  }
-
-  .navbar-toggle {
-    display: block;
+  .fas, .fab {
+    font-size: 16px; /* Smaller icons on mobiles */
   }
 }
+
 
 /* General styles for header and its contents */
 header {
