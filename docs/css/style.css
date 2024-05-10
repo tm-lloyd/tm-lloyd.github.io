@@ -116,13 +116,18 @@ header {
 }
 
 
+/* General styles */
 hr {
-  display: block; /* This will make the <hr> a block-level element */
-  width: 50%; /* This will limit the width of the <hr> to 50% of its parent container */
-  margin: 20px auto; /* This will center the <hr> horizontally and add some vertical spacing */
-  border: 0; /* This will remove the default border */
-  height: 1px; /* This will set the height of the <hr> */
-  background-color: #ccc; /* This will set the color of the <hr> */
+  display: block;
+  width: 50%;
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+}
+
+/* Center <hr> if it's inside <header> */
+header hr {
+  margin: 20px auto;
 }
 
 #profile-pic {
