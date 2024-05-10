@@ -1,3 +1,68 @@
+.navbar nav {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h3 {
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.navbar h3 a {
+  text-decoration: none;
+  color: inherit;
+  margin-left: 40px; /* Consider reducing this on smaller screens */
+  padding: 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  padding-right: 100px; /* Consider reducing this on smaller screens */
+}
+
+.navbar ul li {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .navbar nav {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .navbar h3 {
+    margin-bottom: 10px; /* Give some space between the title and nav items */
+    text-align: center; /* Center-align the name */
+  }
+
+  .navbar h3 a {
+    margin-left: 0; /* Remove extra left margin */
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .navbar ul li {
+    margin-right: 0;
+    margin-bottom: 5px; /* Space out list items vertically */
+  }
+}
+
 /* Base styles */
 .sidebar h1, .navbar h3 {
   font-size: 28px; /* Larger base font size for headers */
