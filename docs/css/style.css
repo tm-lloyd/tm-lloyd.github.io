@@ -1,3 +1,42 @@
+/* Base styles for desktop */
+.navbar, .sidebar {
+  width: 250px;
+  float: left;
+}
+
+.navbar ul, .sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Styles for tablets */
+@media (max-width: 1024px) {
+  .navbar, .sidebar {
+    width: 200px;
+  }
+}
+
+/* Styles for mobile */
+@media (max-width: 768px) {
+  .navbar, .sidebar {
+    width: 100%;
+    float: none;
+  }
+
+  .navbar ul, .sidebar ul {
+    text-align: center;
+  }
+
+  /* Optional: Toggle navbar visibility */
+  .navbar {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+}
+
 @font-face {
   font-family: 'Adobe Caslon Pro';
   font-weight: 400;
