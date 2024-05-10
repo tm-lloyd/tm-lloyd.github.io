@@ -36,15 +36,6 @@
   margin-right: 10px;
 }
 
-hr {
-  display: block; /* This will make the <hr> a block-level element */
-  width: 50%; /* This will limit the width of the <hr> to 50% of its parent container */
-  margin: 20px auto; /* This will center the <hr> horizontally and add some vertical spacing */
-  border: 0; /* This will remove the default border */
-  height: 1px; /* This will set the height of the <hr> */
-  background-color: #ccc; /* This will set the color of the <hr> */
-}
-
 @media (max-width: 768px) {
   .navbar nav {
         padding: 10px; /* Reduced padding */
@@ -132,6 +123,16 @@ header {
   text-align: center;
 }
 
+
+hr {
+  display: block; /* This will make the <hr> a block-level element */
+  width: 50%; /* This will limit the width of the <hr> to 50% of its parent container */
+  margin: 20px auto; /* This will center the <hr> horizontally and add some vertical spacing */
+  border: 0; /* This will remove the default border */
+  height: 1px; /* This will set the height of the <hr> */
+  background-color: #ccc; /* This will set the color of the <hr> */
+}
+
 #profile-pic {
   border-radius: 100px;
   margin-bottom: 10px;
@@ -143,8 +144,6 @@ h1 {
 }
 
 hr {
-  margin: auto;
-  width: 50%;
   margin-bottom: 20px;
 }
 
@@ -634,8 +633,7 @@ small {
 hr {
   border: 0;
   background: #e5e5e5;
-  height: 1px;
-  margin: 20px 0 20px; }
+  height: 1px;}
 
 footer {
   width: 270px;
