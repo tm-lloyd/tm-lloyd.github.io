@@ -119,6 +119,14 @@ hr {
   }
 }
 
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contact-container {
+    width: 100%; /* Full width on smaller screens */
+    text-align: center; /* Center the contact container on small screens */
+  }
+}
+
 /* General styles for header and its contents */
 header {
   text-align: center;
