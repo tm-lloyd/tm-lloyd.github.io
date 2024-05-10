@@ -110,14 +110,6 @@
   }
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  .contact-container {
-    width: 100%; /* Full width on smaller screens */
-    text-align: center; /* Center the contact container on small screens */
-  }
-}
-
 /* General styles for header and its contents */
 header {
   text-align: center;
@@ -153,6 +145,14 @@ hr {
   width: 50%; /* Adjust width in media queries for responsiveness */
 }
 
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contact-container {
+    width: 100%; /* Full width on smaller screens */
+    text-align: center; /* Center the contact container on small screens */
+  }
+}
+
 .contactinfo a {
   text-decoration: none;
   letter-spacing: .175em;
@@ -165,10 +165,6 @@ hr {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .contact-container {
-    width: 100%; /* Full width on smaller screens */
-  }
-
   header {
     padding: 10px;
   }
