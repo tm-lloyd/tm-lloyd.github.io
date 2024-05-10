@@ -65,7 +65,7 @@
   font-size: 16px; /* Base font size for list items */
 }
 
-.sidebar img, .navbar img {
+#profile-pic {
   width: 200px; /* Adjust base image size */
 }
 
@@ -84,7 +84,7 @@
   .sidebar li, .navbar li {
     font-size: 14px; /* Base font size for list items */
   }
-  .sidebar img, .navbar img {
+  #profile-pic {
     width: 150px; /* Smaller images on tablets */
   }
   .fas, .fab {
@@ -102,7 +102,7 @@
   .sidebar li, .navbar li {
     font-size: 10px; /* Base font size for list items */
   }
-  .sidebar img, .navbar img {
+  #profile-pic {
     width: 100px; /* Smaller images on mobile */
   }
   .fas, .fab {
@@ -123,6 +123,7 @@ hr {
   border: 0;
   height: 1px;
   background-color: #ccc;
+  margin: 20px 0 20px; 
 }
 
 /* Center <hr> if it's inside <header> */
