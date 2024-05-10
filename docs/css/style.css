@@ -133,7 +133,6 @@ header hr {
 #profile-pic {
   border-radius: 100px;
   margin-bottom: 10px;
-  width: 200px; /* Responsive width can be set in media queries if needed */
 }
 
 h1 {
