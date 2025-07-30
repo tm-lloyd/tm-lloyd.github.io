@@ -1,5 +1,6 @@
 relativeURLs = true
 theme = "academimal"
 sectionPagesMenu = "main"
+publishDir = "improved_docs"
 defaultContentLanguage = "en"
 ignorefiles = [ "hugo_travis_ci", ".travis.yml" ]
