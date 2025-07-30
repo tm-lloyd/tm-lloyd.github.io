@@ -54,7 +54,7 @@
     }
     
     .wrapper {
-        margin-top: 60px; /* Reduced top margin for smaller navbar */
+        padding-top: 60px; /* Reduced top padding for smaller navbar */
     }
 }
 
@@ -533,7 +533,8 @@ a:hover small {
 
 .wrapper {
   width: 1060px;
-  margin: 80px auto 0; }
+  margin: 0 auto;
+  padding-top: 80px; }
 
 blockquote {
   border-left: 1px solid #e5e5e5;
@@ -571,7 +572,7 @@ th {
 img {
   max-width: 100%; }
 
-header {
+.sidebar, header {
   width: 270px;
   float: left;
   position: fixed;
@@ -627,7 +628,7 @@ header ul a strong {
   display: block;
   color: #222; }
 
-section {
+section, main {
   width: 700px;
   float: right;
   padding-bottom: 50px; }
@@ -650,9 +651,10 @@ footer {
 @media print, screen and (max-width: 1160px) {
   div.wrapper {
     width: auto;
-    margin: 80px 0 0; }
+    margin: 0;
+    padding-top: 80px; }
 
-  header, section, footer {
+  header, section, main, footer {
     float: none;
     position: static;
     width: auto; }
@@ -660,7 +662,7 @@ footer {
   header {
     padding-right: 320px; }
 
-  section {
+  section, main {
     border: 1px solid #e5e5e5;
     border-width: 1px 0;
     padding: 20px 0;
