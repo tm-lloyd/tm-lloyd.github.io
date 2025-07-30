@@ -1,16 +1,33 @@
 <div class="navbar">
 <link rel="stylesheet" href="/css/style.css">
-<nav style="background-color: #fff; padding: 20px; display: flex; justify-content: space-between; position: fixed; top: 0; left: 0; width: 100%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-    <h3 id="" style="margin: 0; color: #333; font: bold;"><a href="index.html" style="text-decoration: none; color: inherit;  margin-left: 40px; padding: 0;">Thomas Lloyd</a></h3>
-    <ul id="navbar" style="list-style-type: none; margin: 0; padding: 0; display: flex; align-items: center; padding-right: 100px;">
-        <li style="margin-right: 10px;"><a href="https://thomaslloyd.me/">Home</a></li>
-        <li style="margin-right: 10px;"><a href="./research.html">Research</a></li>
-        <li style="margin-right: 10px;"><a href="./teaching.html">Teaching</a></li>
-        <li style="margin-right: 10px;"><a href="/pdf/CV_02212025.pdf" target="_blank">CV</a></li>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav role="navigation" aria-label="Main navigation" style="background-color: #fff; padding: 20px; display: flex; justify-content: space-between; position: fixed; top: 0; left: 0; width: 100%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <h3 style="margin: 0; color: #333; font-weight: bold;"><a href="index.html" style="text-decoration: none; color: inherit; margin-left: 40px; padding: 0;" aria-label="Thomas Lloyd - Homepage">Thomas Lloyd</a></h3>
+    <ul id="navbar" role="menubar" style="list-style-type: none; margin: 0; padding: 0; display: flex; align-items: center; padding-right: 100px;">
+        <li role="none" style="margin-right: 10px;"><a role="menuitem" href="https://thomaslloyd.me/">Home</a></li>
+        <li role="none" style="margin-right: 10px;"><a role="menuitem" href="./research.html">Research</a></li>
+        <li role="none" style="margin-right: 10px;"><a role="menuitem" href="./teaching.html">Teaching</a></li>
+        <li role="none" style="margin-right: 10px;"><a role="menuitem" href="/pdf/CV_02212025.pdf" target="_blank" rel="noopener" aria-label="Download CV (PDF)">CV</a></li>
     </ul>
 </nav>
 
 <style>
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+  }
+  
+  .skip-link:focus {
+    top: 6px;
+  }
+  
   #navbar a {
     text-decoration: none;
     color: inherit;
