@@ -5,6 +5,10 @@ const academicContent = {
       title: 'Are People Willing to Pay for Reduced Inequality?',
       authors: [
         {
+          name: 'Thomas Lloyd',
+          url: null
+        },
+        {
           name: 'Brian Hill',
           url: 'https://people.hec.edu/hill/'
         }
@@ -23,6 +27,10 @@ const academicContent = {
       id: 'wp1',
       title: 'The Long Shadow of Early Education: Evidence from a Natural Experiment in the Philippines',
       authors: [
+        {
+          name: 'Thomas Lloyd',
+          url: null
+        },
         {
           name: 'Dean Yang',
           url: 'https://deanyang-econ.github.io/deanyang/'
@@ -44,6 +52,10 @@ const academicContent = {
       title: 'Does It Matter That Carbon Taxes Are Regressive?',
       authors: [
         {
+          name: 'Thomas Lloyd',
+          url: null
+        },
+        {
           name: 'Ashley C. Craig',
           url: 'https://ashleycraig.com/'
         },
@@ -59,6 +71,10 @@ const academicContent = {
       title: 'Colonizer Identity and Economic Development: Evidence from the Scramble for Africa',
       authors: [
         {
+          name: 'Thomas Lloyd',
+          url: null
+        },
+        {
           name: 'Laston Manja',
           url: null
         }
@@ -69,6 +85,10 @@ const academicContent = {
       id: 'wip3',
       title: 'Garage Churches, Poverty, and Crime: Evidence from Colombian Cities',
       authors: [
+        {
+          name: 'Thomas Lloyd',
+          url: null
+        },
         {
           name: 'Juan P. Aparicio',
           url: 'https://www.posadaaparicio.com/research'
@@ -129,7 +149,12 @@ class AcademicContentRenderer {
   renderAuthors(authors) {
     if (!authors || authors.length === 0) return '';
     
-    const authorLinks = authors.map(author => {
+    // Filter out Thomas Lloyd from the co-authors list
+    const coAuthors = authors.filter(author => author.name !== 'Thomas Lloyd');
+    
+    if (coAuthors.length === 0) return '';
+    
+    const authorLinks = coAuthors.map(author => {
       if (author.url) {
         return `<a href="${author.url}" target="_blank">${author.name}</a>`;
       }
