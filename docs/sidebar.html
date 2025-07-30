@@ -8,10 +8,15 @@
 <!-- Minimal Mistakes / AcademicPages-style font stack -->
 <style>
   /* Use the same system sans-serif stack as AcademicPages/Minimal Mistakes */
-  html, body {
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-                 "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  }
+  /* Only sidebar headings & text use the AcademicPages font stack */
+      .sidebar,
+      .sidebar h1,
+      .sidebar p,
+      .sidebar li {
+        font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+                     "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+      }
+
   .contactinfo a:hover { text-decoration: underline; }
   .contactinfo i { margin-right: 6px; vertical-align: -1px; }
 </style>
