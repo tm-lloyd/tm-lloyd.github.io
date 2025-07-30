@@ -221,10 +221,12 @@ class AcademicContentRenderer {
     
     if (academicContent.publications.length > 0) {
       html += this.renderSection(academicContent.publications, 'Publications', options);
+      html += '<hr>\n';
     }
     
     if (academicContent.workingPapers.length > 0) {
       html += this.renderSection(academicContent.workingPapers, 'Working Papers', options);
+      html += '<hr>\n';
     }
     
     if (academicContent.workInProgress.length > 0) {
