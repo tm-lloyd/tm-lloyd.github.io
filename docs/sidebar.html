@@ -1,11 +1,19 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<!-- ADDED: Academicons (Google Scholar, ORCID, etc.) -->
+<!-- Fonts & Icons -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="/css/academicons.min.css">
 <link rel="stylesheet" href="/css/style.css">
+
+<!-- Minimal Mistakes / AcademicPages-style font stack -->
 <style>
-  .contactinfo a:hover {
-    text-decoration: underline;
+  /* Use the same system sans-serif stack as AcademicPages/Minimal Mistakes */
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+                 "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
   }
+  .contactinfo a:hover { text-decoration: underline; }
+  .contactinfo i { margin-right: 6px; vertical-align: -1px; }
 </style>
 
 <div class="sidebar">
@@ -14,40 +22,62 @@
     <h1>Thomas Lloyd</h1>
     <p>PhD Candidate in Economics<br>University of Michigan</p>
     <p class="contactinfo">tmlloyd@umich.edu</p>
-    <hr> <!-- Inline styled HR -->
+    <hr>
+
     <div class="contact-container">
+      <!-- Location -->
       <p class="contactinfo">
-        <i class="fas fa-map-marker" aria-hidden="true"></i> Ann Arbor, MI
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ann Arbor, MI
       </p>
+
+      <!-- Home institution -->
       <p class="contactinfo">
-        <a href="https://www.linkedin.com/in/tml-lloyd/">
-          <i class="fab fa-linkedin" aria-hidden="true"></i> Linkedin
+        <a href="https://lsa.umich.edu/econ.html" target="_blank" rel="noopener">
+          <i class="fa-solid fa-building-columns" aria-hidden="true"></i> University of Michigan
         </a>
       </p>
-      <p class="contactinfo">
-        <a href="https://twitter.com/tml_lloyd">
-          <i class="fab fa-twitter-square" aria-hidden="true"></i> Twitter
-        </a>
-      </p>
+
+      <!-- Email -->
       <p class="contactinfo">
         <a href="mailto:tmlloyd@umich.edu">
-          <i class="fas fa-envelope" aria-hidden="true"></i> Email
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i> Email
         </a>
       </p>
-      <!-- ADDED: Google Scholar (Academicons) -->
+
+      <!-- Google Scholar (Academicons) -->
       <p class="contactinfo">
         <a href="https://scholar.google.com/citations?user=KY4az6YAAAAJ&hl=en&oi=sra" target="_blank" rel="noopener">
           <i class="ai ai-google-scholar" aria-hidden="true"></i> Google Scholar
         </a>
       </p>
-      
-      <!-- ADDED: Bluesky -->
+
+      <!-- ORCID (Academicons) -->
+      <p class="contactinfo">
+        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener">
+          <i class="ai ai-orcid" aria-hidden="true"></i> ORCID
+        </a>
+      </p>
+
+      <!-- GitHub -->
+      <p class="contactinfo">
+        <a href="https://github.com/tm-lloyd" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+        </a>
+      </p>
+
+      <!-- Bluesky (Font Awesome 6.5.2 includes this) -->
       <p class="contactinfo">
         <a href="https://bsky.app/profile/thomaslloyd.bsky.social" target="_blank" rel="noopener">
           <i class="fa-brands fa-bluesky" aria-hidden="true"></i> Bluesky
         </a>
       </p>
+
+      <!-- X (formerly Twitter) -->
+      <p class="contactinfo">
+        <a href="https://x.com/tml_lloyd" target="_blank" rel="noopener">
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> X (Twitter)
+        </a>
+      </p>
     </div>
   </header>
 </div>
-
