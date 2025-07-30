@@ -5,10 +5,6 @@ const academicContent = {
       title: 'Are People Willing to Pay for Reduced Inequality?',
       authors: [
         {
-          name: 'Thomas Lloyd',
-          url: null
-        },
-        {
           name: 'Brian Hill',
           url: 'https://people.hec.edu/hill/'
         }
@@ -27,10 +23,6 @@ const academicContent = {
       id: 'wp1',
       title: 'The Long Shadow of Early Education: Evidence from a Natural Experiment in the Philippines',
       authors: [
-        {
-          name: 'Thomas Lloyd',
-          url: null
-        },
         {
           name: 'Dean Yang',
           url: 'https://deanyang-econ.github.io/deanyang/'
@@ -52,10 +44,6 @@ const academicContent = {
       title: 'Does It Matter That Carbon Taxes Are Regressive?',
       authors: [
         {
-          name: 'Thomas Lloyd',
-          url: null
-        },
-        {
           name: 'Ashley C. Craig',
           url: 'https://ashleycraig.com/'
         },
@@ -64,14 +52,14 @@ const academicContent = {
           url: 'https://www.dylantmoore.com/'
         }
       ],
-      abstract: null
+      abstract: 'We ask how externalities should be taxed when redistribution is costly. In our model, the government raises revenue using distortionary income and commodity taxes. If more or less productive people have identical tastes for an externality-generating activity, the government optimally imposes a Pigouvian tax equal to the marginal damage from the externality. This is true regardless of whether the tax is regressive. But, if regressivity partly reflects different preferences of people with different incomes, the tax optimally deviates from the Pigouvian benchmark because this helps redistribute income efficiently. The overall tax may be higher or lower, and may even reverse sign relative to the externality. We derive sufficient statistics for optimal policy, and use them to study carbon taxation in the United States. Throughout most of the income distribution, our empirical results imply an optimal carbon tax below marginal damage, but this reverses for very high-earning households. When we allow for heterogeneity in preferences at each income level as well as across the income distribution, our optimal tax schedules are attenuated toward the Pigouvian benchmark.'
     },
     {
       id: 'wip2',
       title: 'Colonizer Identity and Economic Development: Evidence from the Scramble for Africa',
       authors: [
         {
-          name: 'Thomas Lloyd',
+          name: 'Laston Manja',
           url: null
         }
       ],
@@ -81,10 +69,6 @@ const academicContent = {
       id: 'wip3',
       title: 'Garage Churches, Poverty, and Crime: Evidence from Colombian Cities',
       authors: [
-        {
-          name: 'Thomas Lloyd',
-          url: null
-        },
         {
           name: 'Juan P. Aparicio',
           url: 'https://www.posadaaparicio.com/research'
@@ -111,9 +95,11 @@ class AcademicContentRenderer {
     
     let html = `<h2 id="${sectionTitle.toLowerCase().replace(/\s+/g, '')}">${sectionTitle}</h2>\n`;
     
-    sectionData.forEach(item => {
+    sectionData.forEach((item, index) => {
       html += this.renderItem(item, { showImages, expandAbstracts });
-      html += '<hr>\n';
+      if (index < sectionData.length - 1) {
+        html += '<hr>\n';
+      }
     });
     
     return html;
