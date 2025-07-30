@@ -5,19 +5,23 @@
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 80px;
-  display: grid;
+  display: grid !important; /* Force grid layout */
   grid-template-columns: 300px 1fr;
+  grid-template-rows: auto;
   gap: 2rem;
   min-height: calc(100vh - 80px);
+  align-items: start; /* Prevent stretching */
 }
 
 /* Sidebar */
 .sidebar {
   grid-column: 1;
+  position: -webkit-sticky; /* Safari support */
   position: sticky;
   top: 100px;
   height: fit-content;
   padding: 1rem;
+  align-self: start; /* Ensures proper grid alignment */
 }
 
 /* Main content */
@@ -66,15 +70,33 @@ main {
   }
 }
 
-/* Override old float styles */
-.sidebar, header {
+/* Override old float styles - preserve sticky positioning */
+@media (min-width: 769px) {
+  .sidebar {
+    float: none !important;
+    width: auto !important;
+    /* Keep position: sticky for desktop */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    float: none !important;
+    position: static !important;
+    width: auto !important;
+  }
+}
+
+/* Always override these for main content */
+section, main {
   float: none !important;
-  position: static !important;
   width: auto !important;
 }
 
-section, main {
+/* Override header float only when it's not the sidebar */
+header:not(.sidebar header) {
   float: none !important;
+  position: static !important;
   width: auto !important;
 }
 
