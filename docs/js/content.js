@@ -192,7 +192,14 @@ class AcademicContentRenderer {
   renderImage(item, showImages) {
     if (!showImages || !item.image) return '';
     const altText = `Figure from "${item.title}"`;
-    return `<img src="${item.image}" alt="${altText}" style="max-width: 100%; height: auto; display: block; margin: 10px 0;" loading="lazy">\n`;
+    
+    // Special sizing for Long Shadow education paper image
+    let imageStyle = "max-width: 100%; height: auto; display: block; margin: 10px 0;";
+    if (item.image.includes('coefplot_TD_educ_munic_x_age_x_census20102020_pafe_moi.png')) {
+      imageStyle = "max-width: 80%; height: auto; display: block; margin: 10px auto;";
+    }
+    
+    return `<img src="${item.image}" alt="${altText}" style="${imageStyle}" loading="lazy">\n`;
   }
 
   renderAll(containerId, options = {}) {

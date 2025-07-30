@@ -1,0 +1,99 @@
+/* Modern CSS Grid Layout - Industry Standard 2024 */
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  min-height: calc(100vh - 80px);
+}
+
+/* Sidebar */
+.sidebar {
+  grid-column: 1;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  padding: 1rem;
+}
+
+/* Main content */
+main {
+  grid-column: 2;
+  max-width: none;
+  width: auto;
+  float: none;
+  padding: 1rem;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .wrapper {
+    grid-template-columns: 250px 1fr;
+    gap: 1.5rem;
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    padding: 60px 1rem 0;
+    gap: 1rem;
+  }
+  
+  .sidebar {
+    position: static !important;
+    grid-column: 1;
+    margin-bottom: 2rem;
+    text-align: center;
+    top: auto !important;
+    height: auto !important;
+  }
+  
+  main {
+    grid-column: 1;
+    padding: 0.5rem;
+  }
+  
+  /* Ensure navbar doesn't overlap on mobile */
+  .navbar nav {
+    position: fixed !important;
+    z-index: 1000;
+  }
+}
+
+/* Override old float styles */
+.sidebar, header {
+  float: none !important;
+  position: static !important;
+  width: auto !important;
+}
+
+section, main {
+  float: none !important;
+  width: auto !important;
+}
+
+/* Modern image handling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#profile-pic {
+  width: 200px;
+  max-width: 100%;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+
+@media (max-width: 768px) {
+  #profile-pic {
+    width: 150px;
+  }
+}
