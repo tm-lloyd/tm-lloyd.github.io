@@ -192,7 +192,7 @@ class AcademicContentRenderer {
   renderImage(item, showImages) {
     if (!showImages || !item.image) return '';
     const altText = `Figure from "${item.title}"`;
-    return `<img src="${item.image}" alt="${altText}" style="width: 100%;" loading="lazy">\n`;
+    return `<img src="${item.image}" alt="${altText}" style="max-width: 100%; height: auto; display: block; margin: 10px 0;" loading="lazy">\n`;
   }
 
   renderAll(containerId, options = {}) {

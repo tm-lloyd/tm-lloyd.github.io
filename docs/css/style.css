@@ -52,6 +52,10 @@
     .navbar ul li {
         margin-right: 5px; /* Reduced margin between items */
     }
+    
+    .wrapper {
+        margin-top: 60px; /* Reduced top margin for smaller navbar */
+    }
 }
 
 /* Base styles */
@@ -529,7 +533,7 @@ a:hover small {
 
 .wrapper {
   width: 1060px;
-  margin: 0 auto; }
+  margin: 80px auto 0; }
 
 blockquote {
   border-left: 1px solid #e5e5e5;
@@ -646,7 +650,7 @@ footer {
 @media print, screen and (max-width: 1160px) {
   div.wrapper {
     width: auto;
-    margin: 0; }
+    margin: 80px 0 0; }
 
   header, section, footer {
     float: none;
