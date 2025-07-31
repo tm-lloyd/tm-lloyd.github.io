@@ -68,6 +68,17 @@ const academicContent = {
     },
     {
       id: 'wip2',
+      title: 'Optimal Income Taxation with Aspirations',
+      authors: [
+        {
+          name: 'Thomas Lloyd',
+          url: null
+        }
+      ],
+      abstract: null
+    },
+    {
+      id: 'wip3',
       title: 'Colonizer Identity and Economic Development: Evidence from the Scramble for Africa',
       authors: [
         {
@@ -82,7 +93,7 @@ const academicContent = {
       abstract: 'This paper examines the long run economic impacts of differential European colonial rule in Africa, by exploiting differences arising from the arbitrary borders established during the Scramble for Africa (1876-1912). Using a regression discontinuity design along the full set of British/French colonial borders, I explore the impact of colonizer identity on measures of economic development. I find persistent effects of the legacy of colonial institutions, with areas formerly under British rule exhibiting higher nighttime light intensity and lower malaria prevalence at the grid cell level relative to areas formerly under French colonial rule. Additionally, at the individual level, these areas display higher educational attainment, lower unemployment rates, and improved public good provision. I explore mechanisms and find evidence in support of sharp discontinuities in formal institutions at the border, such as the structure of property rights and the quality of government, as opposed to informal institutions such as proxies for entrepreneurship and the prevalence of Protestantism.'
     },
     {
-      id: 'wip3',
+      id: 'wip4',
       title: 'Garage Churches, Poverty, and Crime: Evidence from Colombian Cities',
       authors: [
         {
