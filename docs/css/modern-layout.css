@@ -131,16 +131,67 @@ main {
   }
 }
 
-/* Override old float styles for all screen sizes */
+/* Critical overrides to fix conflicts with style.css */
+.wrapper {
+  width: 100% !important;
+  max-width: 1200px !important;
+  display: grid !important;
+  grid-template-columns: 300px 1fr !important;
+  grid-template-rows: auto !important;
+  gap: 2rem !important;
+  margin: 0 auto !important;
+  padding-top: 30px !important;
+}
+
+/* Override old float-based sidebar styles */
 .sidebar {
   float: none !important;
   width: auto !important;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 100px !important;
+  grid-column: 1 !important;
+  height: fit-content !important;
+  padding: 1rem !important;
 }
 
-/* Always override these for main content */
+/* Override old float-based main content styles */
 section, main {
   float: none !important;
   width: auto !important;
+  grid-column: 2 !important;
+  padding: 1rem !important;
+  max-width: none !important;
+  padding-bottom: 50px;
+}
+
+/* Override old media query conflicts */
+@media (max-width: 1160px) {
+  .wrapper {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: 250px 1fr !important;
+    gap: 1.5rem !important;
+    padding-top: 10px !important;
+  }
+  
+  .sidebar {
+    float: none !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    width: auto !important;
+    padding-right: 0 !important;
+  }
+  
+  main {
+    float: none !important;
+    width: auto !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+  }
 }
 
 /* Override header float only when it's not the sidebar */
