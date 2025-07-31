@@ -1,0 +1,7 @@
+# Private teaching evaluation data
+docs/sheets/
+
+# Other sensitive files (add as needed)
+*.xlsx
+*.xls
+*.csv
