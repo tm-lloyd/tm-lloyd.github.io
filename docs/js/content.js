@@ -255,6 +255,12 @@ function toggle(pid) {
   const linkobj = document.getElementById(linkid);
   const button = document.querySelector(`[aria-controls="${objid}"]`);
   
+  // Error handling - ensure elements exist
+  if (!absobj || !linkobj) {
+    console.warn(`Toggle elements not found for ID: ${pid}`);
+    return;
+  }
+  
   if (absobj.style.display === "none") {
     absobj.style.display = "inline";
     absobj.setAttribute('aria-hidden', 'false');

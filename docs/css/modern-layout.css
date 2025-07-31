@@ -1,16 +1,16 @@
-/* Modern CSS Grid Layout - Matching Original Dimensions */
+/* MOBILE-FIRST RESPONSIVE LAYOUT - NO FIXED PIXELS */
 
 .wrapper {
-  width: 1060px;
-  max-width: 1060px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  padding-top: 80px;
-  display: grid !important; /* Force grid layout */
-  grid-template-columns: 270px 700px;
-  grid-template-rows: auto;
-  gap: 90px;
-  min-height: calc(100vh - 80px);
-  align-items: start; /* Prevent stretching */
+  padding: 5rem 1rem 0 1rem;
+  display: grid !important;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 1.5rem;
+  min-height: calc(100dvh - 5rem);
+  align-items: start;
 }
 
 /* Desktop/Tablet Sidebar */
@@ -38,167 +38,221 @@ main {
   padding: 1rem;
 }
 
-/* Responsive breakpoints */
-@media (max-width: 1200px) {
+/* DESKTOP-FIRST RESPONSIVE BREAKPOINTS - Mobile to Desktop */
+
+/* Tablet and above - 2-column layout */
+@media (min-width: 48rem) { /* 768px equivalent */
   .wrapper {
-    width: 95%;
-    max-width: 95%;
-    grid-template-columns: 250px 600px;
-    gap: 60px;
+    max-width: 90%;
+    grid-template-columns: minmax(15rem, 20%) 1fr; /* Fluid sidebar */
+    gap: 2rem;
+    padding: 5rem 2rem 0 2rem;
   }
 }
 
-@media (max-width: 1024px) {
+/* Large screens - wider layout with max constraint */
+@media (min-width: 64rem) { /* 1024px equivalent */
   .wrapper {
-    width: 95%;
-    max-width: 95%;
-    grid-template-columns: 220px 1fr;
-    gap: 40px;
+    max-width: 70rem; /* ~1120px equivalent but flexible */
+    grid-template-columns: 17rem 1fr; /* ~270px equivalent but flexible */
+    gap: 3rem;
   }
 }
 
-@media (max-width: 768px) {
-  .wrapper {
-    width: 100% !important;
-    max-width: 100% !important;
-    grid-template-columns: 1fr !important;
-    grid-template-rows: auto 1fr !important;
-    gap: 1.5rem !important;
-    padding: 80px 1rem 0 1rem !important;
-  }
+/* MOBILE LAYOUT - Default mobile-first styles (already defined above) */
+
+/* DESKTOP LAYOUT OVERRIDES */
+@media (min-width: 48rem) { /* 768px+ - Tablet and desktop */
   
-  /* CRITICAL: Completely eliminate all floating and fixed positioning */
-  .sidebar, 
-  .sidebar.desktop-only,
-  header {
-    float: none !important;
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
+  /* Show sidebar on desktop, hide on mobile */
+  .sidebar.desktop-only {
+    display: block !important;
     grid-column: 1 !important;
-    grid-row: 1 !important;
-    text-align: center !important;
-    padding: 1rem 0 !important;
-    margin: 0 0 1rem 0 !important;
-    border-bottom: 1px solid #e5e5e5;
-    z-index: auto !important;
-  }
-  
-  /* Main content positioning */
-  main,
-  section {
-    float: none !important;
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    grid-column: 1 !important;
-    grid-row: 2 !important;
-    padding: 0 !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 6rem !important;
+    height: fit-content !important;
+    text-align: left !important;
+    padding: 1rem !important;
+    border-bottom: none !important;
     margin: 0 !important;
-    border: none !important;
-    z-index: auto !important;
   }
   
-  /* Footer positioning */
-  footer {
-    float: none !important;
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    padding: 1rem 0 !important;
-    margin: 1rem 0 0 0 !important;
-    z-index: auto !important;
+  /* Desktop main content positioning */
+  main {
+    grid-column: 2 !important;
+    padding: 1rem !important;
   }
   
-  /* Hide mobile ribbon - use stacked sidebar instead */
-  .mobile-ribbon.mobile-only {
-    display: none !important;
-  }
-  
-  /* Compact mobile sidebar styling */
+  /* Desktop sidebar styling */
   .sidebar.desktop-only header,
   .sidebar header {
     text-align: center !important;
-    float: none !important;
-    position: static !important;
-    width: 100% !important;
   }
   
-  .sidebar.desktop-only #profile-pic,
-  .sidebar #profile-pic {
-    width: 120px !important;
-    height: 120px !important;
-    margin: 0 auto 1rem auto !important;
-    float: none !important;
-    position: static !important;
-  }
-  
-  .sidebar.desktop-only h1,
-  .sidebar h1 {
-    font-size: 24px !important;
-    margin-bottom: 0.5rem !important;
-    float: none !important;
-    position: static !important;
-  }
-  
-  .sidebar.desktop-only p,
-  .sidebar p {
-    font-size: 14px !important;
-    margin-bottom: 0.5rem !important;
-    float: none !important;
-    position: static !important;
-  }
-  
-  /* Hide contact details on mobile for cleaner look */
   .sidebar.desktop-only .contact-container,
   .sidebar .contact-container {
-    display: none !important;
+    display: block !important;
   }
   
   .sidebar.desktop-only hr,
   .sidebar hr {
-    display: none !important;
+    display: block !important;
   }
-  
-  /* Ensure navbar doesn't overlap and has proper stacking */
+}
+
+/* MOBILE-SPECIFIC STYLES - Applied to all screen sizes, overridden on desktop */
+.sidebar, 
+.sidebar.desktop-only,
+header {
+  float: none !important;
+  position: static !important;
+  width: 100% !important;
+  height: auto !important;
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  text-align: center !important;
+  padding: 1rem 0 !important;
+  margin: 0 0 1rem 0 !important;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: auto !important;
+}
+
+main,
+section {
+  float: none !important;
+  position: static !important;
+  width: 100% !important;
+  height: auto !important;
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  z-index: auto !important;
+}
+
+/* Hide mobile ribbon - use stacked sidebar instead */
+.mobile-ribbon.mobile-only {
+  display: none !important;
+}
+
+/* Compact mobile sidebar styling */
+.sidebar.desktop-only #profile-pic,
+.sidebar #profile-pic {
+  width: 7.5rem !important; /* 120px equivalent but responsive */
+  height: 7.5rem !important;
+  margin: 0 auto 1rem auto !important;
+}
+
+.sidebar.desktop-only h1,
+.sidebar h1 {
+  font-size: 1.5rem !important; /* 24px equivalent but responsive */
+  margin-bottom: 0.5rem !important;
+}
+
+.sidebar.desktop-only p,
+.sidebar p {
+  font-size: 0.875rem !important; /* 14px equivalent but responsive */
+  margin-bottom: 0.5rem !important;
+}
+
+/* Hide contact details on mobile for cleaner look */
+.sidebar.desktop-only .contact-container,
+.sidebar .contact-container {
+  display: none !important;
+}
+
+.sidebar.desktop-only hr,
+.sidebar hr {
+  display: none !important;
+}
+
+/* MOBILE-FIRST NAVIGATION */
+.navbar nav {
+  position: fixed !important;
+  z-index: 1000 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  background-color: #fff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  padding: 0.75rem 1rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Mobile navigation improvements */
+.navbar nav h3 {
+  font-size: 1rem !important;
+  margin: 0 !important;
+  font-weight: 600 !important;
+}
+
+.navbar nav ul {
+  display: flex !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0.5rem !important;
+}
+
+.navbar nav ul li {
+  margin: 0 !important;
+}
+
+.navbar nav ul li a {
+  display: block !important;
+  padding: 0.5rem 0.75rem !important;
+  text-decoration: none !important;
+  color: #333 !important;
+  font-size: 0.875rem !important;
+  border-radius: 0.25rem !important;
+  transition: background-color 0.2s ease !important;
+  min-height: 2.75rem !important; /* Touch-friendly tap target */
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar nav ul li a:hover,
+.navbar nav ul li a:focus {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  text-decoration: none !important;
+}
+
+/* Larger screens - more spacing */
+@media (min-width: 48rem) {
   .navbar nav {
-    position: fixed !important;
-    z-index: 1000 !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
+    padding: 1.25rem 2rem !important;
   }
   
-  /* Ensure content doesn't overlap with fixed navbar */
-  body {
-    margin: 0 !important;
-    padding: 0 !important;
+  .navbar nav h3 {
+    font-size: 1.125rem !important;
+  }
+  
+  .navbar nav ul {
+    gap: 1rem !important;
+  }
+  
+  .navbar nav ul li a {
+    font-size: 1rem !important;
+    padding: 0.75rem 1rem !important;
   }
 }
 
 /* Critical overrides to fix conflicts with style.css */
 .wrapper {
-  width: 1060px !important;
-  max-width: 1060px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   display: grid !important;
-  grid-template-columns: 270px 700px !important;
-  grid-template-rows: auto !important;
-  gap: 90px !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: auto 1fr !important;
+  gap: 1.5rem !important;
   margin: 0 auto !important;
-  padding-top: 80px !important;
+  padding: 5rem 1rem 0 1rem !important;
+  min-height: calc(100dvh - 5rem) !important;
 }
 
 /* Override old float-based sidebar styles */
@@ -238,16 +292,13 @@ section, main {
   min-height: 0;
 }
 
-/* Override old media query conflicts */
-@media (max-width: 1160px) {
+/* Override old media query conflicts with mobile-first approach */
+@media (min-width: 48rem) {
   .wrapper {
-    width: 95% !important;
-    max-width: 95% !important;
-    margin: 0 auto !important;
-    display: grid !important;
-    grid-template-columns: 220px 1fr !important;
-    gap: 40px !important;
-    padding-top: 80px !important;
+    max-width: 90% !important;
+    grid-template-columns: minmax(15rem, 20%) 1fr !important;
+    gap: 2rem !important;
+    padding: 5rem 2rem 0 2rem !important;
   }
   
   .sidebar {
@@ -255,7 +306,6 @@ section, main {
     position: -webkit-sticky !important;
     position: sticky !important;
     width: auto !important;
-    padding-right: 0 !important;
   }
   
   main {
@@ -267,6 +317,14 @@ section, main {
   }
 }
 
+@media (min-width: 64rem) {
+  .wrapper {
+    max-width: 70rem !important;
+    grid-template-columns: 17rem 1fr !important;
+    gap: 3rem !important;
+  }
+}
+
 /* Override header float only when it's not the sidebar */
 header:not(.sidebar header) {
   float: none !important;
@@ -274,24 +332,67 @@ header:not(.sidebar header) {
   width: auto !important;
 }
 
-/* Modern image handling */
-img {
-  max-width: 100%;
-  height: auto;
+/* RESPONSIVE MEDIA CONSTRAINTS - Prevent overflow on mobile */
+img, 
+video, 
+svg, 
+canvas, 
+iframe,
+embed,
+object {
+  max-width: 100% !important;
+  height: auto !important;
   display: block;
 }
 
+/* Ensure images in content don't break layout */
+main img,
+section img,
+article img,
+.content img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+/* Profile picture responsive sizing */
 #profile-pic {
-  width: 200px;
+  width: 12.5rem; /* ~200px equivalent but responsive */
   max-width: 100%;
   border-radius: 50%;
   margin: 0 auto 1rem;
 }
 
-@media (max-width: 768px) {
+/* Responsive profile picture sizing */
+@media (max-width: 48rem) { /* Mobile */
   #profile-pic {
-    width: 150px;
+    width: 7.5rem; /* ~120px equivalent but responsive */
   }
+}
+
+/* Constrain any embedded content */
+iframe,
+embed,
+object {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Responsive video containers */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /* Utility classes for responsive visibility */
@@ -384,4 +485,145 @@ html body .wrapper header {
     position: static !important;
     float: none !important;
   }
+}
+
+/* RESPONSIVE TABLES AND LONG CONTENT - Prevent horizontal scrolling */
+
+/* Table overflow handling */
+table {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Reset table display on larger screens */
+@media (min-width: 48rem) {
+  table {
+    display: table !important;
+    white-space: normal !important;
+  }
+}
+
+/* Table cells responsive behavior */
+table th,
+table td {
+  padding: 0.5rem !important;
+  text-align: left !important;
+  vertical-align: top !important;
+  word-wrap: break-word !important;
+  overflow-wrap: anywhere !important;
+  max-width: 15rem !important; /* Prevent extremely wide cells */
+}
+
+/* Specific table classes */
+.teaching-table,
+.comments-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin-bottom: 1rem !important;
+  display: block !important;
+  overflow-x: auto !important;
+}
+
+@media (min-width: 48rem) {
+  .teaching-table,
+  .comments-table {
+    display: table !important;
+  }
+}
+
+/* Long content handling */
+pre {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: anywhere !important;
+  overflow-x: auto !important;
+  max-width: 100% !important;
+}
+
+code {
+  word-wrap: break-word !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* Long URLs and unbreakable content */
+.content,
+main,
+section,
+article {
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  hyphens: auto !important;
+}
+
+/* Long URL handling */
+a {
+  overflow-wrap: break-word !important;
+  word-break: break-all !important;
+}
+
+/* Prevent code blocks from overflowing */
+pre code {
+  display: block !important;
+  overflow-x: auto !important;
+  white-space: pre !important;
+  word-wrap: normal !important;
+}
+
+/* ABSOLUTE/FIXED POSITIONING FIXES - Prevent mobile layout conflicts */
+
+/* Remove any stray overflow:hidden that could trap scroll */
+html,
+body {
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+}
+
+/* Ensure proper spacing for fixed navbar */
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Prevent any floating elements from interfering */
+* {
+  box-sizing: border-box !important;
+}
+
+/* Reset any problematic positioning */
+.wrapper > *:not(.navbar) {
+  position: static !important;
+  float: none !important;
+}
+
+/* Only allow fixed positioning for navbar */
+.navbar nav {
+  /* Already defined above - this is the only allowed fixed element */
+}
+
+/* Ensure adequate spacing below fixed navbar */
+@media (max-width: 48rem) {
+  .wrapper {
+    padding-top: 4rem !important; /* Ensure enough space for smaller mobile navbar */
+  }
+}
+
+@media (min-width: 48rem) {
+  .wrapper {
+    padding-top: 5rem !important; /* More space for larger desktop navbar */
+  }
+}
+
+/* Force normal document flow for all content */
+main,
+section,
+article,
+.content {
+  position: static !important;
+  clear: both !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
