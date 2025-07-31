@@ -13,8 +13,8 @@
   align-items: start; /* Prevent stretching */
 }
 
-/* Sidebar */
-.sidebar {
+/* Desktop/Tablet Sidebar */
+.sidebar.desktop-only {
   grid-column: 1;
   position: -webkit-sticky; /* Safari support */
   position: sticky;
@@ -22,6 +22,11 @@
   height: fit-content;
   padding: 1rem;
   align-self: start; /* Ensures proper grid alignment */
+}
+
+/* Mobile Ribbon (hidden by default) */
+.mobile-ribbon.mobile-only {
+  display: none;
 }
 
 /* Main content */
@@ -45,21 +50,77 @@ main {
 @media (max-width: 768px) {
   .wrapper {
     grid-template-columns: 1fr;
-    padding: 10px 1rem 0;
+    grid-template-rows: auto auto 1fr;
+    padding: 0 1rem;
     gap: 1rem;
+    padding-top: 80px; /* Account for fixed navbar */
   }
   
-  .sidebar {
-    position: static !important;
+  /* Hide desktop sidebar on mobile */
+  .sidebar.desktop-only {
+    display: none !important;
+  }
+  
+  /* Show mobile ribbon on mobile */
+  .mobile-ribbon.mobile-only {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin: 0 auto 20px auto;
+    max-width: 500px;
     grid-column: 1;
-    margin-bottom: 2rem;
-    text-align: center;
-    top: auto !important;
-    height: auto !important;
+    grid-row: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  .mobile-profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  
+  .mobile-info {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .mobile-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #333;
+    font-family: "Adobe Caslon Pro", serif;
+  }
+  
+  .mobile-title {
+    font-size: 14px;
+    margin: 0 0 2px 0;
+    color: #666;
+    font-family: "Noto Sans", sans-serif;
+  }
+  
+  .mobile-university {
+    font-size: 14px;
+    margin: 0;
+    color: #666;
+    font-family: "Noto Sans", sans-serif;
+  }
+  
+  .mobile-university i {
+    margin-right: 6px;
+    color: #007bff;
   }
   
   main {
     grid-column: 1;
+    grid-row: 2;
     padding: 0.5rem;
   }
   
@@ -70,21 +131,10 @@ main {
   }
 }
 
-/* Override old float styles - preserve sticky positioning */
-@media (min-width: 769px) {
-  .sidebar {
-    float: none !important;
-    width: auto !important;
-    /* Keep position: sticky for desktop */
-  }
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    float: none !important;
-    position: static !important;
-    width: auto !important;
-  }
+/* Override old float styles for all screen sizes */
+.sidebar {
+  float: none !important;
+  width: auto !important;
 }
 
 /* Always override these for main content */
@@ -117,5 +167,69 @@ img {
 @media (max-width: 768px) {
   #profile-pic {
     width: 150px;
+  }
+}
+
+/* Utility classes for responsive visibility */
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+/* Extra small screens - adjust mobile ribbon */
+@media (max-width: 480px) {
+  .mobile-ribbon.mobile-only {
+    padding: 12px 15px;
+    margin: 0 auto 15px auto;
+  }
+  
+  .mobile-profile-pic {
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+  }
+  
+  .mobile-name {
+    font-size: 16px;
+  }
+  
+  .mobile-title,
+  .mobile-university {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-ribbon.mobile-only {
+    padding: 10px 12px;
+    margin: 0 auto 12px auto;
+  }
+  
+  .mobile-profile-pic {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+  }
+  
+  .mobile-name {
+    font-size: 15px;
+  }
+  
+  .mobile-title,
+  .mobile-university {
+    font-size: 12px;
   }
 }
