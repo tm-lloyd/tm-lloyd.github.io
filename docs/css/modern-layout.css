@@ -1,14 +1,14 @@
-/* Modern CSS Grid Layout - Industry Standard 2024 */
+/* Modern CSS Grid Layout - Matching Original Dimensions */
 
 .wrapper {
-  width: 100%;
-  max-width: 1200px;
+  width: 1060px;
+  max-width: 1060px;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 80px;
   display: grid !important; /* Force grid layout */
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 270px 700px;
   grid-template-rows: auto;
-  gap: 2rem;
+  gap: 90px;
   min-height: calc(100vh - 80px);
   align-items: start; /* Prevent stretching */
 }
@@ -39,108 +39,166 @@ main {
 }
 
 /* Responsive breakpoints */
+@media (max-width: 1200px) {
+  .wrapper {
+    width: 95%;
+    max-width: 95%;
+    grid-template-columns: 250px 600px;
+    gap: 60px;
+  }
+}
+
 @media (max-width: 1024px) {
   .wrapper {
-    grid-template-columns: 250px 1fr;
-    gap: 1.5rem;
-    padding-top: 10px;
+    width: 95%;
+    max-width: 95%;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
   }
 }
 
 @media (max-width: 768px) {
   .wrapper {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto 1fr;
-    padding: 0 1rem;
-    gap: 1rem;
-    padding-top: 80px; /* Account for fixed navbar */
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto 1fr !important;
+    gap: 1.5rem !important;
+    padding: 80px 1rem 0 1rem !important;
   }
   
-  /* Hide desktop sidebar on mobile */
-  .sidebar.desktop-only {
+  /* CRITICAL: Completely eliminate all floating and fixed positioning */
+  .sidebar, 
+  .sidebar.desktop-only,
+  header {
+    float: none !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    text-align: center !important;
+    padding: 1rem 0 !important;
+    margin: 0 0 1rem 0 !important;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: auto !important;
+  }
+  
+  /* Main content positioning */
+  main,
+  section {
+    float: none !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    z-index: auto !important;
+  }
+  
+  /* Footer positioning */
+  footer {
+    float: none !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    padding: 1rem 0 !important;
+    margin: 1rem 0 0 0 !important;
+    z-index: auto !important;
+  }
+  
+  /* Hide mobile ribbon - use stacked sidebar instead */
+  .mobile-ribbon.mobile-only {
     display: none !important;
   }
   
-  /* Show mobile ribbon on mobile */
-  .mobile-ribbon.mobile-only {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 12px;
-    padding: 15px 20px;
-    margin: 0 auto 20px auto;
-    max-width: 500px;
-    grid-column: 1;
-    grid-row: 1;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  /* Compact mobile sidebar styling */
+  .sidebar.desktop-only header,
+  .sidebar header {
+    text-align: center !important;
+    float: none !important;
+    position: static !important;
+    width: 100% !important;
   }
   
-  .mobile-profile-pic {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
-    flex-shrink: 0;
-    object-fit: cover;
+  .sidebar.desktop-only #profile-pic,
+  .sidebar #profile-pic {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto 1rem auto !important;
+    float: none !important;
+    position: static !important;
   }
   
-  .mobile-info {
-    flex: 1;
-    text-align: left;
+  .sidebar.desktop-only h1,
+  .sidebar h1 {
+    font-size: 24px !important;
+    margin-bottom: 0.5rem !important;
+    float: none !important;
+    position: static !important;
   }
   
-  .mobile-name {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 4px 0;
-    color: #333;
-    font-family: "Adobe Caslon Pro", serif;
+  .sidebar.desktop-only p,
+  .sidebar p {
+    font-size: 14px !important;
+    margin-bottom: 0.5rem !important;
+    float: none !important;
+    position: static !important;
   }
   
-  .mobile-title {
-    font-size: 14px;
-    margin: 0 0 2px 0;
-    color: #666;
-    font-family: "Noto Sans", sans-serif;
+  /* Hide contact details on mobile for cleaner look */
+  .sidebar.desktop-only .contact-container,
+  .sidebar .contact-container {
+    display: none !important;
   }
   
-  .mobile-university {
-    font-size: 14px;
-    margin: 0;
-    color: #666;
-    font-family: "Noto Sans", sans-serif;
+  .sidebar.desktop-only hr,
+  .sidebar hr {
+    display: none !important;
   }
   
-  .mobile-university i {
-    margin-right: 6px;
-    color: #007bff;
-  }
-  
-  main {
-    grid-column: 1;
-    grid-row: 2;
-    padding: 0.5rem;
-  }
-  
-  /* Ensure navbar doesn't overlap on mobile */
+  /* Ensure navbar doesn't overlap and has proper stacking */
   .navbar nav {
     position: fixed !important;
-    z-index: 1000;
+    z-index: 1000 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Ensure content doesn't overlap with fixed navbar */
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
 
 /* Critical overrides to fix conflicts with style.css */
 .wrapper {
-  width: 100% !important;
-  max-width: 1200px !important;
+  width: 1060px !important;
+  max-width: 1060px !important;
   display: grid !important;
-  grid-template-columns: 300px 1fr !important;
+  grid-template-columns: 270px 700px !important;
   grid-template-rows: auto !important;
-  gap: 2rem !important;
+  gap: 90px !important;
   margin: 0 auto !important;
-  padding-top: 30px !important;
+  padding-top: 80px !important;
 }
 
 /* Override old float-based sidebar styles */
@@ -165,16 +223,31 @@ section, main {
   padding-bottom: 50px;
 }
 
+/* Global CSS Grid enforcement - overrides ANY float/position conflicts */
+.wrapper * {
+  box-sizing: border-box;
+}
+
+/* Ensure CSS Grid container behavior */
+.wrapper {
+  display: grid !important;
+}
+
+.wrapper > * {
+  min-width: 0; /* Prevents grid overflow */
+  min-height: 0;
+}
+
 /* Override old media query conflicts */
 @media (max-width: 1160px) {
   .wrapper {
-    width: 100% !important;
-    max-width: 1200px !important;
+    width: 95% !important;
+    max-width: 95% !important;
     margin: 0 auto !important;
     display: grid !important;
-    grid-template-columns: 250px 1fr !important;
-    gap: 1.5rem !important;
-    padding-top: 10px !important;
+    grid-template-columns: 220px 1fr !important;
+    gap: 40px !important;
+    padding-top: 80px !important;
   }
   
   .sidebar {
