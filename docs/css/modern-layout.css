@@ -4,7 +4,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 10px;
+  padding-top: 30px;
   display: grid !important; /* Force grid layout */
   grid-template-columns: 300px 1fr;
   grid-template-rows: auto;

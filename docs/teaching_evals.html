@@ -24,6 +24,24 @@
   <!-- PNG fallback for older browsers (optional) -->
   <link rel="icon"   href="/icons/294px-Michigan_Wolverines_logo.png" sizes="32x32" type="image/png">
   <link rel="shortcut icon" href="/icons/294px-Michigan_Wolverines_logo.png">
+  
+  <style>
+    /* Prevent margin collapse and fix whitespace issues */
+    #navbar-placeholder:empty,
+    #sidebar-placeholder:empty {
+      display: none;
+    }
+    
+    /* Prevent margin collapse on main container */
+    .wrapper {
+      overflow: hidden; /* Creates new block formatting context */
+    }
+    
+    /* Reset margins on first child to prevent collapse */
+    main > *:first-child {
+      margin-top: 0 !important;
+    }
+  </style>
 
 </head>
 
