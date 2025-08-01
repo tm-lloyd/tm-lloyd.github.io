@@ -173,7 +173,7 @@
         /* ======  phones ≤ 480 px  ====== */
       @media (max-width: 480px) {
 
-        /* 1. Turn table → stacked cards (unchanged) */
+       /* 1. Shared stacked-card rules — unchanged */
         .comments-table            { display:block; overflow:hidden; }
         .comments-table thead,
         .comments-table tbody,
@@ -183,45 +183,41 @@
 
         .comments-table thead tr   { position:absolute; top:-9999px; left:-9999px; }
 
-        .comments-table tr {
-          border: 1px solid #ccc;
-          margin-bottom: .625rem;
-          padding: .625rem;
-          background:#fff;
-          border-radius: .25rem;
+        .comments-table tr{
+          border:1px solid #ccc; margin:0 0 .625rem; padding:.625rem;
+          background:#fff; border-radius:.25rem;
         }
 
-        /* 2. Universal cell padding (room for label) */
-        .comments-table td {
-          border:none;
-          position:relative;
-          padding: .5rem .5rem .5rem 7rem;   /* 7 rem left = label column */
-          white-space:normal;                /* default – may wrap */
-          overflow-wrap:break-word;          /* break only at spaces/punct */
-          word-break:normal;
+        /* 2. Universal cell padding (room for label column) */
+        .comments-table td{
+          border:none; position:relative;
+          padding:.5rem .5rem .5rem 7rem;      /* 7 rem left column */
+          white-space:normal; overflow-wrap:break-word; word-break:normal;
         }
 
-        /* 3. Two short cells must stay on one line */
+        /* 3. Keep Course & Term on one line */
         .comments-table td[data-label="Course"],
-        .comments-table td[data-label="Term"] {
-          white-space:nowrap;                /* no wrapping here */
-          overflow-wrap:normal;
+        .comments-table td[data-label="Term"]{
+          white-space:nowrap; overflow-wrap:normal;
         }
 
-        /* 4. Long comment cell may wrap freely and use full width */
-        .comments-table td[data-label="Comment"] {
-          padding-left: .5rem;               /* no indent – label sits inline */
+        /* 4A. Comment cell gets full width */
+        .comments-table td[data-label="Comment"]{
+          padding:.5rem;                       /* no left column indent */
         }
 
-        /* 5. Pseudo-label placed in a fixed 7 rem column */
-        .comments-table td::before {
-          content: attr(data-label) ": ";
-          position:absolute;
-          left:.5rem;
-          top:.5rem;
-          width:6.5rem;                      /* 7 rem (padding) − .5 rem gap */
-          font-weight:bold;
-          white-space:nowrap;
+        /* 4B. Comment label moves ABOVE the text (not overlay) */
+        .comments-table td[data-label="Comment"]::before{
+          content:attr(data-label) ":";
+          position:static; display:block;      /* normal flow */
+          margin-bottom:.25rem; font-weight:bold;
+        }
+
+        /* 5. Labels for the other cells stay in the left column */
+        .comments-table td:not([data-label="Comment"])::before{
+          content:attr(data-label) ":";
+          position:absolute; left:.5rem; top:.5rem;
+          width:6.5rem; font-weight:bold; white-space:nowrap;
         }
       }
       </style>

@@ -64,6 +64,10 @@
       .brand{font-size:16px;line-height:44px;}
       #navbar{font-size:14px;padding-right:24px;}
       #navbar a{line-height:44px;}
+      /* ⇣ new override */
+      #navbar a::after{
+        bottom:10px;          /* was 2px; adjust until it sits just under text */
+      }
     }
   </style>
 </div>

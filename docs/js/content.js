@@ -223,8 +223,13 @@ class AcademicContentRenderer {
     const marginStyle = width === '100%' ? 'margin:10px 0;' : 'margin:10px auto;';
 
     // ↓ add an explicit width to trump the global rule
-    const imageStyle =
-      `width:${width}; max-width:${width}; height:auto; display:block; ${marginStyle}`;
+    const imageStyle = `
+      width:${width} !important;
+      max-width:${width} !important;   /* extra safety */
+      height:auto;
+      display:block;
+      ${marginStyle}
+    `.trim();
 
     return `<img src="${item.image}" alt="${altText}" style="${imageStyle}" loading="lazy">\n`;
   }
