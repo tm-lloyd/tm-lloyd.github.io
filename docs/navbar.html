@@ -6,7 +6,7 @@
 
   <nav class="main-nav" aria-label="Main navigation">
     <h3 class="brand">
-      <a href="index.html" aria-label="Thomas Lloyd – homepage">Thomas Lloyd</a>
+      <a href="index.html" aria-label="Thomas Lloyd – homepage">Thomas&nbsp;Lloyd</a>
     </h3>
 
     <ul id="navbar" role="menubar">
@@ -19,52 +19,46 @@
 
   <!-- ─────────── NAVBAR CSS (inline for brevity) ─────────── -->
   <style>
-    /* ── Skip link ─────────────────────────────────────────── */
+    /* ── Skip-link ────────────────────────────────────────── */
     .skip-link{
       position:absolute;top:-40px;left:6px;background:#000;color:#fff;
       padding:8px;border-radius:4px;text-decoration:none;z-index:1000;
     }
     .skip-link:focus{top:6px;}
 
-    /* ── Base nav (mobile-first) ───────────────────────────── */
+    /* ── Base nav – mobile-first (flexible height) ────────── */
     .main-nav{
       background:#fff;position:fixed;top:0;left:0;width:100%;
       display:flex;justify-content:space-between;align-items:center;
-      padding:6px 10px;               /* comfortable touch padding */
+      flex-wrap:nowrap;padding:6px 10px;
       box-shadow:0 2px 4px rgba(0,0,0,.1);z-index:9999;
     }
 
-    .brand{margin:0;font:600 15px/1 'Noto Sans',sans-serif;}
+    .brand{
+      margin:0;font:600 clamp(14px,4.5vw,16px)/1 'Noto Sans',sans-serif;
+      white-space:nowrap;
+    }
     .brand a{text-decoration:none;color:#333;}
 
     #navbar{
-      list-style:none;display:flex;align-items:center;
-      margin:0;padding:0 10px 0 0;font-size:12px;
+      list-style:none;display:flex;align-items:center;flex-wrap:nowrap;
+      margin:0;padding:0 10px 0 0;font-size:clamp(11px,3.8vw,14px);
     }
-    #navbar li{margin-right:6px;}
+    #navbar li{margin-right:6px;flex:0 0 auto;}
     #navbar a{
       position:relative;padding:0 6px;text-decoration:none;color:inherit;
+      white-space:nowrap;
     }
 
     /* underline animation */
     #navbar a::after{
-      content:"";position:absolute;left:0;bottom:3px;width:100%;height:3px;
+      content:"";position:absolute;left:0;bottom:2px;width:100%;height:3px;
       background:#727272;transform:scaleX(0);transition:transform .3s ease;
     }
     #navbar a:hover{font-weight:bold;}
     #navbar a:hover::after{transform:scaleX(1);}
 
-    /* ── Extra-small tweaks ───────────────────────────────── */
-    @media (max-width:400px){
-      .brand{font-size:14px;}
-      #navbar{font-size:11px;}
-    }
-    @media (max-width:350px){
-      .brand{font-size:12px;}
-      #navbar{font-size:10px;}
-    }
-
-    /* ── Desktop overrides (≥ 481 px) ─────────────────────── */
+    /* ── Desktop ≥ 481 px — tighter bar ─────────────────── */
     @media (min-width:481px){
       .main-nav{height:44px;padding:0 14px;}
       .brand{font-size:16px;line-height:44px;}
