@@ -1,7 +1,7 @@
 <div class="navbar">
 <link rel="stylesheet" href="/css/style.css">
 <a href="#main-content" class="skip-link">Skip to main content</a>
-<nav role="navigation" aria-label="Main navigation" style="background-color: #fff; padding: 12px 20px; display: flex; justify-content: space-between; position: fixed; top: 0; left: 0; width: 100%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+<nav role="navigation" aria-label="Main navigation" class="main-nav">
     <h3 style="margin: 0; color: #333; font-weight: bold; font-family: 'Noto Sans', sans-serif; font-size: 18px;"><a href="index.html" style="text-decoration: none; color: inherit; margin-left: 40px; padding: 0;" aria-label="Thomas Lloyd - Homepage">Thomas Lloyd</a></h3>
     <ul id="navbar" role="menubar" style="list-style-type: none; margin: 0; padding: 0; display: flex; align-items: center; padding-right: 100px;">
         <li role="none" style="margin-right: 10px;"><a role="menuitem" href="https://thomaslloyd.me/">Home</a></li>
@@ -57,6 +57,34 @@
   #navbar a:hover::after {
     transform: scaleX(1); 
   }
+
+  /* ─── Desktop / default navbar size ─────────────────────────────── */
+.main-nav{
+  background:#fff;
+  position:fixed;
+  top:0; left:0; width:100%;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:6px 16px;            /* ↓ reduced from 12 px top-bottom */
+  box-shadow:0 2px 4px rgba(0,0,0,.1);
+}
+
+/* Brand */
+.main-nav h3{
+  margin:0;
+  font-family:'Noto Sans',sans-serif;
+  font-size:17px;              /* slightly smaller */
+}
+
+/* Menu list */
+#navbar{
+  list-style:none;
+  display:flex; align-items:center;
+  margin:0; padding:0 40px 0 0; /* ↓ right padding 100 → 40 */
+}
+
+#navbar li{ margin-right:8px; } /* ↓ gap 10 → 8 */
+
+#navbar a{ padding:2px 4px; }   /* keeps click target while lowering height */
   
   /* Responsive navbar font sizing */
   @media (max-width: 480px) {
