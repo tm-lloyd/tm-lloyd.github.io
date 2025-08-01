@@ -170,60 +170,60 @@
           }
         }
         
-        @media (max-width: 480px) {
-          .comments-table {
-            display: block;
-            overflow-x: auto;
-            white-space: nowrap;
-          }
-          
-          .comments-table thead,
-          .comments-table tbody,
-          .comments-table th,
-          .comments-table td,
-          .comments-table tr {
-            display: block;
-          }
-          
-          .comments-table thead tr {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
-          }
-          
-          .comments-table tr {
-            border: 1px solid #ccc;
-            margin-bottom: 0.625rem;
-            padding: 0.625rem;
-            background-color: #fff;
-            border-radius: 0.25rem;
-          }
-          
-          .comments-table td {
-            border: none;
-            position: relative;
-            padding-left: 30%;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            white-space: normal;
-            word-wrap: break-word;
-            overflow-wrap: anywhere;
-          }
-          
-          .comments-table td:before {
-            content: attr(data-label) ": ";
-            position: absolute;
-            left: 0.375rem;
-            top: 0.5rem;
-            width: 28%;
-            padding-right: 0.5rem;
-            white-space: nowrap;
-            font-weight: bold;
-            color: #333;
-            font-size: 0.875rem;
-          }
+        /* ======  phones ≤ 480 px  ====== */
+      @media (max-width: 480px) {
+
+        /* 1. Turn table → stacked cards (unchanged) */
+        .comments-table            { display:block; overflow:hidden; }
+        .comments-table thead,
+        .comments-table tbody,
+        .comments-table tr,
+        .comments-table th,
+        .comments-table td         { display:block; }
+
+        .comments-table thead tr   { position:absolute; top:-9999px; left:-9999px; }
+
+        .comments-table tr {
+          border: 1px solid #ccc;
+          margin-bottom: .625rem;
+          padding: .625rem;
+          background:#fff;
+          border-radius: .25rem;
         }
+
+        /* 2. Universal cell padding (room for label) */
+        .comments-table td {
+          border:none;
+          position:relative;
+          padding: .5rem .5rem .5rem 7rem;   /* 7 rem left = label column */
+          white-space:normal;                /* default – may wrap */
+          overflow-wrap:break-word;          /* break only at spaces/punct */
+          word-break:normal;
+        }
+
+        /* 3. Two short cells must stay on one line */
+        .comments-table td[data-label="Course"],
+        .comments-table td[data-label="Term"] {
+          white-space:nowrap;                /* no wrapping here */
+          overflow-wrap:normal;
+        }
+
+        /* 4. Long comment cell may wrap freely and use full width */
+        .comments-table td[data-label="Comment"] {
+          padding-left: .5rem;               /* no indent – label sits inline */
+        }
+
+        /* 5. Pseudo-label placed in a fixed 7 rem column */
+        .comments-table td::before {
+          content: attr(data-label) ": ";
+          position:absolute;
+          left:.5rem;
+          top:.5rem;
+          width:6.5rem;                      /* 7 rem (padding) − .5 rem gap */
+          font-weight:bold;
+          white-space:nowrap;
+        }
+      }
       </style>
 
       <hr style="border: none; height: 0.0625rem; background-color: #e8e8e8; margin: 2.5rem 0 1.875rem 0;">
