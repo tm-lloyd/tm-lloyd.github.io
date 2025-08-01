@@ -475,22 +475,22 @@ html body .wrapper header {
     z-index: auto !important;
   }
   
-  /* Override ANY table display conflicts from page-specific styles */
+  /* Override positioning conflicts but allow custom display modes for teaching tables */
   html body .wrapper .teaching-table,
   html body .wrapper .comments-table,
   html body .teaching-table,
   html body .comments-table {
-    display: table !important;
     width: 100% !important;
     position: static !important;
     float: none !important;
+    /* Remove display: table override to allow mobile card layout */
   }
 }
 
 /* RESPONSIVE TABLES AND LONG CONTENT - Prevent horizontal scrolling */
 
-/* Table overflow handling */
-table {
+/* Table overflow handling - exclude teaching tables which have custom mobile layout */
+table:not(.teaching-table):not(.comments-table) {
   width: 100% !important;
   max-width: 100% !important;
   display: block !important;
@@ -501,15 +501,15 @@ table {
 
 /* Reset table display on larger screens */
 @media (min-width: 48rem) {
-  table {
+  table:not(.teaching-table):not(.comments-table) {
     display: table !important;
     white-space: normal !important;
   }
 }
 
-/* Table cells responsive behavior */
-table th,
-table td {
+/* Table cells responsive behavior - exclude teaching tables which have custom mobile layout */
+table:not(.teaching-table):not(.comments-table) th,
+table:not(.teaching-table):not(.comments-table) td {
   padding: 0.5rem !important;
   text-align: left !important;
   vertical-align: top !important;
@@ -518,14 +518,13 @@ table td {
   max-width: 15rem !important; /* Prevent extremely wide cells */
 }
 
-/* Specific table classes */
+/* Specific table classes - Allow teaching.html to handle its own mobile layout */
 .teaching-table,
 .comments-table {
   width: 100% !important;
   border-collapse: collapse !important;
   margin-bottom: 1rem !important;
-  display: block !important;
-  overflow-x: auto !important;
+  /* Remove conflicting display rules - let teaching.html handle mobile layout */
 }
 
 @media (min-width: 48rem) {
