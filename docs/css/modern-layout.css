@@ -24,6 +24,7 @@
   align-self: start; /* Ensures proper grid alignment */
 }
 
+
 /* Mobile Ribbon (hidden by default) */
 .mobile-ribbon.mobile-only {
   display: none;
@@ -101,35 +102,39 @@ main {
   }
 }
 
-/* MOBILE-SPECIFIC STYLES - Applied to all screen sizes, overridden on desktop */
-.sidebar, 
-.sidebar.desktop-only,
-header {
-  float: none !important;
-  position: static !important;
-  width: 100% !important;
-  height: auto !important;
-  grid-column: 1 !important;
-  grid-row: 1 !important;
-  text-align: center !important;
-  padding: 1rem 0 !important;
-  margin: 0 0 1rem 0 !important;
-  border-bottom: 1px solid #e5e5e5;
-  z-index: auto !important;
+/* MOBILE-SPECIFIC STYLES - Applied to mobile screens only */
+@media (max-width: 47.99rem) { /* Mobile only - below 768px */
+  .sidebar, 
+  .sidebar.desktop-only,
+  header {
+    float: none !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    text-align: center !important;
+    padding: 1rem 0 !important;
+    margin: 0 0 1rem 0 !important;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: auto !important;
+  }
 }
 
-main,
-section {
-  float: none !important;
-  position: static !important;
-  width: 100% !important;
-  height: auto !important;
-  grid-column: 1 !important;
-  grid-row: 2 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
-  z-index: auto !important;
+@media (max-width: 47.99rem) { /* Mobile only - below 768px */
+  main,
+  section {
+    float: none !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    z-index: auto !important;
+  }
 }
 
 /* Hide mobile ribbon - use stacked sidebar instead */
@@ -137,35 +142,39 @@ section {
   display: none !important;
 }
 
-/* Compact mobile sidebar styling */
-.sidebar.desktop-only #profile-pic,
-.sidebar #profile-pic {
-  width: 7.5rem !important; /* 120px equivalent but responsive */
-  height: 7.5rem !important;
-  margin: 0 auto 1rem auto !important;
+/* Compact mobile sidebar styling - mobile only */
+@media (max-width: 47.99rem) { /* Mobile only - below 768px */
+  .sidebar.desktop-only #profile-pic,
+  .sidebar #profile-pic {
+    width: 7.5rem !important; /* 120px equivalent but responsive */
+    height: 7.5rem !important;
+    margin: 0 auto 1rem auto !important;
+  }
+
+  .sidebar.desktop-only h1,
+  .sidebar h1 {
+    font-size: 1.5rem !important; /* 24px equivalent but responsive */
+    margin-bottom: 0.5rem !important;
+  }
+
+  .sidebar.desktop-only p,
+  .sidebar p {
+    font-size: 0.875rem !important; /* 14px equivalent but responsive */
+    margin-bottom: 0.5rem !important;
+  }
 }
 
-.sidebar.desktop-only h1,
-.sidebar h1 {
-  font-size: 1.5rem !important; /* 24px equivalent but responsive */
-  margin-bottom: 0.5rem !important;
-}
+/* Hide contact details on mobile only for cleaner look */
+@media (max-width: 47.99rem) { /* Mobile only - below 768px */
+  .sidebar.desktop-only .contact-container,
+  .sidebar .contact-container {
+    display: none !important;
+  }
 
-.sidebar.desktop-only p,
-.sidebar p {
-  font-size: 0.875rem !important; /* 14px equivalent but responsive */
-  margin-bottom: 0.5rem !important;
-}
-
-/* Hide contact details on mobile for cleaner look */
-.sidebar.desktop-only .contact-container,
-.sidebar .contact-container {
-  display: none !important;
-}
-
-.sidebar.desktop-only hr,
-.sidebar hr {
-  display: none !important;
+  .sidebar.desktop-only hr,
+  .sidebar hr {
+    display: none !important;
+  }
 }
 
 /* MOBILE-FIRST NAVIGATION */

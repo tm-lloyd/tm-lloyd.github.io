@@ -116,6 +116,18 @@
         font-weight: bold;
         color: #333;
       }
+      
+      /* Make logos smaller on mobile */
+      h3 img {
+        height: 0.8em !important;
+        margin-left: 0.5rem !important;
+      }
+      
+      /* Stack heading and logo on very small screens if needed */
+      h3 {
+        flex-wrap: wrap !important;
+        gap: 0.25rem !important;
+      }
     }
   </style>
 </head>
@@ -166,10 +178,10 @@
           background-color: rgba(51, 51, 51, 0.1);
         }
       </style>
-      <h3 style="display: inline-flex; align-items: baseline; margin: 1.25rem 0 0.3125rem; padding-bottom: 0.125rem;">
+     <h3 style="display:inline-flex; align-items:center; margin:1.25rem 0 0.3125rem; padding-bottom:0.125rem; white-space:nowrap; line-height:1;">
   Graduate Student Instructor (GSI) at the University of Michigan
   <img src="./icons/LSA_logo_umich.png" alt="University of Michigan LSA Logo"
-       style="height: 0.9em; display: block; transform: translateY(0); margin-left: 1.25rem;">
+       style="height:1em; max-height:1em; width:auto; display:inline-block; vertical-align:middle; margin-left:1em; object-fit:contain; transform:scale(.85); transform-origin:left center;">
 </h3>
 
 
@@ -227,9 +239,11 @@
 
 <div style="height: 10px;"></div>
       
- <h3 style="display: inline-flex; align-items: center; gap: 0.5rem; margin: 1.25rem 0 0.3125rem; white-space: nowrap;">
+<h3 style="display:inline-flex; align-items:center; gap:0.5em; margin:1.25em 0 0.3125em; white-space:nowrap; line-height:1;">
   Teaching Assistant (TA) at École Polytechnique (CREST/ENSAE)
-  <img src="./icons/ecole_polytechnique_logo.svg" alt="École Polytechnique Logo" style="height: 2.4em; display: block; margin-left: 1rem;">
+  <img src="./icons/ecole_polytechnique_logo.svg" alt="École Polytechnique Logo"
+       style="height:3em; max-height:3em; width:auto; display:inline-block; vertical-align:middle; margin-left:0.5em; transform:scale(.85); transform-origin:left center;">
+</h3>
 </h3>
     <table class="teaching-table" role="table" aria-label="Teaching Assistant positions at Ecole Polytechnique">
       <tbody>
