@@ -220,9 +220,12 @@ class AcademicContentRenderer {
     
     // Use imageWidth attribute or default to 100%
     const width = item.imageWidth || '100%';
-    const marginStyle = width === '100%' ? 'margin: 10px 0;' : 'margin: 10px auto;';
-    const imageStyle = `max-width: ${width}; height: auto; display: block; ${marginStyle}`;
-    
+    const marginStyle = width === '100%' ? 'margin:10px 0;' : 'margin:10px auto;';
+
+    // ↓ add an explicit width to trump the global rule
+    const imageStyle =
+      `width:${width}; max-width:${width}; height:auto; display:block; ${marginStyle}`;
+
     return `<img src="${item.image}" alt="${altText}" style="${imageStyle}" loading="lazy">\n`;
   }
 
