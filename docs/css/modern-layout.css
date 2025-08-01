@@ -4,7 +4,7 @@
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 5rem 1rem 0 1rem;
+  padding: 4rem 1rem 0 1rem;
   display: grid !important;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
@@ -47,7 +47,7 @@ main {
     max-width: 90%;
     grid-template-columns: minmax(15rem, 20%) 1fr; /* Fluid sidebar */
     gap: 2rem;
-    padding: 5rem 2rem 0 2rem;
+    padding: 4rem 2rem 0 2rem;
   }
 }
 
@@ -260,7 +260,7 @@ main {
   grid-template-rows: auto 1fr !important;
   gap: 1.5rem !important;
   margin: 0 auto !important;
-  padding: 5rem 1rem 0 1rem !important;
+  padding: 4rem 1rem 0 1rem !important;
   min-height: calc(100dvh - 5rem) !important;
 }
 
@@ -307,7 +307,7 @@ section, main {
     max-width: 90% !important;
     grid-template-columns: minmax(15rem, 20%) 1fr !important;
     gap: 2rem !important;
-    padding: 5rem 2rem 0 2rem !important;
+    padding: 4rem 2rem 0 2rem !important;
   }
   
   .sidebar {
@@ -615,13 +615,13 @@ body {
 /* Ensure adequate spacing below fixed navbar */
 @media (max-width: 48rem) {
   .wrapper {
-    padding-top: 4rem !important; /* Ensure enough space for smaller mobile navbar */
+    padding-top: 3rem !important; /* Ensure enough space for smaller mobile navbar */
   }
 }
 
 @media (min-width: 48rem) {
   .wrapper {
-    padding-top: 5rem !important; /* More space for larger desktop navbar */
+    padding-top: 4rem !important; /* More space for larger desktop navbar */
   }
 }
 
@@ -634,4 +634,32 @@ article,
   clear: both !important;
   width: 100% !important;
   max-width: 100% !important;
+}
+
+/* Paper title styling - prevent word breaks on desktop */
+.paper-title {
+  hyphens: manual !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}
+
+.paper-title a {
+  hyphens: manual !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}
+
+/* Allow word breaks on mobile for better layout */
+@media (max-width: 47.99rem) {
+  .paper-title {
+    hyphens: auto !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  .paper-title a {
+    hyphens: auto !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
 }

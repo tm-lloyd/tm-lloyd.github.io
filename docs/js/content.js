@@ -19,7 +19,8 @@ const academicContent = {
       workingPaperUrl: 'https://people.hec.edu/hill/wp-content/uploads/sites/25/2021/11/WTPRII_0623.pdf',
       workingPaperText: 'Working Paper Version, June 2023',
       abstract: 'Would consumers be willing to pay more for goods for which there is less inequality in wages across those involved in their production? In incentive-compatible behavioural choice studies on representative samples of the English and US populations, we find significantly positive willingness to pay for such inequality reductions in over 80% of subjects. Whilst it varies with political leaning and the extent of the inequality reduction, willingness to pay is positive across the political spectrum and for all studied inequality differences. It is higher for more intuitive and informative inequality-reporting formats. Our findings have policy implications for both governments and firms. On the one hand, they suggest the promise of universal provision of product-level inequality information as a tool for moderating income inequality. On the other, they highlight the potential relevance of inequality reporting for firms\' marketing strategies.',
-      image: './jpg/WTP_fig4.png'
+      image: './jpg/WTP_fig4.png',
+      imageWidth: '100%'
     }
   ],
   workingPapers: [
@@ -43,7 +44,8 @@ const academicContent = {
       isNew: true,
       presentation: 'Presented at the North East Universities Development Consortium (NEUDC) 2024 Conference',
       abstract: 'How does early educational quality affect longer-term academic outcomes? We shed light on this question via a natural experiment in the Philippines—the flawed implementation of a mother tongue education policy in public schools in kindergarten to Grade 3. This policy led to an unexpected decline in educational quality, but differentially in a subset of schools strongly predicted by pre-policy student language composition. We use language composition variables as instrumental variables for treatment. Leveraging panel data and confirming robustness to pre-trends, we find that the policy led to declines in standardized test scores in public primary schools. Employing a triple-difference strategy with Philippine Census data (across cohorts, localities, and decadal censuses), we show that by 2020, cohorts fully exposed to the policy completed 0.3 fewer years of schooling. By revealing how a policy-induced reduction in early education quality reduces educational attainment in later years, our results underscore the importance of investing in the quality of education in the first years of schooling.',
-      image: './jpg/coefplot_TD_educ_munic_x_age_x_census20102020_pafe_moi.png'
+      image: './jpg/coefplot_TD_educ_munic_x_age_x_census20102020_pafe_moi.png',
+      imageWidth: '80%'
     }
   ],
   workInProgress: [
@@ -151,10 +153,11 @@ class AcademicContentRenderer {
   }
 
   renderTitle(item) {
+    const titleStyle = "margin:1.25rem 0 0.3125rem; hyphens: manual; word-break: keep-all; overflow-wrap: normal;";
     if (item.url) {
-      return `<h3 style="margin:20px 0 5px;"><a href="${item.url}" target="_blank">${item.title}</a></h3>\n`;
+      return `<h3 class="paper-title" style="${titleStyle}"><a href="${item.url}" target="_blank" style="hyphens: manual; word-break: keep-all;">${item.title}</a></h3>\n`;
     }
-    return `<h3 style="margin:20px 0 5px;">${item.title}</h3>\n`;
+    return `<h3 class="paper-title" style="${titleStyle}">${item.title}</h3>\n`;
   }
 
   renderAuthors(authors) {
@@ -215,11 +218,10 @@ class AcademicContentRenderer {
     if (!showImages || !item.image) return '';
     const altText = `Figure from "${item.title}"`;
     
-    // Special sizing for Long Shadow education paper image
-    let imageStyle = "max-width: 100%; height: auto; display: block; margin: 10px 0;";
-    if (item.image.includes('coefplot_TD_educ_munic_x_age_x_census20102020_pafe_moi.png')) {
-      imageStyle = "max-width: 80%; height: auto; display: block; margin: 10px auto;";
-    }
+    // Use imageWidth attribute or default to 100%
+    const width = item.imageWidth || '100%';
+    const marginStyle = width === '100%' ? 'margin: 10px 0;' : 'margin: 10px auto;';
+    const imageStyle = `max-width: ${width}; height: auto; display: block; ${marginStyle}`;
     
     return `<img src="${item.image}" alt="${altText}" style="${imageStyle}" loading="lazy">\n`;
   }
