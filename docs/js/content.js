@@ -43,6 +43,9 @@ const academicContent = {
       date: 'March 2025',
       isNew: true,
       presentation: 'Presented at the North East Universities Development Consortium (NEUDC) 2024 Conference',
+      press: [
+        { name: 'Inquirer.net', url: 'https://opinion.inquirer.net/185363/revisiting-mtb-mle' }
+      ],
       abstract: 'How does early educational quality affect longer-term academic outcomes? We shed light on this question via a natural experiment in the Philippines—the flawed implementation of a mother tongue education policy in public schools in kindergarten to Grade 3. This policy led to an unexpected decline in educational quality, but differentially in a subset of schools strongly predicted by pre-policy student language composition. We use language composition variables as instrumental variables for treatment. Leveraging panel data and confirming robustness to pre-trends, we find that the policy led to declines in standardized test scores in public primary schools. Employing a triple-difference strategy with Philippine Census data (across cohorts, localities, and decadal censuses), we show that by 2020, cohorts fully exposed to the policy completed 0.3 fewer years of schooling. By revealing how a policy-induced reduction in early education quality reduces educational attainment in later years, our results underscore the importance of investing in the quality of education in the first years of schooling.',
       image: './jpg/coefplot_TD_educ_munic_x_age_x_census20102020_pafe_moi.png',
       imageWidth: '80%'
@@ -66,6 +69,7 @@ const academicContent = {
           url: 'https://www.dylantmoore.com/'
         }
       ],
+      presentation: 'Presented at the 2025 Annual Congress of the International Institute of Public Finance (IIPF)',
       abstract: 'We ask how externalities should be taxed when redistribution is costly. In our model, the government raises revenue using distortionary income and commodity taxes. If more or less productive people have identical tastes for an externality-generating activity, the government optimally imposes a Pigouvian tax equal to the marginal damage from the externality. This is true regardless of whether the tax is regressive. But, if regressivity partly reflects different preferences of people with different incomes, the tax optimally deviates from the Pigouvian benchmark because this helps redistribute income efficiently. The overall tax may be higher or lower, and may even reverse sign relative to the externality. We derive sufficient statistics for optimal policy, and use them to study carbon taxation in the United States. Throughout most of the income distribution, our empirical results imply an optimal carbon tax below marginal damage, but this reverses for very high-earning households. When we allow for heterogeneity in preferences at each income level as well as across the income distribution, our optimal tax schedules are attenuated toward the Pigouvian benchmark.'
     },
     {
@@ -89,7 +93,7 @@ const academicContent = {
         },
         {
           name: 'Laston Manja',
-          url: null
+          url: 'https://laston-manja.github.io/'
         }
       ],
       abstract: 'This paper examines the long run economic impacts of differential European colonial rule in Africa, by exploiting differences arising from the arbitrary borders established during the Scramble for Africa (1876-1912). Using a regression discontinuity design along the full set of British/French colonial borders, I explore the impact of colonizer identity on measures of economic development. I find persistent effects of the legacy of colonial institutions, with areas formerly under British rule exhibiting higher nighttime light intensity and lower malaria prevalence at the grid cell level relative to areas formerly under French colonial rule. Additionally, at the individual level, these areas display higher educational attainment, lower unemployment rates, and improved public good provision. I explore mechanisms and find evidence in support of sharp discontinuities in formal institutions at the border, such as the structure of property rights and the quality of government, as opposed to informal institutions such as proxies for entrepreneurship and the prevalence of Protestantism.'
@@ -147,6 +151,7 @@ class AcademicContentRenderer {
     html += this.renderJournal(item);
     html += this.renderAdditionalInfo(item);
     html += this.renderAbstract(item, expandAbstracts);
+    html += this.renderPress(item);
     html += this.renderImage(item, showImages);
     
     return html;
@@ -201,6 +206,16 @@ class AcademicContentRenderer {
     }
     
     return html;
+  }
+
+  renderPress(item) {
+    if (!item.press || !Array.isArray(item.press) || item.press.length === 0) return '';
+    
+    const pressLinks = item.press.map(outlet => 
+      `<a href="${outlet.url}" target="_blank">${outlet.name}</a>`
+    ).join(', ');
+    
+    return `<p style="margin:0 0 5px;"><b>Press:</b> ${pressLinks}</p>\n`;
   }
 
   renderAbstract(item, expandAbstracts) {
