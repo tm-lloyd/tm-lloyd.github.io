@@ -115,6 +115,7 @@ const academicContent = {
           url: 'https://mariamedellin.com/'
         }
       ],
+      presentation: 'Presented at the 2025 ASREC Europe (Copenhagen) Graduate Student Workshop',
       abstract: null
     }
   ]
