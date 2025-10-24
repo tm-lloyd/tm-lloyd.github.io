@@ -148,15 +148,33 @@
         margin-top: 0.25rem;
       }
 
-      /* Hide the heading logos on phones */
-      h3 img{
-        display:none !important;
+    }
+
+    /* Mobile styling for section headers with logos */
+    @media (max-width: 768px) {
+      /* Allow headers to wrap on mobile */
+      h3[style*="inline-flex"] {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        white-space: normal !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
       }
 
-      /* Stack heading and logo on very small screens if needed */
-      h3 {
-        flex-wrap: wrap !important;
-        gap: 0.25rem !important;
+      /* Make logos smaller and move to new line on very small screens */
+      h3 img {
+        height: 2em !important;
+        max-height: 2em !important;
+        margin-left: 0 !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* On phones, put logo on its own line */
+      h3 img {
+        display: block !important;
+        margin: 0.5rem 0 !important;
+        width: auto !important;
       }
     }
   </style>
@@ -273,7 +291,6 @@
   Teaching Assistant (TA) at École Polytechnique (CREST/ENSAE)
   <img src="./icons/ecole_polytechnique_logo.svg" alt="École Polytechnique Logo"
        style="height:3em; max-height:3em; width:auto; display:inline-block; vertical-align:middle; margin-left:0.5em; transform:scale(.85); transform-origin:left center;">
-</h3>
 </h3>
     <table class="teaching-table" role="table" aria-label="Teaching Assistant positions at Ecole Polytechnique">
       <tbody>

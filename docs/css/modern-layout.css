@@ -613,13 +613,13 @@ body {
 }
 
 /* Ensure adequate spacing below fixed navbar */
-@media (max-width: 48rem) {
+@media (max-width: 768px) {
   .wrapper {
-    padding-top: 3rem !important; /* Ensure enough space for smaller mobile navbar */
+    padding-top: 3.5rem !important; /* Space for mobile navbar with profile pic */
   }
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 769px) {
   .wrapper {
     padding-top: 4rem !important; /* More space for larger desktop navbar */
   }
