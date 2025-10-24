@@ -162,13 +162,11 @@
         @media (max-width: 768px) and (min-width: 481px) {
           .comments-table {
             font-size: 0.9375rem;
-            width: 100vw; /* Full viewport width */
-            margin-left: calc(-50vw + 50%); /* Center and extend to edges */
-            margin-right: 0;
+            width: 100%;
           }
 
           .comments-table tbody {
-            padding: 0 1.25rem; /* Internal padding for content */
+            padding: 0;
           }
 
           .comments-table th,
@@ -182,9 +180,8 @@
           /* Full-width seamless card layout */
           .comments-table {
             display: block;
-            width: 100vw; /* Full viewport width */
-            margin-left: calc(-50vw + 50%); /* Center and extend to edges */
-            margin-right: 0;
+            width: 100%;
+            margin: 0;
             font-size: 16px;
             background: #fff;
           }
@@ -195,6 +192,8 @@
           .comments-table th,
           .comments-table td {
             display: block;
+            width: 100% !important; /* Override desktop column widths */
+            min-width: 0 !important; /* Remove min-width constraints */
           }
 
           .comments-table thead tr {
@@ -206,20 +205,22 @@
           .comments-table tbody {
             padding: 0;
             margin: 0;
+            width: 100%;
           }
 
           /* Each row is a full-width card with divider */
           .comments-table tr {
             border: none;
-            border-bottom: 1px solid #e0e0e0; /* Thin divider between cards */
+            border-bottom: 1px solid #e0e0e0;
             margin: 0;
-            padding: 1.25rem 1.25rem; /* Internal padding for text breathing room */
+            padding: 1.25rem 1rem;
             background: #fff;
-            width: 100%;
+            width: 100% !important;
+            box-sizing: border-box;
           }
 
           .comments-table tr:last-child {
-            border-bottom: none; /* No divider after last card */
+            border-bottom: none;
           }
 
           /* Remove all ::before labels - we'll style directly */
@@ -227,15 +228,17 @@
             display: none;
           }
 
-          /* All cells - no padding, full width */
+          /* All cells - reset everything to full width */
           .comments-table td {
             border: none;
             padding: 0;
             margin: 0;
-            width: 100%;
-            white-space: normal;
+            width: 100% !important; /* Force full width */
+            max-width: 100% !important;
+            white-space: normal !important;
             overflow-wrap: break-word;
             word-break: normal;
+            box-sizing: border-box;
           }
 
           /* Metadata header - compact, one line */

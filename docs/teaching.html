@@ -73,13 +73,11 @@
     @media (max-width: 768px) and (min-width: 481px) {
       .teaching-table {
         font-size: 15px;
-        width: 100vw; /* Full viewport width */
-        margin-left: calc(-50vw + 50%); /* Center and extend to edges */
-        margin-right: 0;
+        width: 100%;
       }
 
       .teaching-table tbody {
-        padding: 0 1.25rem; /* Internal padding for content */
+        padding: 0;
       }
 
       .teaching-table th,
@@ -101,9 +99,8 @@
       .teaching-table {
         display: block;
         font-size: 16px;
-        width: 100vw; /* Full viewport width */
-        margin-left: calc(-50vw + 50%); /* Center and extend to edges */
-        margin-right: 0;
+        width: 100%;
+        margin: 0;
         background: #fff;
       }
 
@@ -113,6 +110,7 @@
       .teaching-table td,
       .teaching-table tr {
         display: block;
+        width: 100% !important;
       }
 
       .teaching-table thead tr {
@@ -124,15 +122,17 @@
       .teaching-table tbody {
         padding: 0;
         margin: 0;
+        width: 100%;
       }
 
       .teaching-table tr {
         border: none;
-        border-bottom: 1px solid #e0e0e0; /* Thin divider instead of cards */
+        border-bottom: 1px solid #e0e0e0;
         margin: 0;
-        padding: 1.25rem 1.25rem; /* Internal padding for breathing room */
+        padding: 1.25rem 1rem;
         background-color: #fff;
-        width: 100%;
+        width: 100% !important;
+        box-sizing: border-box;
       }
 
       .teaching-table tr:last-child {
@@ -141,9 +141,11 @@
 
       .teaching-table td {
         border: none;
-        padding: 0.5rem 0; /* No horizontal padding inside cells */
-        width: 100%;
-        white-space: normal; /* Allow text to wrap naturally */
+        padding: 0.5rem 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        box-sizing: border-box;
       }
 
       .teaching-table td:before {
