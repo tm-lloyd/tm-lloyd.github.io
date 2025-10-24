@@ -637,9 +637,15 @@ document.addEventListener("DOMContentLoaded", function() {
       if (!response.ok) throw new Error('Failed to load navbar');
       return response.text();
     })
-    .then(text => document.getElementById('navbar-placeholder').innerHTML = text)
+    .then(text => {
+      document.getElementById('navbar-placeholder').innerHTML = text;
+      // Load navbar JavaScript after HTML is inserted
+      const script = document.createElement('script');
+      script.src = './js/navbar.js';
+      document.body.appendChild(script);
+    })
     .catch(error => console.warn('Error loading navbar:', error));
-    
+
   fetch('sidebar.html')
     .then(response => {
       if (!response.ok) throw new Error('Failed to load sidebar');
