@@ -73,6 +73,13 @@
     @media (max-width: 768px) and (min-width: 481px) {
       .teaching-table {
         font-size: 15px; /* Larger font for readability */
+        width: calc(100% + 2rem); /* Compensate for wrapper padding */
+        margin-left: -1rem;
+        margin-right: -1rem;
+      }
+
+      .teaching-table tbody {
+        padding: 0 1rem; /* Add padding back for content */
       }
 
       .teaching-table th,
@@ -94,6 +101,9 @@
       .teaching-table {
         display: block;
         font-size: 16px; /* Readable mobile font */
+        width: calc(100% + 2rem); /* Compensate for wrapper padding */
+        margin-left: -1rem; /* Offset wrapper left padding */
+        margin-right: -1rem; /* Offset wrapper right padding */
       }
 
       .teaching-table thead,
@@ -108,6 +118,10 @@
         position: absolute;
         top: -9999px;
         left: -9999px;
+      }
+
+      .teaching-table tbody {
+        padding: 0 1rem; /* Add padding back inside tbody for cards */
       }
 
       .teaching-table tr {

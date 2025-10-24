@@ -159,9 +159,16 @@
         }
         
         /* Responsive table styling for tablets */
-        @media (max-width: 768px) {
+        @media (max-width: 768px) and (min-width: 481px) {
           .comments-table {
             font-size: 0.9375rem; /* 15px - more readable */
+            width: calc(100% + 2rem); /* Compensate for wrapper padding */
+            margin-left: -1rem;
+            margin-right: -1rem;
+          }
+
+          .comments-table tbody {
+            padding: 0 1rem; /* Add padding back for content */
           }
 
           .comments-table th,
@@ -171,23 +178,35 @@
         }
 
         /* Mobile card-based layout for phones */
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
           /* Stack table as cards */
-          .comments-table            { display:block; overflow:hidden; font-size: 1rem; }
+          .comments-table {
+            display: block;
+            overflow: hidden;
+            font-size: 1rem;
+            width: calc(100% + 2rem); /* Compensate for wrapper padding */
+            margin-left: -1rem; /* Offset wrapper left padding */
+            margin-right: -1rem; /* Offset wrapper right padding */
+          }
+
           .comments-table thead,
           .comments-table tbody,
           .comments-table tr,
           .comments-table th,
-          .comments-table td         { display:block; }
+          .comments-table td { display: block; }
 
-          .comments-table thead tr   { position:absolute; top:-9999px; left:-9999px; }
+          .comments-table thead tr { position: absolute; top: -9999px; left: -9999px; }
 
-          .comments-table tr{
-            border:1px solid #ddd;
-            margin:0 0 1rem;
-            padding:1rem;
-            background:#fff;
-            border-radius:0.5rem;
+          .comments-table tbody {
+            padding: 0 1rem; /* Add padding back inside tbody for cards */
+          }
+
+          .comments-table tr {
+            border: 1px solid #ddd;
+            margin: 0 0 1rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 0.5rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
           }
 

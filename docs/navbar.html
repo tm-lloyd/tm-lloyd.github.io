@@ -186,28 +186,37 @@
       #navbar {
         position: static;
         display: flex;
+        flex-direction: row; /* Override mobile column layout */
         align-items: center;
         flex-wrap: nowrap;
         width: auto;
+        max-height: none; /* Override mobile max-height */
+        overflow-y: visible; /* Override mobile overflow */
         box-shadow: none;
         transform: none;
+        transition: none; /* Remove mobile transition */
         padding: 0 24px 0 0;
         background: transparent;
         border-radius: 0;
       }
 
       #navbar li {
+        margin: 0;
         margin-right: 8px;
         border-bottom: none;
         flex: 0 0 auto;
+        width: auto; /* Override mobile 100% width */
       }
 
       #navbar a {
         position: relative;
+        display: inline-block; /* Override mobile block */
         padding: 0 12px;
         font-size: 15px;
         line-height: 50px;
         white-space: nowrap;
+        width: auto; /* Override mobile 100% width */
+        box-sizing: content-box;
       }
 
       /* Underline animation for desktop */
