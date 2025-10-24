@@ -177,72 +177,115 @@
           }
         }
 
-        /* Mobile card-based layout for phones */
+        /* Modern mobile-first card design for phones */
         @media (max-width: 480px) {
-          /* Stack table as cards */
+          /* Full-width seamless card layout */
           .comments-table {
             display: block;
-            overflow: hidden;
-            font-size: 1rem;
-            width: calc(100% + 2rem); /* Compensate for wrapper padding */
-            margin-left: -1rem; /* Offset wrapper left padding */
-            margin-right: -1rem; /* Offset wrapper right padding */
+            width: 100vw; /* Full viewport width */
+            margin-left: calc(-50vw + 50%); /* Center and extend to edges */
+            margin-right: 0;
+            font-size: 16px;
+            background: #fff;
           }
 
           .comments-table thead,
           .comments-table tbody,
           .comments-table tr,
           .comments-table th,
-          .comments-table td { display: block; }
+          .comments-table td {
+            display: block;
+          }
 
-          .comments-table thead tr { position: absolute; top: -9999px; left: -9999px; }
+          .comments-table thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+          }
 
           .comments-table tbody {
-            padding: 0 0 0 1rem; /* Only left padding - cards touch right edge */
+            padding: 0;
+            margin: 0;
           }
 
+          /* Each row is a full-width card with divider */
           .comments-table tr {
-            border: 1px solid #ddd;
-            margin: 0 0 1rem;
-            padding: 1rem 0 1rem 1rem; /* No right padding - text extends to card edge */
+            border: none;
+            border-bottom: 1px solid #e0e0e0; /* Thin divider between cards */
+            margin: 0;
+            padding: 1.25rem 1rem; /* Comfortable padding all around */
             background: #fff;
-            border-radius: 0.5rem 0 0 0.5rem; /* Only round left corners */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-          }
-
-          /* All cells get full width with label above */
-          .comments-table td{
-            border:none;
-            position:relative;
-            padding:0.75rem 0; /* No horizontal padding inside cells */
-            white-space:normal;
-            overflow-wrap:break-word;
-            word-break:normal;
             width: 100%;
           }
 
-          /* All labels appear above their content */
-          .comments-table td::before{
-            content:attr(data-label) ":";
-            display:block;
-            font-weight:bold;
-            margin-bottom:0.375rem;
-            color: #555;
-            font-size: 0.875rem;
+          .comments-table tr:last-child {
+            border-bottom: none; /* No divider after last card */
           }
 
-          /* Course and Term cells */
-          .comments-table td[data-label="Course"],
-          .comments-table td[data-label="Term"]{
-            font-size: 0.9375rem;
+          /* Remove all ::before labels - we'll style directly */
+          .comments-table td::before {
+            display: none;
           }
 
-          /* Comment cell styling */
-          .comments-table td[data-label="Comment"]{
-            padding-top: 0.75rem;
-            border-top: 1px solid #eee;
-            margin-top: 0.5rem;
-            line-height: 1.6;
+          /* All cells - no padding, full width */
+          .comments-table td {
+            border: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            white-space: normal;
+            overflow-wrap: break-word;
+            word-break: normal;
+          }
+
+          /* Metadata header - compact, one line */
+          .comments-table td[data-label="Course"] {
+            font-size: 0.8125rem; /* 13px */
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            line-height: 1.4;
+          }
+
+          .comments-table td[data-label="Term"] {
+            font-size: 0.75rem; /* 12px */
+            color: #999;
+            font-weight: 400;
+            margin-bottom: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+          }
+
+          /* Comment - the star of the show */
+          .comments-table td[data-label="Comment"] {
+            font-size: 1rem; /* 16px - highly readable */
+            line-height: 1.7; /* Excellent readability */
+            color: #222;
+            margin: 0;
+            padding: 0;
+            /* Allow text to breathe */
+            font-weight: 400;
+          }
+
+          /* Opening quote styling for visual interest */
+          .comments-table td[data-label="Comment"]::before {
+            content: '"';
+            display: inline;
+            font-size: 1.5em;
+            line-height: 0;
+            color: #ddd;
+            margin-right: 0.1em;
+            vertical-align: -0.2em;
+          }
+
+          .comments-table td[data-label="Comment"]::after {
+            content: '"';
+            display: inline;
+            font-size: 1.5em;
+            line-height: 0;
+            color: #ddd;
+            margin-left: 0.1em;
+            vertical-align: -0.2em;
           }
         }
       </style>
