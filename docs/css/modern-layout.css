@@ -567,10 +567,10 @@ article {
   hyphens: auto !important;
 }
 
-/* Long URL handling */
+/* Long URL handling - break at natural points, not mid-word */
 a {
   overflow-wrap: break-word !important;
-  word-break: break-all !important;
+  word-break: normal !important;
 }
 
 /* Prevent code blocks from overflowing */
@@ -656,10 +656,36 @@ article,
     word-break: normal !important;
     overflow-wrap: break-word !important;
   }
-  
+
   .paper-title a {
     hyphens: auto !important;
     word-break: normal !important;
     overflow-wrap: break-word !important;
+  }
+
+  /* Improve body text readability on mobile */
+  body {
+    font-size: 16px !important; /* Minimum recommended mobile font size */
+    line-height: 1.6 !important; /* Better line spacing for readability */
+  }
+
+  /* Ensure paragraphs and main content are readable */
+  main p, section p, article p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Headings should be proportional */
+  main h2, section h2 {
+    font-size: 1.5rem !important; /* 24px */
+    margin-top: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  main h3, section h3 {
+    font-size: 1.25rem !important; /* 20px */
+    margin-top: 1.25rem !important;
+    margin-bottom: 0.75rem !important;
   }
 }

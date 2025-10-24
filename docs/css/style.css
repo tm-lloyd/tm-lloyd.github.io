@@ -38,21 +38,28 @@
 
 @media (max-width: 768px) {
   .navbar nav {
-        padding: 10px; /* Reduced padding */
+        padding: 12px 8px; /* Better mobile padding */
     }
 
     .navbar h3 a {
-        margin-left: 5px; /* Reduced left margin */
+        margin-left: 8px; /* Better left margin for readability */
     }
 
     .navbar ul {
-        padding-right: 5px; /* Reduced right padding */
+        padding-right: 8px; /* Better right padding */
     }
 
     .navbar ul li {
-        margin-right: 5px; /* Reduced margin between items */
+        margin-right: 8px; /* Better spacing between items */
     }
-    
+
+    .navbar ul li a {
+        padding: 8px 10px; /* Larger touch targets */
+        min-height: 44px; /* iOS recommended touch target size */
+        display: flex;
+        align-items: center;
+    }
+
     .wrapper {
         padding-top: 60px; /* Reduced top padding for smaller navbar */
     }
@@ -98,19 +105,19 @@
 
 @media (max-width: 768px) {
   .sidebar h1, .navbar h3 {
-    font-size: 14px; /* Smaller text on mobile */
+    font-size: 18px; /* Readable text on mobile */
   }
   .sidebar p, .navbar p {
-    font-size: 10px; /* Smaller base font size for paragraphs */
+    font-size: 14px; /* Readable base font size for paragraphs */
   }
   .sidebar li, .navbar li {
-    font-size: 10px; /* Base font size for list items */
+    font-size: 14px; /* Readable base font size for list items */
   }
   #profile-pic {
     width: 100px; /* Smaller images on mobile */
   }
   .fas, .fab {
-    font-size: 12px; /* Smaller icons on mobile */
+    font-size: 16px; /* Readable icons on mobile */
   }
 }
 
