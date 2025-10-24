@@ -120,6 +120,8 @@
       transition: transform 0.3s ease;
       max-height: calc(100vh - 50px);
       overflow-y: auto;
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
     }
 
     #navbar.active {
@@ -129,6 +131,7 @@
     #navbar li {
       margin: 0;
       border-bottom: 1px solid #f0f0f0;
+      width: 100%; /* Full width for each item */
     }
 
     #navbar li:last-child {
@@ -143,6 +146,8 @@
       font-size: 16px;
       font-family: 'Noto Sans', sans-serif;
       transition: background-color 0.2s ease;
+      width: 100%; /* Full width links */
+      box-sizing: border-box;
     }
 
     #navbar a:hover,
