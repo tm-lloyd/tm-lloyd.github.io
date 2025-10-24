@@ -1,12 +1,50 @@
 // Navbar Hamburger Menu Functionality
 (function() {
-  // Prevent multiple initializations
-  if (window.navbarInitialized) {
-    return;
-  }
-  window.navbarInitialized = true;
+  'use strict';
 
-  let closeMenuHandler = null;
+  // Store references globally to manage cleanup
+  if (!window.navbarManager) {
+    window.navbarManager = {
+      hamburgerClickHandler: null,
+      closeMenuHandler: null,
+      linkClickHandlers: [],
+      initialized: false
+    };
+  }
+
+  function cleanupNavbar() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('#navbar');
+
+    if (!hamburger || !navMenu) {
+      return;
+    }
+
+    // Remove all event listeners
+    if (window.navbarManager.hamburgerClickHandler) {
+      hamburger.removeEventListener('click', window.navbarManager.hamburgerClickHandler);
+    }
+
+    if (window.navbarManager.closeMenuHandler) {
+      document.removeEventListener('click', window.navbarManager.closeMenuHandler);
+    }
+
+    // Remove link click handlers
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach((link, index) => {
+      if (window.navbarManager.linkClickHandlers[index]) {
+        link.removeEventListener('click', window.navbarManager.linkClickHandlers[index]);
+      }
+    });
+
+    // Reset state
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+
+    // Clear handlers array
+    window.navbarManager.linkClickHandlers = [];
+  }
 
   function initNavbar() {
     const hamburger = document.querySelector('.hamburger');
@@ -16,18 +54,11 @@
       return;
     }
 
-    // Clean up any existing state
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-    hamburger.setAttribute('aria-expanded', 'false');
+    // Clean up first to prevent duplicate listeners
+    cleanupNavbar();
 
-    // Remove old click outside handler if it exists
-    if (closeMenuHandler) {
-      document.removeEventListener('click', closeMenuHandler);
-    }
-
-    // Toggle menu when hamburger is clicked
-    hamburger.addEventListener('click', function(e) {
+    // Hamburger click handler
+    window.navbarManager.hamburgerClickHandler = function(e) {
       e.preventDefault();
       e.stopPropagation();
 
@@ -42,20 +73,25 @@
         navMenu.classList.add('active');
         hamburger.setAttribute('aria-expanded', 'true');
       }
-    });
+    };
 
-    // Close menu when clicking a link
+    hamburger.addEventListener('click', window.navbarManager.hamburgerClickHandler);
+
+    // Link click handlers
     const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
+    navLinks.forEach((link, index) => {
+      const handler = function() {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
-      });
+      };
+
+      window.navbarManager.linkClickHandlers[index] = handler;
+      link.addEventListener('click', handler);
     });
 
-    // Close menu when clicking outside (with proper event handling)
-    closeMenuHandler = function(event) {
+    // Close menu when clicking outside
+    window.navbarManager.closeMenuHandler = function(event) {
       // Don't close if clicking hamburger or menu
       if (hamburger.contains(event.target) || navMenu.contains(event.target)) {
         return;
@@ -69,26 +105,36 @@
       }
     };
 
-    // Use setTimeout to prevent immediate triggering
+    // Delay to prevent immediate triggering
     setTimeout(function() {
-      document.addEventListener('click', closeMenuHandler);
-    }, 100);
+      document.addEventListener('click', window.navbarManager.closeMenuHandler);
+    }, 150);
+
+    window.navbarManager.initialized = true;
   }
 
-  // Handle browser back/forward button
+  // Handle browser back/forward button - critical for bfcache
   window.addEventListener('pageshow', function(event) {
-    // Reset initialization flag if coming from cache
     if (event.persisted) {
-      window.navbarInitialized = false;
-      initNavbar();
-      window.navbarInitialized = true;
+      // Page was loaded from cache, reinitialize completely
+      setTimeout(function() {
+        cleanupNavbar();
+        initNavbar();
+      }, 50);
     }
   });
 
-  // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initNavbar);
-  } else {
-    initNavbar();
+  // Handle before unload to cleanup
+  window.addEventListener('pagehide', function() {
+    cleanupNavbar();
+  });
+
+  // Initialize only once when script loads
+  if (!window.navbarManager.initialized) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initNavbar);
+    } else {
+      initNavbar();
+    }
   }
 })();

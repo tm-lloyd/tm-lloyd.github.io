@@ -79,12 +79,12 @@
       }
 
       .teaching-table tbody {
-        padding: 0 1rem; /* Add padding back for content */
+        padding: 0 0 0 1rem; /* Only left padding - table touches right edge */
       }
 
       .teaching-table th,
       .teaching-table td {
-        padding: 10px 8px; /* More generous padding */
+        padding: 10px 0 10px 8px; /* No right padding */
       }
 
       .teaching-table td:first-child {
@@ -121,21 +121,21 @@
       }
 
       .teaching-table tbody {
-        padding: 0 1rem; /* Add padding back inside tbody for cards */
+        padding: 0 0 0 1rem; /* Only left padding - cards touch right edge */
       }
 
       .teaching-table tr {
         border: 1px solid #ddd;
         margin-bottom: 1rem;
-        padding: 1rem;
+        padding: 1rem 0 1rem 1rem; /* No right padding - text extends to card edge */
         background-color: #fff;
-        border-radius: 0.5rem;
+        border-radius: 0.5rem 0 0 0.5rem; /* Only round left corners */
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       }
 
       .teaching-table td {
         border: none;
-        padding: 0.5rem 0;
+        padding: 0.5rem 0; /* No horizontal padding inside cells */
         width: 100%;
         white-space: normal; /* Allow text to wrap naturally */
       }
@@ -175,17 +175,25 @@
         gap: 0.5rem !important;
       }
 
-      /* Make logos smaller and move to new line on very small screens */
-      h3 img {
-        height: 2em !important;
-        max-height: 2em !important;
+      /* Michigan LSA logo - make 80% of original (1em -> 0.8em) */
+      h3 img[src*="LSA_logo_umich"] {
+        height: 0.8em !important;
+        max-height: 0.8em !important;
+        margin-left: 0 !important;
+      }
+
+      /* Polytechnique logo - make 1.4x of original (3em -> 4.2em) */
+      h3 img[src*="ecole_polytechnique_logo"] {
+        height: 4.2em !important;
+        max-height: 4.2em !important;
         margin-left: 0 !important;
       }
     }
 
     @media (max-width: 480px) {
-      /* On phones, put logo on its own line */
-      h3 img {
+      /* On phones, put logos on their own line */
+      h3 img[src*="LSA_logo_umich"],
+      h3 img[src*="ecole_polytechnique_logo"] {
         display: block !important;
         margin: 0.5rem 0 !important;
         width: auto !important;
@@ -339,10 +347,19 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .then(text => {
       document.getElementById('navbar-placeholder').innerHTML = text;
-      // Load navbar JavaScript after HTML is inserted
-      const script = document.createElement('script');
-      script.src = './js/navbar.js';
-      document.body.appendChild(script);
+
+      // Load navbar JavaScript only if not already loaded
+      if (!document.querySelector('script[src="./js/navbar.js"]')) {
+        const script = document.createElement('script');
+        script.src = './js/navbar.js';
+        script.id = 'navbar-script';
+        document.body.appendChild(script);
+      } else if (window.navbarManager) {
+        // Script already loaded, just reinitialize
+        window.navbarManager.initialized = false;
+        const event = new Event('DOMContentLoaded');
+        document.dispatchEvent(event);
+      }
     })
     .catch(error => console.warn('Error loading navbar:', error));
 

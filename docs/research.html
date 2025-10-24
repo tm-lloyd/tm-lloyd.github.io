@@ -71,10 +71,19 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .then(text => {
       document.getElementById('navbar-placeholder').innerHTML = text;
-      // Load navbar JavaScript after HTML is inserted
-      const script = document.createElement('script');
-      script.src = './js/navbar.js';
-      document.body.appendChild(script);
+
+      // Load navbar JavaScript only if not already loaded
+      if (!document.querySelector('script[src="./js/navbar.js"]')) {
+        const script = document.createElement('script');
+        script.src = './js/navbar.js';
+        script.id = 'navbar-script';
+        document.body.appendChild(script);
+      } else if (window.navbarManager) {
+        // Script already loaded, just reinitialize
+        window.navbarManager.initialized = false;
+        const event = new Event('DOMContentLoaded');
+        document.dispatchEvent(event);
+      }
     })
     .catch(error => console.warn('Error loading navbar:', error));
 

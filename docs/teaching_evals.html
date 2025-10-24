@@ -168,12 +168,12 @@
           }
 
           .comments-table tbody {
-            padding: 0 1rem; /* Add padding back for content */
+            padding: 0 0 0 1rem; /* Only left padding - table touches right edge */
           }
 
           .comments-table th,
           .comments-table td {
-            padding: 0.625rem 0.375rem; /* More padding for readability */
+            padding: 0.625rem 0 0.625rem 0.375rem; /* No right padding */
           }
         }
 
@@ -198,15 +198,15 @@
           .comments-table thead tr { position: absolute; top: -9999px; left: -9999px; }
 
           .comments-table tbody {
-            padding: 0 1rem; /* Add padding back inside tbody for cards */
+            padding: 0 0 0 1rem; /* Only left padding - cards touch right edge */
           }
 
           .comments-table tr {
             border: 1px solid #ddd;
             margin: 0 0 1rem;
-            padding: 1rem;
+            padding: 1rem 0 1rem 1rem; /* No right padding - text extends to card edge */
             background: #fff;
-            border-radius: 0.5rem;
+            border-radius: 0.5rem 0 0 0.5rem; /* Only round left corners */
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
           }
 
@@ -214,7 +214,7 @@
           .comments-table td{
             border:none;
             position:relative;
-            padding:0.75rem 0;
+            padding:0.75rem 0; /* No horizontal padding inside cells */
             white-space:normal;
             overflow-wrap:break-word;
             word-break:normal;
@@ -658,10 +658,19 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .then(text => {
       document.getElementById('navbar-placeholder').innerHTML = text;
-      // Load navbar JavaScript after HTML is inserted
-      const script = document.createElement('script');
-      script.src = './js/navbar.js';
-      document.body.appendChild(script);
+
+      // Load navbar JavaScript only if not already loaded
+      if (!document.querySelector('script[src="./js/navbar.js"]')) {
+        const script = document.createElement('script');
+        script.src = './js/navbar.js';
+        script.id = 'navbar-script';
+        document.body.appendChild(script);
+      } else if (window.navbarManager) {
+        // Script already loaded, just reinitialize
+        window.navbarManager.initialized = false;
+        const event = new Event('DOMContentLoaded');
+        document.dispatchEvent(event);
+      }
     })
     .catch(error => console.warn('Error loading navbar:', error));
 
