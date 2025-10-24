@@ -614,8 +614,12 @@ body {
 
 /* Ensure adequate spacing below fixed navbar */
 @media (max-width: 768px) {
+  body {
+    padding: 0 !important; /* Remove all body padding on mobile */
+  }
+
   .wrapper {
-    padding-top: 3.5rem !important; /* Space for mobile navbar with profile pic */
+    padding: 3.5rem 0 0 0 !important; /* No horizontal padding on mobile - just top for navbar */
   }
 }
 

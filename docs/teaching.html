@@ -72,27 +72,27 @@
     /* Tablet responsive styling (481px - 768px) */
     @media (max-width: 768px) and (min-width: 481px) {
       .teaching-table {
-        font-size: 15px; /* Larger font for readability */
-        width: calc(100% + 2rem); /* Compensate for wrapper padding */
-        margin-left: -1rem;
-        margin-right: -1rem;
+        font-size: 15px;
+        width: 100vw; /* Full viewport width */
+        margin-left: calc(-50vw + 50%); /* Center and extend to edges */
+        margin-right: 0;
       }
 
       .teaching-table tbody {
-        padding: 0 0 0 1rem; /* Only left padding - table touches right edge */
+        padding: 0 1.25rem; /* Internal padding for content */
       }
 
       .teaching-table th,
       .teaching-table td {
-        padding: 10px 0 10px 8px; /* No right padding */
+        padding: 10px 8px;
       }
 
       .teaching-table td:first-child {
-        width: 20%; /* Slightly wider for Term */
+        width: 20%;
       }
 
       .teaching-table td:nth-child(2) {
-        width: 80%; /* Plenty of space for course names */
+        width: 80%;
       }
     }
     
@@ -100,10 +100,11 @@
     @media (max-width: 480px) {
       .teaching-table {
         display: block;
-        font-size: 16px; /* Readable mobile font */
-        width: calc(100% + 2rem); /* Compensate for wrapper padding */
-        margin-left: -1rem; /* Offset wrapper left padding */
-        margin-right: -1rem; /* Offset wrapper right padding */
+        font-size: 16px;
+        width: 100vw; /* Full viewport width */
+        margin-left: calc(-50vw + 50%); /* Center and extend to edges */
+        margin-right: 0;
+        background: #fff;
       }
 
       .teaching-table thead,
@@ -121,16 +122,21 @@
       }
 
       .teaching-table tbody {
-        padding: 0 0 0 1rem; /* Only left padding - cards touch right edge */
+        padding: 0;
+        margin: 0;
       }
 
       .teaching-table tr {
-        border: 1px solid #ddd;
-        margin-bottom: 1rem;
-        padding: 1rem 0 1rem 1rem; /* No right padding - text extends to card edge */
+        border: none;
+        border-bottom: 1px solid #e0e0e0; /* Thin divider instead of cards */
+        margin: 0;
+        padding: 1.25rem 1.25rem; /* Internal padding for breathing room */
         background-color: #fff;
-        border-radius: 0.5rem 0 0 0.5rem; /* Only round left corners */
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        width: 100%;
+      }
+
+      .teaching-table tr:last-child {
+        border-bottom: none;
       }
 
       .teaching-table td {

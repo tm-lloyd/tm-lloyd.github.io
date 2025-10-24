@@ -161,19 +161,19 @@
         /* Responsive table styling for tablets */
         @media (max-width: 768px) and (min-width: 481px) {
           .comments-table {
-            font-size: 0.9375rem; /* 15px - more readable */
-            width: calc(100% + 2rem); /* Compensate for wrapper padding */
-            margin-left: -1rem;
-            margin-right: -1rem;
+            font-size: 0.9375rem;
+            width: 100vw; /* Full viewport width */
+            margin-left: calc(-50vw + 50%); /* Center and extend to edges */
+            margin-right: 0;
           }
 
           .comments-table tbody {
-            padding: 0 0 0 1rem; /* Only left padding - table touches right edge */
+            padding: 0 1.25rem; /* Internal padding for content */
           }
 
           .comments-table th,
           .comments-table td {
-            padding: 0.625rem 0 0.625rem 0.375rem; /* No right padding */
+            padding: 0.625rem 0.375rem;
           }
         }
 
@@ -213,7 +213,7 @@
             border: none;
             border-bottom: 1px solid #e0e0e0; /* Thin divider between cards */
             margin: 0;
-            padding: 1.25rem 1rem; /* Comfortable padding all around */
+            padding: 1.25rem 1.25rem; /* Internal padding for text breathing room */
             background: #fff;
             width: 100%;
           }
@@ -263,29 +263,7 @@
             color: #222;
             margin: 0;
             padding: 0;
-            /* Allow text to breathe */
             font-weight: 400;
-          }
-
-          /* Opening quote styling for visual interest */
-          .comments-table td[data-label="Comment"]::before {
-            content: '"';
-            display: inline;
-            font-size: 1.5em;
-            line-height: 0;
-            color: #ddd;
-            margin-right: 0.1em;
-            vertical-align: -0.2em;
-          }
-
-          .comments-table td[data-label="Comment"]::after {
-            content: '"';
-            display: inline;
-            font-size: 1.5em;
-            line-height: 0;
-            color: #ddd;
-            margin-left: 0.1em;
-            vertical-align: -0.2em;
           }
         }
       </style>
