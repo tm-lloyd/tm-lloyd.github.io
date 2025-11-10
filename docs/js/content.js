@@ -54,7 +54,7 @@ const academicContent = {
   workInProgress: [
     {
       id: 'wip1',
-      title: 'Does It Matter That Carbon Taxes Are Regressive?',
+      title: 'Do Distributional Concerns Justify Lower Environmental Taxes?',
       authors: [
         {
           name: 'Thomas Lloyd',
@@ -70,7 +70,7 @@ const academicContent = {
         }
       ],
       presentation: 'Presented at the 2025 Annual Congress of the International Institute of Public Finance (IIPF)',
-      abstract: 'We ask how externalities should be taxed when redistribution is costly. In our model, the government raises revenue using distortionary income and commodity taxes. If more or less productive people have identical tastes for an externality-generating activity, the government optimally imposes a Pigouvian tax equal to the marginal damage from the externality. This is true regardless of whether the tax is regressive. But, if regressivity partly reflects different preferences of people with different incomes, the tax optimally deviates from the Pigouvian benchmark because this helps redistribute income efficiently. The overall tax may be higher or lower, and may even reverse sign relative to the externality. We derive sufficient statistics for optimal policy, and use them to study carbon taxation in the United States. Throughout most of the income distribution, our empirical results imply an optimal carbon tax below marginal damage, but this reverses for very high-earning households. When we allow for heterogeneity in preferences at each income level as well as across the income distribution, our optimal tax schedules are attenuated toward the Pigouvian benchmark.'
+      abstract: 'How should taxes on externality-generating activities be adjusted if they are regressive? In our model, the government raises revenue using distortionary income and commodity taxes. If more or less productive people have identical tastes for externality-generating consumption, the government optimally imposes a Pigouvian tax equal to the marginal damage from the externality. This is true regardless of whether the tax is regressive. But, if regressivity reflects different preferences of people with different incomes rather than solely income effects, the optimal tax differs from the Pigouvian benchmark. We derive sufficient statistics for optimal policy, and use them to study carbon taxation in the United States. Our empirical results suggest an optimal carbon tax that is remarkably close to the Pigouvian level, but with higher carbon taxes for very high-income households if this is feasible. When we allow for heterogeneity in preferences at each income level as well as across the income distribution, our optimal tax schedules are further attenuated toward the Pigouvian benchmark.'
     },
     {
       id: 'wip2',
@@ -81,6 +81,7 @@ const academicContent = {
           url: null
         }
       ],
+      presentation: 'Presented at the 118th (2025) National Tax Association (NTA) Annual Conference, Boston',
       abstract: null
     },
     {
@@ -96,7 +97,7 @@ const academicContent = {
           url: 'https://laston-manja.github.io/'
         }
       ],
-      abstract: 'This paper examines the long run economic impacts of differential European colonial rule in Africa, by exploiting differences arising from the arbitrary borders established during the Scramble for Africa (1876-1912). Using a regression discontinuity design along the full set of British/French colonial borders, I explore the impact of colonizer identity on measures of economic development. I find persistent effects of the legacy of colonial institutions, with areas formerly under British rule exhibiting higher nighttime light intensity and lower malaria prevalence at the grid cell level relative to areas formerly under French colonial rule. Additionally, at the individual level, these areas display higher educational attainment, lower unemployment rates, and improved public good provision. I explore mechanisms and find evidence in support of sharp discontinuities in formal institutions at the border, such as the structure of property rights and the quality of government, as opposed to informal institutions such as proxies for entrepreneurship and the prevalence of Protestantism.'
+      abstract: 'This paper examines the long-run economic impact of differential European colonial rule in Africa, by exploiting differences arising from the arbitrary borders established during the Scramble for Africa (1876-1912). Using a regression discontinuity design along the full set of British-French colonial borders in West and Central Africa, we explore the impact of colonizer identity on local measures of economic development. We find that areas formerly under British rule exhibit higher nighttime light intensity (2-6%), which translates into substantially higher local GDP per capita (USD 1,620-2,220). At the individual level, these areas display higher educational attainment, lower unemployment rates, and improved public good provision. We explore mechanisms and find sharp institutional discontinuities at colonial borders. Areas formerly under British rule display lower perceived corruption in formal government institutions, particularly local government, and higher trust in parliaments. Perceived judicial corruption is lower, while agreement that court decisions must be obeyed is stronger, in line with differences in legal origin. However, traditional leaders show higher perceived corruption on the British side, consistent with indirect rule empowering traditional authorities as intermediaries. Colonial legacies also shape nation-building. British areas show weaker national identity and lower colonial language use, alongside lower perception of unfair treatment of one's ethnic group. These findings indicate that differential colonial governance strategies created persistent institutional divergences that continue to shape economic development in contemporary Africa.'
     },
     {
       id: 'wip4',
