@@ -26,32 +26,6 @@ const academicContent = {
   workingPapers: [
     {
       id: 'wp1',
-      title: 'The Long Shadow of Early Education: Evidence from a Natural Experiment in the Philippines',
-      authors: [
-        {
-          name: 'Thomas Lloyd',
-          url: null
-        },
-        {
-          name: 'Dean Yang',
-          url: 'https://deanyang-econ.github.io/deanyang/'
-        }
-      ],
-      url: '/pdf/lloyd_yang_2025_long_shadow_education.pdf',
-      nberUrl: 'https://www.nber.org/papers/w33600',
-      nberText: 'NBER Working Paper No. 33600',
-      date: 'March 2025',
-      isNew: true,
-      presentation: 'Presented at the North East Universities Development Consortium (NEUDC) 2024 Conference',
-      press: [
-        { name: 'Inquirer.net', url: 'https://opinion.inquirer.net/185363/revisiting-mtb-mle' }
-      ],
-      abstract: 'How does early educational quality affect longer-term academic outcomes? We shed light on this question via a natural experiment in the Philippines—the flawed implementation of a mother tongue education policy in public schools in kindergarten to Grade 3. This policy led to an unexpected decline in educational quality, but differentially in a subset of schools strongly predicted by pre-policy student language composition. We use language composition variables as instrumental variables for treatment. Leveraging panel data and confirming robustness to pre-trends, we find that the policy led to declines in standardized test scores in public primary schools. Employing a triple-difference strategy with Philippine Census data (across cohorts, localities, and decadal censuses), we show that by 2020, cohorts fully exposed to the policy completed 0.3 fewer years of schooling. By revealing how a policy-induced reduction in early education quality reduces educational attainment in later years, our results underscore the importance of investing in the quality of education in the first years of schooling.',
-      image: './jpg/coefplot_TD_educ_munic_x_age_x_census20102020_pafe_moi.png',
-      imageWidth: '80%'
-    },
-    {
-      id: 'wp2',
       title: 'Do Distributional Concerns Justify Lower Environmental Taxes?',
       authors: [
         {
@@ -68,9 +42,36 @@ const academicContent = {
         }
       ],
       url: './pdf/externalities.pdf',
+      date: 'December 2025',
       presentation: 'Presented at the 2025 Annual Congress of the International Institute of Public Finance (IIPF)',
       abstract: 'How should taxes on externality-generating activities be adjusted if they are regressive? In our model, the government raises revenue using distortionary income and commodity taxes. If more or less productive people have identical tastes for externality-generating consumption, the government optimally imposes a Pigouvian tax equal to the marginal damage from the externality. This is true regardless of whether the tax is regressive. But, if regressivity reflects different preferences of people with different incomes rather than solely income effects, the optimal tax differs from the Pigouvian benchmark. We derive sufficient statistics for optimal policy, and use them to study carbon taxation in the United States. Our empirical results suggest an optimal carbon tax that is remarkably close to the Pigouvian level, but with higher carbon taxes for very high-income households if this is feasible. When we allow for heterogeneity in preferences at each income level as well as across the income distribution, our optimal tax schedules are further attenuated toward the Pigouvian benchmark.',
       image: './jpg/fig_pareto_efficient_corrective_tax_rate_dirty_eti_0.33.png',
+      imageWidth: '80%'
+    },
+    {
+      id: 'wp2',
+      title: 'The Long Shadow of Early Education: Evidence from a Natural Experiment in the Philippines',
+      authors: [
+        {
+          name: 'Thomas Lloyd',
+          url: null
+        },
+        {
+          name: 'Dean Yang',
+          url: 'https://deanyang-econ.github.io/deanyang/'
+        }
+      ],
+      url: './pdf/lloyd_yang_2025_long_shadow_education.pdf',
+      nberUrl: 'https://www.nber.org/papers/w33600',
+      nberText: 'NBER Working Paper No. 33600',
+      date: 'March 2025',
+      isNew: true,
+      presentation: 'Presented at the North East Universities Development Consortium (NEUDC) 2024 Conference',
+      press: [
+        { name: 'Inquirer.net', url: 'https://opinion.inquirer.net/185363/revisiting-mtb-mle' }
+      ],
+      abstract: 'How does early educational quality affect longer-term academic outcomes? We shed light on this question via a natural experiment in the Philippines—the flawed implementation of a mother tongue education policy in public schools in kindergarten to Grade 3. This policy led to an unexpected decline in educational quality, but differentially in a subset of schools strongly predicted by pre-policy student language composition. We use language composition variables as instrumental variables for treatment. Leveraging panel data and confirming robustness to pre-trends, we find that the policy led to declines in standardized test scores in public primary schools. Employing a triple-difference strategy with Philippine Census data (across cohorts, localities, and decadal censuses), we show that by 2020, cohorts fully exposed to the policy completed 0.3 fewer years of schooling. By revealing how a policy-induced reduction in early education quality reduces educational attainment in later years, our results underscore the importance of investing in the quality of education in the first years of schooling.',
+      image: './jpg/coefplot_TD_educ_munic_x_age_x_census20102020_pafe_moi.png',
       imageWidth: '80%'
     }
   ],
