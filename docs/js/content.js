@@ -49,11 +49,9 @@ const academicContent = {
       abstract: 'How does early educational quality affect longer-term academic outcomes? We shed light on this question via a natural experiment in the Philippines—the flawed implementation of a mother tongue education policy in public schools in kindergarten to Grade 3. This policy led to an unexpected decline in educational quality, but differentially in a subset of schools strongly predicted by pre-policy student language composition. We use language composition variables as instrumental variables for treatment. Leveraging panel data and confirming robustness to pre-trends, we find that the policy led to declines in standardized test scores in public primary schools. Employing a triple-difference strategy with Philippine Census data (across cohorts, localities, and decadal censuses), we show that by 2020, cohorts fully exposed to the policy completed 0.3 fewer years of schooling. By revealing how a policy-induced reduction in early education quality reduces educational attainment in later years, our results underscore the importance of investing in the quality of education in the first years of schooling.',
       image: './jpg/coefplot_TD_educ_munic_x_age_x_census20102020_pafe_moi.png',
       imageWidth: '80%'
-    }
-  ],
-  workInProgress: [
+    },
     {
-      id: 'wip1',
+      id: 'wp2',
       title: 'Do Distributional Concerns Justify Lower Environmental Taxes?',
       authors: [
         {
@@ -69,11 +67,16 @@ const academicContent = {
           url: 'https://www.dylantmoore.com/'
         }
       ],
+      url: './pdf/externalities.pdf',
       presentation: 'Presented at the 2025 Annual Congress of the International Institute of Public Finance (IIPF)',
-      abstract: 'How should taxes on externality-generating activities be adjusted if they are regressive? In our model, the government raises revenue using distortionary income and commodity taxes. If more or less productive people have identical tastes for externality-generating consumption, the government optimally imposes a Pigouvian tax equal to the marginal damage from the externality. This is true regardless of whether the tax is regressive. But, if regressivity reflects different preferences of people with different incomes rather than solely income effects, the optimal tax differs from the Pigouvian benchmark. We derive sufficient statistics for optimal policy, and use them to study carbon taxation in the United States. Our empirical results suggest an optimal carbon tax that is remarkably close to the Pigouvian level, but with higher carbon taxes for very high-income households if this is feasible. When we allow for heterogeneity in preferences at each income level as well as across the income distribution, our optimal tax schedules are further attenuated toward the Pigouvian benchmark.'
-    },
+      abstract: 'How should taxes on externality-generating activities be adjusted if they are regressive? In our model, the government raises revenue using distortionary income and commodity taxes. If more or less productive people have identical tastes for externality-generating consumption, the government optimally imposes a Pigouvian tax equal to the marginal damage from the externality. This is true regardless of whether the tax is regressive. But, if regressivity reflects different preferences of people with different incomes rather than solely income effects, the optimal tax differs from the Pigouvian benchmark. We derive sufficient statistics for optimal policy, and use them to study carbon taxation in the United States. Our empirical results suggest an optimal carbon tax that is remarkably close to the Pigouvian level, but with higher carbon taxes for very high-income households if this is feasible. When we allow for heterogeneity in preferences at each income level as well as across the income distribution, our optimal tax schedules are further attenuated toward the Pigouvian benchmark.',
+      image: './jpg/fig_pareto_efficient_corrective_tax_rate_dirty_eti_0.33.png',
+      imageWidth: '80%'
+    }
+  ],
+  workInProgress: [
     {
-      id: 'wip2',
+      id: 'wip1',
       title: 'Optimal Income Taxation with Aspirations',
       authors: [
         {
@@ -85,7 +88,7 @@ const academicContent = {
       abstract: null
     },
     {
-      id: 'wip3',
+      id: 'wip2',
       title: 'Colonizer Identity and Economic Development: Evidence from the Scramble for Africa',
       authors: [
         {
@@ -100,7 +103,7 @@ const academicContent = {
       abstract: 'This paper examines the long-run economic impact of differential European colonial rule in Africa, by exploiting differences arising from the arbitrary borders established during the Scramble for Africa (1876-1912). Using a regression discontinuity design along the full set of British-French colonial borders in West and Central Africa, we explore the impact of colonizer identity on local measures of economic development. We find that areas formerly under British rule exhibit higher nighttime light intensity (2-6%), which translates into substantially higher local GDP per capita (USD 1,620-2,220). At the individual level, these areas display higher educational attainment, lower unemployment rates, and improved public good provision. We explore mechanisms and find sharp institutional discontinuities at colonial borders. Areas formerly under British rule display lower perceived corruption in formal government institutions, particularly local government, and higher trust in parliaments. Perceived judicial corruption is lower, while agreement that court decisions must be obeyed is stronger, in line with differences in legal origin. However, traditional leaders show higher perceived corruption on the British side, consistent with indirect rule empowering traditional authorities as intermediaries. Colonial legacies also shape nation-building. British areas show weaker national identity and lower colonial language use, alongside lower perception of unfair treatment of one\'s ethnic group. These findings indicate that differential colonial governance strategies created persistent institutional divergences that continue to shape economic development in contemporary Africa.'
     },
     {
-      id: 'wip4',
+      id: 'wip3',
       title: 'Garage Churches, Poverty, and Crime: Evidence from Colombian Cities',
       authors: [
         {
