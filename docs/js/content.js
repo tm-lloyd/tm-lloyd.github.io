@@ -42,8 +42,8 @@ const academicContent = {
         }
       ],
       url: './pdf/externalities.pdf',
-      nberUrl: 'https://www.ifo.de/en/cesifo/publications/2025/working-paper/do-distributional-concerns-justify-lower-environmental-taxes',
-      nberText: 'CESifo Working Paper No. 12317',
+      wpSeriesUrl: 'https://www.ifo.de/en/cesifo/publications/2025/working-paper/do-distributional-concerns-justify-lower-environmental-taxes',
+      wpSeriesText: 'CESifo Working Paper No. 12317',
       date: 'December 2025',
       isNew: true,
       presentation: 'Presented at the 2025 Annual Congress of the International Institute of Public Finance (IIPF)',
@@ -65,8 +65,8 @@ const academicContent = {
         }
       ],
       url: './pdf/lloyd_yang_2025_long_shadow_education.pdf',
-      nberUrl: 'https://www.nber.org/papers/w33600',
-      nberText: 'NBER Working Paper No. 33600',
+      wpSeriesUrl: 'https://www.nber.org/papers/w33600',
+      wpSeriesText: 'NBER Working Paper No. 33600',
       date: 'March 2025',
       isNew: true,
       presentation: 'Presented at the North East Universities Development Consortium (NEUDC) 2024 Conference',
@@ -205,9 +205,9 @@ class AcademicContentRenderer {
       html += `<p style="margin:0 0 5px;"><em><a href="${item.workingPaperUrl}" target="_blank">[${item.workingPaperText}]</a></em></p>\n`;
     }
     
-    if (item.nberUrl) {
+    if (item.wpSeriesUrl) {
       const newLabel = item.isNew ? '<b>NEW!</b> ' : '';
-      html += `<p style="margin:0 0 5px;"><em>${newLabel}<a href="${item.nberUrl}" target="_blank">${item.nberText}</a></em>, ${item.date}</p>\n`;
+      html += `<p style="margin:0 0 5px;"><em>${newLabel}<a href="${item.wpSeriesUrl}" target="_blank">${item.wpSeriesText}</a></em>, ${item.date}</p>\n`;
     }
     
     if (item.presentation) {
