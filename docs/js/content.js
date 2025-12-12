@@ -42,7 +42,10 @@ const academicContent = {
         }
       ],
       url: './pdf/externalities.pdf',
+      nberUrl: 'https://www.ifo.de/en/cesifo/publications/2025/working-paper/do-distributional-concerns-justify-lower-environmental-taxes',
+      nberText: 'CESifo Working Paper No. 12317',
       date: 'December 2025',
+      isNew: true,
       presentation: 'Presented at the 2025 Annual Congress of the International Institute of Public Finance (IIPF)',
       abstract: 'How should taxes on externality-generating activities be adjusted if they are regressive? In our model, the government raises revenue using distortionary income and commodity taxes. If more or less productive people have identical tastes for externality-generating consumption, the government optimally imposes a Pigouvian tax equal to the marginal damage from the externality. This is true regardless of whether the tax is regressive. But, if regressivity reflects different preferences of people with different incomes rather than solely income effects, the optimal tax differs from the Pigouvian benchmark. We derive sufficient statistics for optimal policy, and use them to study carbon taxation in the United States. Our empirical results suggest an optimal carbon tax that is remarkably close to the Pigouvian level, but with higher carbon taxes for very high-income households if this is feasible. When we allow for heterogeneity in preferences at each income level as well as across the income distribution, our optimal tax schedules are further attenuated toward the Pigouvian benchmark.',
       image: './jpg/fig_pareto_efficient_corrective_tax_rate_dirty_eti_0.33.png',
