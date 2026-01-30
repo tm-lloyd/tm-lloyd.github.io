@@ -169,7 +169,7 @@ class AcademicContentRenderer {
   renderTitle(item) {
     const titleStyle = "margin:1.25rem 0 0.3125rem; hyphens: manual; word-break: keep-all; overflow-wrap: normal;";
     if (item.url) {
-      return `<h3 class="paper-title" style="${titleStyle}"><a href="${item.url}" target="_blank" style="hyphens: manual; word-break: keep-all;">${item.title}</a></h3>\n`;
+      return `<h3 class="paper-title" style="${titleStyle}"><a href="${item.url}" target="_blank" rel="noopener" style="hyphens: manual; word-break: keep-all;">${item.title}</a></h3>\n`;
     }
     return `<h3 class="paper-title" style="${titleStyle}">${item.title}</h3>\n`;
   }
@@ -184,7 +184,7 @@ class AcademicContentRenderer {
     
     const authorLinks = coAuthors.map(author => {
       if (author.url) {
-        return `<a href="${author.url}" target="_blank">${author.name}</a>`;
+        return `<a href="${author.url}" target="_blank" rel="noopener">${author.name}</a>`;
       }
       return author.name;
     });
@@ -202,12 +202,12 @@ class AcademicContentRenderer {
     let html = '';
     
     if (item.workingPaperUrl) {
-      html += `<p style="margin:0 0 5px;"><em><a href="${item.workingPaperUrl}" target="_blank">[${item.workingPaperText}]</a></em></p>\n`;
+      html += `<p style="margin:0 0 5px;"><em><a href="${item.workingPaperUrl}" target="_blank" rel="noopener">[${item.workingPaperText}]</a></em></p>\n`;
     }
     
     if (item.wpSeriesUrl) {
       const newLabel = item.isNew ? '<b>NEW!</b> ' : '';
-      html += `<p style="margin:0 0 5px;"><em>${newLabel}<a href="${item.wpSeriesUrl}" target="_blank">${item.wpSeriesText}</a></em>, ${item.date}</p>\n`;
+      html += `<p style="margin:0 0 5px;"><em>${newLabel}<a href="${item.wpSeriesUrl}" target="_blank" rel="noopener">${item.wpSeriesText}</a></em>, ${item.date}</p>\n`;
     }
     
     if (item.presentation) {
@@ -221,7 +221,7 @@ class AcademicContentRenderer {
     if (!item.press || !Array.isArray(item.press) || item.press.length === 0) return '';
     
     const pressLinks = item.press.map(outlet => 
-      `<a href="${outlet.url}" target="_blank">${outlet.name}</a>`
+      `<a href="${outlet.url}" target="_blank" rel="noopener">${outlet.name}</a>`
     ).join(', ');
     
     return `<p style="margin:0 0 5px;"><b>Press:</b> ${pressLinks}</p>\n`;
@@ -234,7 +234,7 @@ class AcademicContentRenderer {
       return `<p style="margin:0 0 5px;">${item.abstract}</p>\n`;
     } else {
       const toggleId = this.toggleCounter++;
-      return `<p style="margin:0 0 5px;"><a href="javascript:toggle(${toggleId})" role="button" aria-expanded="false" aria-controls="pubabs_${toggleId}">Abstract<span id="pubabslink_${toggleId}"> (click to expand)</span></a><span id="pubabs_${toggleId}" style="display:none;" aria-hidden="true"> (–): ${item.abstract}</span></p>\n`;
+      return `<p style="margin:0 0 5px;"><button onclick="toggle(${toggleId})" role="button" aria-expanded="false" aria-controls="pubabs_${toggleId}" style="background:none;border:none;padding:0;margin:0;font:inherit;color:#267CB9;cursor:pointer;text-align:left;">Abstract<span id="pubabslink_${toggleId}"> (click to expand)</span></button><span id="pubabs_${toggleId}" style="display:none;" aria-hidden="true"> (–): ${item.abstract}</span></p>\n`;
     }
   }
 
