@@ -142,10 +142,9 @@ class AcademicContentRenderer {
     let html = `<h2 id="${sectionTitle.toLowerCase().replace(/\s+/g, '')}">${sectionTitle}</h2>\n`;
     
     sectionData.forEach((item, index) => {
+      html += '<div class="paper-card">\n';
       html += this.renderItem(item, { showImages, expandAbstracts });
-      if (index < sectionData.length - 1) {
-        html += '<hr>\n';
-      }
+      html += '</div>\n';
     });
     
     return html;
@@ -206,7 +205,7 @@ class AcademicContentRenderer {
     }
     
     if (item.wpSeriesUrl) {
-      const newLabel = item.isNew ? '<b>NEW!</b> ' : '';
+      const newLabel = item.isNew ? '<span class="badge-new">NEW</span> ' : '';
       html += `<p style="margin:0 0 5px;"><em>${newLabel}<a href="${item.wpSeriesUrl}" target="_blank" rel="noopener">${item.wpSeriesText}</a></em>, ${item.date}</p>\n`;
     }
     
@@ -234,7 +233,7 @@ class AcademicContentRenderer {
       return `<p style="margin:0 0 5px;">${item.abstract}</p>\n`;
     } else {
       const toggleId = this.toggleCounter++;
-      return `<p style="margin:0 0 5px;"><button onclick="toggle(${toggleId})" role="button" aria-expanded="false" aria-controls="pubabs_${toggleId}" style="background:none;border:none;padding:0;margin:0;font:inherit;color:#267CB9;cursor:pointer;text-align:left;">Abstract<span id="pubabslink_${toggleId}"> (click to expand)</span></button><span id="pubabs_${toggleId}" style="display:none;" aria-hidden="true"> (–): ${item.abstract}</span></p>\n`;
+      return `<p style="margin:0 0 5px;"><button onclick="toggle(${toggleId})" role="button" aria-expanded="false" aria-controls="pubabs_${toggleId}" style="background:none;border:none;padding:0.375rem 0;margin:0;font:inherit;color:var(--color-link, #2b6cb0);cursor:pointer;text-align:left;display:inline-flex;align-items:center;gap:0.25rem;min-height:2.75rem;">Abstract <span id="pubabslink_${toggleId}" style="font-size:0.75em;">&#9660;</span></button><span id="pubabs_${toggleId}" style="display:none;" aria-hidden="true"> (–): ${item.abstract}</span></p>\n`;
     }
   }
 
@@ -298,11 +297,13 @@ function toggle(pid) {
   if (absobj.style.display === "none") {
     absobj.style.display = "inline";
     absobj.setAttribute('aria-hidden', 'false');
-    linkobj.style.display = "none";
+    linkobj.innerHTML = '&#9650;';
+    linkobj.style.display = "inline";
     if (button) button.setAttribute('aria-expanded', 'true');
   } else {
     absobj.style.display = "none";
     absobj.setAttribute('aria-hidden', 'true');
+    linkobj.innerHTML = '&#9660;';
     linkobj.style.display = "inline";
     if (button) button.setAttribute('aria-expanded', 'false');
   }

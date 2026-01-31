@@ -25,11 +25,6 @@
 }
 
 
-/* Mobile Ribbon (hidden by default) */
-.mobile-ribbon.mobile-only {
-  display: none;
-}
-
 /* Main content */
 main {
   grid-column: 2;
@@ -116,7 +111,7 @@ main {
     text-align: center !important;
     padding: 1rem 0 !important;
     margin: 0 0 1rem 0 !important;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid var(--color-border, #e2e8f0);
     z-index: auto !important;
   }
 }
@@ -137,10 +132,6 @@ main {
   }
 }
 
-/* Hide mobile ribbon - use stacked sidebar instead */
-.mobile-ribbon.mobile-only {
-  display: none !important;
-}
 
 /* Compact mobile sidebar styling - mobile only */
 @media (max-width: 47.99rem) { /* Mobile only - below 768px */
@@ -164,15 +155,45 @@ main {
   }
 }
 
-/* Hide contact details on mobile only for cleaner look */
+/* Compact contact row on mobile */
 @media (max-width: 47.99rem) { /* Mobile only - below 768px */
-  .sidebar.desktop-only .contact-container,
-  .sidebar .contact-container {
+  .sidebar.desktop-only hr,
+  .sidebar hr {
     display: none !important;
   }
 
-  .sidebar.desktop-only hr,
-  .sidebar hr {
+  .sidebar.desktop-only .contact-container,
+  .sidebar .contact-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    margin-top: 0.75rem !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .sidebar.desktop-only .contact-container p,
+  .sidebar .contact-container p {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block !important;
+  }
+
+  .sidebar.desktop-only .contact-container a,
+  .sidebar .contact-container a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    padding: 0.375rem 0.625rem !important;
+    font-size: 0.8125rem !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border-radius: 1rem !important;
+    text-decoration: none !important;
+  }
+
+  /* Hide location text (not actionable on mobile) */
+  .sidebar .contact-container p:first-child {
     display: none !important;
   }
 }
@@ -425,13 +446,6 @@ object {
 
 /* ULTRA-HIGH SPECIFICITY OVERRIDES - Must come LAST to override JavaScript-loaded styles */
 
-/* Override sidebar.html font-family conflicts */
-html body .wrapper .sidebar,
-html body .wrapper .sidebar.desktop-only,
-html body .wrapper .sidebar header,
-html body .wrapper header {
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
-}
 
 /* Mobile layout overrides with maximum specificity */
 @media (max-width: 768px) {

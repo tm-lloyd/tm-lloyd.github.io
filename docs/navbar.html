@@ -40,7 +40,10 @@
 
     /* ── Base nav – mobile-first (flexible height) ────────── */
     .main-nav{
-      background:#fff;position:fixed;top:0;left:0;width:100%;
+      background:rgba(255,255,255,0.85);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      position:fixed;top:0;left:0;width:100%;
       display:flex;justify-content:space-between;align-items:center;
       flex-wrap:nowrap;padding:8px 12px;
       box-shadow:0 2px 4px rgba(0,0,0,.1);z-index:9999;
@@ -106,8 +109,8 @@
 
     /* Mobile menu - hidden by default, dropdown when open */
     #navbar{
-      position: fixed;
-      top: 50px;
+      position: absolute;
+      top: 100%;
       right: 0;
       background: #fff;
       list-style: none;
