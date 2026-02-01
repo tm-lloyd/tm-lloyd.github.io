@@ -6,7 +6,8 @@
       "Bash(git -C \"C:\\\\Users\\\\thoma\\\\Documents\\\\GitHub\\\\tm-lloyd.github.io\" diff --stat)",
       "WebFetch(domain:ashleycraig.com)",
       "WebFetch(domain:www.dylantmoore.com)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(tree:*)"
     ],
     "deny": []
   }

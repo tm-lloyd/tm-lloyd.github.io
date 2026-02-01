@@ -136,17 +136,19 @@ class AcademicContentRenderer {
 
   renderSection(sectionData, sectionTitle, options = {}) {
     const { showImages = false, expandAbstracts = false } = options;
-    
+
     if (!sectionData || sectionData.length === 0) return '';
-    
-    let html = `<h2 id="${sectionTitle.toLowerCase().replace(/\s+/g, '')}">${sectionTitle}</h2>\n`;
-    
+
+    // Add top margin for non-first sections (Working Papers, Work in Progress)
+    const topMargin = sectionTitle === 'Publications' ? '' : ' style="margin-top: 2rem;"';
+    let html = `<h2 id="${sectionTitle.toLowerCase().replace(/\s+/g, '')}"${topMargin}>${sectionTitle}</h2>\n`;
+
     sectionData.forEach((item, index) => {
       html += '<div class="paper-card">\n';
       html += this.renderItem(item, { showImages, expandAbstracts });
       html += '</div>\n';
     });
-    
+
     return html;
   }
 
