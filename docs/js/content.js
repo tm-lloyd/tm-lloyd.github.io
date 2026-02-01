@@ -260,23 +260,21 @@ class AcademicContentRenderer {
   renderAll(containerId, options = {}) {
     const container = document.getElementById(containerId);
     if (!container) return;
-    
+
     let html = '';
-    
+
     if (academicContent.publications.length > 0) {
       html += this.renderSection(academicContent.publications, 'Publications', options);
-      html += '<hr>\n';
     }
-    
+
     if (academicContent.workingPapers.length > 0) {
       html += this.renderSection(academicContent.workingPapers, 'Working Papers', options);
-      html += '<hr>\n';
     }
-    
+
     if (academicContent.workInProgress.length > 0) {
       html += this.renderSection(academicContent.workInProgress, 'Work in Progress', options);
     }
-    
+
     container.innerHTML = html;
   }
 }
