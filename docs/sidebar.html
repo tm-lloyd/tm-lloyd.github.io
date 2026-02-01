@@ -2,14 +2,16 @@
 <style>
   .sidebar .contact-container {
     width: 100%;
-    max-width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+    padding-left: 20px;
   }
 
   .contactinfo {
     display: flex;
     align-items: center;
-    margin: 0 0 8px 0;
-    line-height: 1.6;
+    margin: 0 0 10px 0;
+    line-height: 1.5;
     font-size: 14px;
   }
 
@@ -18,12 +20,12 @@
   }
 
   .contactinfo i {
-    width: 24px;
-    min-width: 24px;
+    width: 20px;
+    min-width: 20px;
     text-align: center;
     flex-shrink: 0;
-    font-size: 16px;
-    margin-right: 10px;
+    font-size: 15px;
+    margin-right: 12px;
     color: var(--color-text-muted, #718096);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -34,7 +36,7 @@
 
   /* Academicons are slightly larger, adjust size */
   .contactinfo i.ai {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .contactinfo a {
@@ -44,6 +46,7 @@
     text-decoration: none;
     font-weight: 400;
     transition: color 0.2s ease;
+    letter-spacing: 0.01em;
   }
 
   .contactinfo a:hover {
@@ -54,6 +57,7 @@
   /* Plain text (location, email without link) */
   .contactinfo:not(:has(a)) {
     color: var(--color-text, #2d3748);
+    letter-spacing: 0.01em;
   }
 
   /* Email display at top */
@@ -62,6 +66,7 @@
     text-align: center;
     margin: 10px 0 0 0;
     display: block;
+    letter-spacing: 0;
   }
 
   .sidebar hr {
