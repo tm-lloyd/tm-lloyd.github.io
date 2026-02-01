@@ -93,7 +93,7 @@ const academicContent = {
     },
     {
       id: 'wip2',
-      title: 'Colonizer Identity and Economic Development: Evidence from the Scramble for Africa',
+      title: 'Colonizer Identity and Economic Development: Evidence from the "Scramble for Africa"',
       authors: [
         {
           name: 'Thomas Lloyd',
@@ -230,12 +230,12 @@ class AcademicContentRenderer {
 
   renderAbstract(item, expandAbstracts) {
     if (!item.abstract) return '';
-    
+
     if (expandAbstracts) {
       return `<p style="margin:0 0 5px;">${item.abstract}</p>\n`;
     } else {
       const toggleId = this.toggleCounter++;
-      return `<p style="margin:0 0 5px;"><button onclick="toggle(${toggleId})" role="button" aria-expanded="false" aria-controls="pubabs_${toggleId}" style="background:none;border:none;padding:0.375rem 0;margin:0;font:inherit;color:var(--color-link, #2b6cb0);cursor:pointer;text-align:left;display:inline-flex;align-items:center;gap:0.25rem;min-height:2.75rem;">Abstract <span id="pubabslink_${toggleId}" style="font-size:0.75em;">&#9660;</span></button><span id="pubabs_${toggleId}" style="display:none;" aria-hidden="true"> (–): ${item.abstract}</span></p>\n`;
+      return `<p style="margin:0 0 5px;"><button onclick="toggle(${toggleId})" role="button" aria-expanded="false" aria-controls="pubabs_${toggleId}" style="background:none;border:none;padding:0;margin:0;font:inherit;color:var(--color-link, #2b6cb0);cursor:pointer;text-align:left;display:inline;vertical-align:baseline;">Abstract <span id="pubabslink_${toggleId}" style="font-size:0.75em;display:inline;">&#9660;</span></button><span id="pubabs_${toggleId}" style="display:none;" aria-hidden="true">: ${item.abstract}</span></p>\n`;
     }
   }
 

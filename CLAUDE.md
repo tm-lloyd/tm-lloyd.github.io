@@ -19,11 +19,13 @@ The core architecture revolves around a **single source of truth** pattern for a
 
 ### Component Loading Pattern
 
-The site uses a modular component system with dynamic loading:
+The site uses a modular component system with **cached dynamic loading**:
 
 - **Navbar** (`docs/navbar.html`): Navigation bar loaded into `#navbar-placeholder`
 - **Sidebar** (`docs/sidebar.html`): Contact info and profile loaded into `#sidebar-placeholder`
-- Both components are loaded asynchronously via JavaScript on each page
+- Both components are loaded via `docs/js/component-loader.js` using **sessionStorage caching**
+- Components are fetched once per session and reused across page navigation (eliminates reload flicker)
+- Navbar includes hamburger menu functionality (`docs/js/navbar.js`) with mobile-responsive dropdown
 
 ### File Organization
 
@@ -35,8 +37,9 @@ docs/                    # GitHub Pages root (all deployable content)
 ├── navbar.html         # Reusable navigation component
 ├── sidebar.html        # Reusable sidebar component
 ├── js/
-│   ├── content.js      # SINGLE SOURCE OF TRUTH for all research content
-│   └── scale.fix.js    # Mobile viewport fixes
+│   ├── content.js          # SINGLE SOURCE OF TRUTH for all research content
+│   ├── component-loader.js # Loads navbar/sidebar with sessionStorage caching
+│   └── navbar.js           # Hamburger menu functionality for mobile navigation
 ├── css/                # Stylesheets
 ├── pdf/                # CV and paper PDFs
 ├── jpg/                # Research figures and images
@@ -96,11 +99,29 @@ This site is deployed via GitHub Pages:
 
 ## Design Philosophy
 
-- **Minimal dependencies**: No build tools, package managers, or frameworks
+- **Minimal dependencies**: No build tools, package managers, or frameworks required for deployment
 - **Single source of truth**: All research content in one file (`content.js`)
-- **Component reuse**: Navbar and sidebar shared across pages via dynamic loading
+- **Component reuse**: Navbar and sidebar shared across pages via cached dynamic loading
 - **Responsive design**: Mobile-first CSS with CSS Grid and Flexbox
 - **Academic focus**: Typography and layout optimized for academic content presentation
+- **Performance optimized**: SessionStorage caching for components, efficient rendering
+
+## Styling and Design Patterns
+
+### Typography
+- **Headings**: Adobe Caslon Pro (serif) - `var(--font-serif)`
+- **Body text**: Noto Sans (sans-serif) - `var(--font-sans)`
+- **Buttons**: Noto Sans at 0.875rem for consistency
+
+### Layout Components
+- **Paper cards**: Clean card layout with hover effects, padding: `0.75rem 1rem`
+- **Section headers**: 2rem top margin for non-first sections (Working Papers, Work in Progress)
+- **Buttons**: `.button-2` class with Noto Sans font, subtle hover states
+
+### CSS Organization
+- `docs/css/style.css`: Main styles, typography, colors, button styles
+- `docs/css/modern-layout.css`: Responsive grid layout, mobile-first approach
+- Design tokens defined in `:root` (colors, fonts, spacing, shadows)
 
 ## Credits
 

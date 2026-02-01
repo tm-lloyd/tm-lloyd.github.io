@@ -583,6 +583,7 @@ main h2, section h2 {
   font-size: 0.875rem;
   font-weight: 500;
   padding: 0.625rem 1.25rem;
+  margin-bottom: 1rem;
   transition: all 0.2s ease;
   text-align: center;
   white-space: nowrap;

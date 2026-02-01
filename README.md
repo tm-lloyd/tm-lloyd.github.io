@@ -6,7 +6,9 @@ A clean, responsive academic website built with HTML, CSS, and JavaScript. This 
 
 - **Dynamic Content System**: Research publications, working papers, and work-in-progress automatically rendered from a single JavaScript content file
 - **Responsive Design**: Mobile-friendly layout that works across all devices
-- **Modular Architecture**: Navbar and sidebar are separate components loaded dynamically
+- **Modular Architecture**: Navbar and sidebar are separate components loaded dynamically with sessionStorage caching
+- **Performance Optimized**: Components cached per session to eliminate reload flicker between pages
+- **Mobile Navigation**: Hamburger menu with smooth animations for mobile/tablet devices
 - **Academic Icons**: Support for Google Scholar, ORCID, and other academic platforms
 - **PDF Integration**: Easy CV and paper linking system
 - **GitHub Pages Ready**: Deployed directly from the repository
@@ -22,7 +24,8 @@ docs/
 ├── sidebar.html           # Sidebar with contact info and links
 ├── js/
 │   ├── content.js         # Main content database (EDIT THIS FOR MODIFYING PAPER ENTRIES AND ATTRIBUTES)
-│   └── scale.fix.js       # Mobile scaling fixes
+│   ├── component-loader.js # Loads navbar/sidebar with sessionStorage caching
+│   └── navbar.js          # Hamburger menu functionality for mobile navigation
 ├── css/                   # Stylesheets
 ├── pdf/                   # CV and paper PDFs
 ├── jpg/                   # Images and figures
@@ -198,7 +201,10 @@ Update the site title and navigation links:
 ### Responsive Design
 - The site is fully responsive and mobile-friendly
 - Uses CSS Grid and Flexbox for layout
-- Mobile-specific styling for tables and navigation
+- Mobile-first design approach with breakpoints at 768px and 1024px
+- Hamburger menu navigation for mobile/tablet screens
+- Mobile-specific styling for tables, navigation, and content cards
+- Optimized typography with Noto Sans (buttons, UI) and Adobe Caslon Pro (content)
 
 ## 🚀 Deployment and Forking
 
@@ -240,11 +246,18 @@ This site is designed for GitHub Pages deployment:
 
 ## 🛠️ Technical Details
 
+### Performance Features
+- **Component Caching**: Navbar and sidebar HTML is cached in sessionStorage after first load
+- **Static Loading**: Components persist across page navigation without re-fetching
+- **Efficient Rendering**: Research content renders conditionally based on page context
+- **Optimized Assets**: Card layout with minimal padding and efficient hover states
+
 ### JavaScript Functionality
 - **Dynamic Content Rendering**: The `AcademicContentRenderer` class in `content.js` automatically generates HTML from the content database
 - **Abstract Toggling**: Click "Abstract" links to expand/collapse paper abstracts
-- **Responsive Loading**: Navbar and sidebar are loaded asynchronously
-- **Mobile Scaling**: iOS-specific scaling fixes for better mobile experience
+- **Cached Component Loading**: Navbar and sidebar use sessionStorage caching for instant page transitions
+- **Mobile Navigation**: Hamburger menu with event management and bfcache support
+- **Responsive Rendering**: Content adapts based on page context (index vs research pages)
 
 ### SEO and Accessibility
 - Semantic HTML structure

@@ -1,7 +1,28 @@
 <!-- Sidebar-specific styles -->
 <style>
-  .contactinfo a:hover { text-decoration: underline; }
-  .contactinfo i { margin-right: 6px; vertical-align: -1px; }
+  .contactinfo {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .contactinfo i {
+    width: 1.5rem;
+    text-align: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .contactinfo a {
+    flex: 1;
+    text-align: left;
+  }
+
+  .contactinfo a:hover {
+    text-decoration: underline;
+  }
 </style>
 
 <!-- Desktop Sidebar (hidden on mobile) -->
