@@ -1,27 +1,72 @@
 <!-- Sidebar-specific styles -->
 <style>
+  .sidebar .contact-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .contactinfo {
     display: flex;
     align-items: center;
-    gap: 0;
+    margin: 0 0 8px 0;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .contactinfo:last-child {
+    margin-bottom: 0;
   }
 
   .contactinfo i {
-    width: 1.5rem;
+    width: 24px;
+    min-width: 24px;
     text-align: center;
     flex-shrink: 0;
-    font-size: 1rem;
+    font-size: 16px;
+    margin-right: 10px;
+    color: var(--color-text-muted, #718096);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Academicons are slightly larger, adjust size */
+  .contactinfo i.ai {
+    font-size: 18px;
   }
 
   .contactinfo a {
     flex: 1;
     text-align: left;
+    color: var(--color-link, #2b6cb0);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s ease;
   }
 
   .contactinfo a:hover {
-    text-decoration: underline;
+    color: var(--color-link-hover, #1a4971);
+    text-decoration: none;
+  }
+
+  /* Plain text (location, email without link) */
+  .contactinfo:not(:has(a)) {
+    color: var(--color-text, #2d3748);
+  }
+
+  /* Email display at top */
+  .sidebar header > p.contactinfo {
+    font-size: 14px;
+    text-align: center;
+    margin: 10px 0 0 0;
+    display: block;
+  }
+
+  .sidebar hr {
+    margin: 16px 0;
+    opacity: 0.6;
   }
 </style>
 
@@ -49,43 +94,32 @@
 
       <!-- Email -->
       <p class="contactinfo">
-        <i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:tmlloyd@umich.edu">
-          Email
-        </a>
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        <a href="mailto:tmlloyd@umich.edu">Email</a>
       </p>
 
       <!-- Google Scholar (Academicons) -->
       <p class="contactinfo">
-        <i class="ai ai-google-scholar" aria-hidden="true"></i> <a href="https://scholar.google.com/citations?user=KY4az6YAAAAJ&hl=en&oi=sra" target="_blank" rel="noopener">
-          Scholar
-        </a>
+        <i class="ai ai-google-scholar" aria-hidden="true"></i>
+        <a href="https://scholar.google.com/citations?user=KY4az6YAAAAJ&hl=en&oi=sra" target="_blank" rel="noopener">Google Scholar</a>
       </p>
+
       <!-- ORCID (Academicons) -->
       <p class="contactinfo">
-        <i class="ai ai-orcid" aria-hidden="true"></i> <a href="https://orcid.org/0009-0008-9821-9962" target="_blank" rel="noopener">
-          ORCID
-        </a>
+        <i class="ai ai-orcid" aria-hidden="true"></i>
+        <a href="https://orcid.org/0009-0008-9821-9962" target="_blank" rel="noopener">ORCID</a>
       </p>
 
-      <!-- GitHub -->
-      <!-- <p class="contactinfo">
-        <i class="fa-brands fa-github" aria-hidden="true"></i> <a href="https://github.com/tm-lloyd" target="_blank" rel="noopener">
-          GitHub
-        </a>
-      </p> -->
-
-      <!-- Bluesky (Font Awesome 6.5.2 includes this) -->
+      <!-- Bluesky -->
       <p class="contactinfo">
-        <i class="fa-brands fa-bluesky" aria-hidden="true"></i> <a href="https://bsky.app/profile/thomaslloyd.bsky.social" target="_blank" rel="noopener">
-          Bluesky
-        </a>
+        <i class="fa-brands fa-bluesky" aria-hidden="true"></i>
+        <a href="https://bsky.app/profile/thomaslloyd.bsky.social" target="_blank" rel="noopener">Bluesky</a>
       </p>
 
       <!-- X (formerly Twitter) -->
       <p class="contactinfo">
-        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> <a href="https://x.com/tml_lloyd" target="_blank" rel="noopener">
-          X (Twitter)
-        </a>
+        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+        <a href="https://x.com/tml_lloyd" target="_blank" rel="noopener">X (Twitter)</a>
       </p>
     </div>
   </header>
