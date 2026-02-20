@@ -81,7 +81,7 @@ const academicContent = {
   workInProgress: [
     {
       id: 'wip1',
-      title: 'Optimal Income Taxation with Aspirations',
+      title: 'Motivated or Frustrated? Aspirations and Optimal Taxation',
       authors: [
         {
           name: 'Thomas Lloyd',
@@ -108,7 +108,7 @@ const academicContent = {
     },
     {
       id: 'wip3',
-      title: 'Garage Churches, Poverty, and Crime: Evidence from Colombian Cities',
+      title: 'Preaching Change: The Impact of Evangelical Churches on Crime in Colombian Cities',
       authors: [
         {
           name: 'Thomas Lloyd',
