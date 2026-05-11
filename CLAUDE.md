@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static academic website for Thomas Lloyd built with vanilla HTML, CSS, and JavaScript. The site is deployed via GitHub Pages from the `docs/` directory. The website features a dynamic content management system where research publications, working papers, and work-in-progress projects are defined in a single JavaScript file and automatically rendered across multiple pages.
+This is a static academic website for Thomas Lloyd built with vanilla HTML, CSS, and JavaScript. The site is deployed via GitHub Pages from the `docs/` directory. The website features a dynamic content management system where research publications, working papers, and work-in-progress projects are defined in a single JSON file and automatically rendered across multiple pages.
 
 ## Architecture
 
@@ -12,8 +12,8 @@ This is a static academic website for Thomas Lloyd built with vanilla HTML, CSS,
 
 The core architecture revolves around a **single source of truth** pattern for academic content:
 
-- **Central content database**: `docs/js/content.js` contains the `academicContent` object with three arrays: `publications`, `workingPapers`, and `workInProgress`
-- **Rendering system**: The `AcademicContentRenderer` class dynamically generates HTML from the content database
+- **Central content database**: `docs/js/content.json` contains three arrays: `publications`, `workingPapers`, and `workInProgress`
+- **Rendering system**: The `AcademicContentRenderer` class in `docs/js/content.js` dynamically generates HTML from the content database
 - **Multi-page rendering**: The same content renders differently on `index.html` (collapsed abstracts, no images) vs `research.html` (expanded abstracts, with images)
 - **Toggle functionality**: JavaScript-based abstract expansion/collapse with unique IDs for each paper
 
@@ -34,12 +34,15 @@ docs/                    # GitHub Pages root (all deployable content)
 ├── index.html          # Homepage
 ├── research.html       # Detailed research page
 ├── teaching.html       # Teaching experience
+├── teaching_evals.html # Teaching evaluation comments and charts
 ├── navbar.html         # Reusable navigation component
 ├── sidebar.html        # Reusable sidebar component
 ├── js/
-│   ├── content.js          # SINGLE SOURCE OF TRUTH for all research content
+│   ├── content.json        # SINGLE SOURCE OF TRUTH for all research content
+│   ├── content.js          # Research content renderer
 │   ├── component-loader.js # Loads navbar/sidebar with sessionStorage caching
-│   └── navbar.js           # Hamburger menu functionality for mobile navigation
+│   ├── navbar.js           # Hamburger menu functionality for mobile navigation
+│   └── teaching-evals.js   # Teaching evaluation chart rendering
 ├── css/                # Stylesheets
 ├── pdf/                # CV and paper PDFs
 ├── jpg/                # Research figures and images
@@ -51,24 +54,28 @@ docs/                    # GitHub Pages root (all deployable content)
 
 ### Editing Research Content
 
-**ALL research content edits must be made in `docs/js/content.js`**. This is the only file you should modify for publications, working papers, or work-in-progress. The content automatically renders on both homepage and research page.
+**ALL research content edits must be made in `docs/js/content.json`**. This is the only file you should modify for publications, working papers, or work-in-progress. The content automatically renders on both homepage and research page.
 
 Structure of content objects:
-```javascript
+```json
 {
-  id: 'unique_id',
-  title: 'Paper Title',
-  authors: [{name: 'Author', url: 'https://...'}],  // Thomas Lloyd filtered out automatically
-  abstract: 'Text...',
-  image: './jpg/figure.png',  // Optional, shows only on research.html
-  imageWidth: '80%',          // Optional, defaults to '100%'
-  // Additional fields vary by section (journal, year, nberUrl, presentation, etc.)
+  "id": "unique_id",
+  "title": "Paper Title",
+  "authors": [
+    {
+      "name": "Author",
+      "url": "https://..."
+    }
+  ],
+  "abstract": "Text...",
+  "image": "./jpg/figure.png",
+  "imageWidth": "80%"
 }
 ```
 
 ### Adding New Papers
 
-1. Edit `docs/js/content.js` and add to appropriate array
+1. Edit `docs/js/content.json` and add to appropriate array
 2. Add PDF to `docs/pdf/` if available
 3. Add figure to `docs/jpg/` if available
 4. Content will automatically appear on both index.html and research.html
@@ -81,7 +88,7 @@ Structure of content objects:
 
 ### Editing Bio and Personal Info
 
-- **Bio text**: Edit `docs/index.html` around line 38 in the `<p id="bio">` section
+- **Bio text**: Edit the `<p id="bio">` section in `docs/index.html`
 - **Contact info**: Edit `docs/sidebar.html` (email, social media links, profile photo)
 - **Navigation**: Edit `docs/navbar.html` for site title and nav links
 
@@ -100,7 +107,7 @@ This site is deployed via GitHub Pages:
 ## Design Philosophy
 
 - **Minimal dependencies**: No build tools, package managers, or frameworks required for deployment
-- **Single source of truth**: All research content in one file (`content.js`)
+- **Single source of truth**: All research content in one file (`content.json`)
 - **Component reuse**: Navbar and sidebar shared across pages via cached dynamic loading
 - **Responsive design**: Mobile-first CSS with CSS Grid and Flexbox
 - **Academic focus**: Typography and layout optimized for academic content presentation
@@ -120,7 +127,7 @@ This site is deployed via GitHub Pages:
 
 ### CSS Organization
 - `docs/css/style.css`: Main styles, typography, colors, button styles
-- `docs/css/modern-layout.css`: Responsive grid layout, mobile-first approach
+- `docs/css/modern-layout.css`: Responsive grid layout, component styles, and page-specific table/chart styles
 - Design tokens defined in `:root` (colors, fonts, spacing, shadows)
 
 ## Credits

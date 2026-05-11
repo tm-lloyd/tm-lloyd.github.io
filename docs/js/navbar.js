@@ -1,140 +1,89 @@
-// Navbar Hamburger Menu Functionality
 (function() {
   'use strict';
 
-  // Store references globally to manage cleanup
-  if (!window.navbarManager) {
-    window.navbarManager = {
-      hamburgerClickHandler: null,
-      closeMenuHandler: null,
-      linkClickHandlers: [],
-      initialized: false
-    };
-  }
+  const manager = window.navbarManager || {};
 
-  function cleanupNavbar() {
+  manager.cleanup = function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('#navbar');
 
-    if (!hamburger || !navMenu) {
-      return;
+    if (!hamburger || !navMenu) return;
+
+    if (manager.hamburgerClickHandler) {
+      hamburger.removeEventListener('click', manager.hamburgerClickHandler);
     }
 
-    // Remove all event listeners
-    if (window.navbarManager.hamburgerClickHandler) {
-      hamburger.removeEventListener('click', window.navbarManager.hamburgerClickHandler);
+    if (manager.closeMenuHandler) {
+      document.removeEventListener('click', manager.closeMenuHandler);
     }
 
-    if (window.navbarManager.closeMenuHandler) {
-      document.removeEventListener('click', window.navbarManager.closeMenuHandler);
-    }
-
-    // Remove link click handlers
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach((link, index) => {
-      if (window.navbarManager.linkClickHandlers[index]) {
-        link.removeEventListener('click', window.navbarManager.linkClickHandlers[index]);
-      }
+    manager.linkClickHandlers = manager.linkClickHandlers || [];
+    navMenu.querySelectorAll('a').forEach(function(link, index) {
+      const handler = manager.linkClickHandlers[index];
+      if (handler) link.removeEventListener('click', handler);
     });
 
-    // Reset state
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
     hamburger.setAttribute('aria-expanded', 'false');
+    manager.linkClickHandlers = [];
+    manager.initialized = false;
+  };
 
-    // Clear handlers array
-    window.navbarManager.linkClickHandlers = [];
-  }
-
-  function initNavbar() {
+  manager.init = function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('#navbar');
 
-    if (!hamburger || !navMenu) {
-      return;
-    }
+    if (!hamburger || !navMenu) return;
 
-    // Clean up first to prevent duplicate listeners
-    cleanupNavbar();
+    manager.cleanup();
 
-    // Hamburger click handler
-    window.navbarManager.hamburgerClickHandler = function(e) {
-      e.preventDefault();
-      e.stopPropagation();
+    manager.hamburgerClickHandler = function(event) {
+      event.preventDefault();
+      event.stopPropagation();
 
-      const isActive = hamburger.classList.contains('active');
-
-      if (isActive) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-      } else {
-        hamburger.classList.add('active');
-        navMenu.classList.add('active');
-        hamburger.setAttribute('aria-expanded', 'true');
-      }
+      const isOpen = hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
     };
 
-    hamburger.addEventListener('click', window.navbarManager.hamburgerClickHandler);
+    hamburger.addEventListener('click', manager.hamburgerClickHandler);
 
-    // Link click handlers
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach((link, index) => {
-      const handler = function() {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-      };
-
-      window.navbarManager.linkClickHandlers[index] = handler;
+    manager.linkClickHandlers = [];
+    navMenu.querySelectorAll('a').forEach(function(link, index) {
+      const handler = closeMenu;
+      manager.linkClickHandlers[index] = handler;
       link.addEventListener('click', handler);
     });
 
-    // Close menu when clicking outside
-    window.navbarManager.closeMenuHandler = function(event) {
-      // Don't close if clicking hamburger or menu
-      if (hamburger.contains(event.target) || navMenu.contains(event.target)) {
-        return;
-      }
-
-      // Only close if menu is actually open
-      if (hamburger.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
+    manager.closeMenuHandler = function(event) {
+      if (hamburger.contains(event.target) || navMenu.contains(event.target)) return;
+      closeMenu();
     };
 
-    // Delay to prevent immediate triggering
-    setTimeout(function() {
-      document.addEventListener('click', window.navbarManager.closeMenuHandler);
-    }, 150);
+    document.addEventListener('click', manager.closeMenuHandler);
+    manager.initialized = true;
 
-    window.navbarManager.initialized = true;
-  }
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  };
 
-  // Handle browser back/forward button - critical for bfcache
+  window.navbarManager = manager;
+
   window.addEventListener('pageshow', function(event) {
-    if (event.persisted) {
-      // Page was loaded from cache, reinitialize completely
-      setTimeout(function() {
-        cleanupNavbar();
-        initNavbar();
-      }, 50);
-    }
+    if (event.persisted) manager.init();
   });
 
-  // Handle before unload to cleanup
   window.addEventListener('pagehide', function() {
-    cleanupNavbar();
+    manager.cleanup();
   });
 
-  // Initialize only once when script loads
-  if (!window.navbarManager.initialized) {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initNavbar);
-    } else {
-      initNavbar();
-    }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', manager.init);
+  } else {
+    manager.init();
   }
 })();

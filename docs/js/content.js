@@ -1,136 +1,6 @@
-const academicContent = {
-  publications: [
-    {
-      id: 'pub1',
-      title: 'Are People Willing to Pay for Reduced Inequality?',
-      authors: [
-        {
-          name: 'Thomas Lloyd',
-          url: null
-        },
-        {
-          name: 'Brian Hill',
-          url: 'https://people.hec.edu/hill/'
-        }
-      ],
-      journal: 'Management Science',
-      year: '2025',
-      url: 'https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2023.01974',
-      workingPaperUrl: 'https://people.hec.edu/hill/wp-content/uploads/sites/25/2021/11/WTPRII_0623.pdf',
-      workingPaperText: 'Working Paper Version, June 2023',
-      abstract: 'Would consumers be willing to pay more for goods for which there is less inequality in wages across those involved in their production? In incentive-compatible behavioural choice studies on representative samples of the English and US populations, we find significantly positive willingness to pay for such inequality reductions in over 80% of subjects. Whilst it varies with political leaning and the extent of the inequality reduction, willingness to pay is positive across the political spectrum and for all studied inequality differences. It is higher for more intuitive and informative inequality-reporting formats. Our findings have policy implications for both governments and firms. On the one hand, they suggest the promise of universal provision of product-level inequality information as a tool for moderating income inequality. On the other, they highlight the potential relevance of inequality reporting for firms\' marketing strategies.',
-      image: './jpg/WTP_fig4.png',
-      imageWidth: '100%'
-    }
-  ],
-  workingPapers: [
-    {
-      id: 'wp1',
-      title: 'Do Distributional Concerns Justify Lower Environmental Taxes?',
-      authors: [
-        {
-          name: 'Thomas Lloyd',
-          url: null
-        },
-        {
-          name: 'Ashley C. Craig',
-          url: 'https://ashleycraig.com/'
-        },
-        {
-          name: 'Dylan T. Moore',
-          url: 'https://www.dylantmoore.com/'
-        }
-      ],
-      url: './pdf/externalities.pdf',
-      wpSeriesUrl: 'https://www.ifo.de/en/cesifo/publications/2025/working-paper/do-distributional-concerns-justify-lower-environmental-taxes',
-      wpSeriesText: 'CESifo Working Paper No. 12317',
-      date: 'December 2025',
-      isNew: true,
-      presentation: 'Presented at the 2025 Annual Congress of the International Institute of Public Finance (IIPF)',
-      abstract: 'How should taxes on externality-generating activities be adjusted if they are regressive? In our model, the government raises revenue using distortionary income and commodity taxes. If more or less productive people have identical tastes for externality-generating consumption, the government optimally imposes a Pigouvian tax equal to the marginal damage from the externality. This is true regardless of whether the tax is regressive. But, if regressivity reflects different preferences of people with different incomes rather than solely income effects, the optimal tax differs from the Pigouvian benchmark. We derive sufficient statistics for optimal policy, and use them to study carbon taxation in the United States. Our empirical results suggest an optimal carbon tax that is remarkably close to the Pigouvian level, but with higher carbon taxes for very high-income households if this is feasible. When we allow for heterogeneity in preferences at each income level as well as across the income distribution, our optimal tax schedules are further attenuated toward the Pigouvian benchmark.',
-      image: './jpg/fig_pareto_efficient_corrective_tax_rate_dirty_eti_0.33.png',
-      imageWidth: '80%'
-    },
-    {
-      id: 'wp2',
-      title: 'The Long Shadow of Early Education: Evidence from a Natural Experiment in the Philippines',
-      authors: [
-        {
-          name: 'Thomas Lloyd',
-          url: null
-        },
-        {
-          name: 'Dean Yang',
-          url: 'https://deanyang-econ.github.io/deanyang/'
-        }
-      ],
-      url: './pdf/lloyd_yang_2025_long_shadow_education.pdf',
-      wpSeriesUrl: 'https://www.nber.org/papers/w33600',
-      wpSeriesText: 'NBER Working Paper No. 33600',
-      date: 'March 2025',
-      isNew: true,
-      presentation: 'Presented at the North East Universities Development Consortium (NEUDC) 2024 Conference',
-      press: [
-        { name: 'Inquirer.net', url: 'https://opinion.inquirer.net/185363/revisiting-mtb-mle' }
-      ],
-      abstract: 'How does early educational quality affect longer-term academic outcomes? We shed light on this question via a natural experiment in the Philippines—the flawed implementation of a mother tongue education policy in public schools in kindergarten to Grade 3. This policy led to an unexpected decline in educational quality, but differentially in a subset of schools strongly predicted by pre-policy student language composition. We use language composition variables as instrumental variables for treatment. Leveraging panel data and confirming robustness to pre-trends, we find that the policy led to declines in standardized test scores in public primary schools. Employing a triple-difference strategy with Philippine Census data (across cohorts, localities, and decadal censuses), we show that by 2020, cohorts fully exposed to the policy completed 0.3 fewer years of schooling. By revealing how a policy-induced reduction in early education quality reduces educational attainment in later years, our results underscore the importance of investing in the quality of education in the first years of schooling.',
-      image: './jpg/coefplot_TD_educ_munic_x_age_x_census20102020_pafe_moi.png',
-      imageWidth: '80%'
-    }
-  ],
-  workInProgress: [
-    {
-      id: 'wip1',
-      title: 'Motivated or Frustrated? Aspirations and Optimal Taxation',
-      authors: [
-        {
-          name: 'Thomas Lloyd',
-          url: null
-        }
-      ],
-      presentation: 'Presented at the 118th (2025) National Tax Association (NTA) Annual Conference, Boston',
-      abstract: null
-    },
-    {
-      id: 'wip2',
-      title: 'Colonizer Identity and Economic Development: Evidence from the "Scramble for Africa"',
-      authors: [
-        {
-          name: 'Thomas Lloyd',
-          url: null
-        },
-        {
-          name: 'Laston Manja',
-          url: 'https://laston-manja.github.io/'
-        }
-      ],
-      abstract: 'This paper examines the long-run economic impact of differential European colonial rule in Africa, by exploiting differences arising from the arbitrary borders established during the Scramble for Africa (1876-1912). Using a regression discontinuity design along the full set of British-French colonial borders in West and Central Africa, we explore the impact of colonizer identity on local measures of economic development. We find that areas formerly under British rule exhibit higher nighttime light intensity (2-6%), which translates into substantially higher local GDP per capita (USD 1,620-2,220). At the individual level, these areas display higher educational attainment, lower unemployment rates, and improved public good provision. We explore mechanisms and find sharp institutional discontinuities at colonial borders. Areas formerly under British rule display lower perceived corruption in formal government institutions, particularly local government, and higher trust in parliaments. Perceived judicial corruption is lower, while agreement that court decisions must be obeyed is stronger, in line with differences in legal origin. However, traditional leaders show higher perceived corruption on the British side, consistent with indirect rule empowering traditional authorities as intermediaries. Colonial legacies also shape nation-building. British areas show weaker national identity and lower colonial language use, alongside lower perception of unfair treatment of one\'s ethnic group. These findings indicate that differential colonial governance strategies created persistent institutional divergences that continue to shape economic development in contemporary Africa.'
-    },
-    {
-      id: 'wip3',
-      title: 'Preaching Change: The Impact of Evangelical Churches on Crime in Colombian Cities',
-      authors: [
-        {
-          name: 'Thomas Lloyd',
-          url: null
-        },
-        {
-          name: 'Juan P. Aparicio',
-          url: 'https://www.posadaaparicio.com/research'
-        },
-        {
-          name: 'María Medellín Esguerra',
-          url: 'https://mariamedellin.com/'
-        }
-      ],
-      presentation: 'Presented at the 2025 ASREC Europe (Copenhagen) Graduate Student Workshop',
-      abstract: null
-    }
-  ]
-};
-
 class AcademicContentRenderer {
-  constructor() {
+  constructor(content) {
+    this.content = content;
     this.toggleCounter = 0;
   }
 
@@ -139,11 +9,11 @@ class AcademicContentRenderer {
 
     if (!sectionData || sectionData.length === 0) return '';
 
-    // Add top margin for non-first sections (Working Papers, Work in Progress)
-    const topMargin = sectionTitle === 'Publications' ? '' : ' style="margin-top: 2rem;"';
-    let html = `<h2 id="${sectionTitle.toLowerCase().replace(/\s+/g, '')}"${topMargin}>${sectionTitle}</h2>\n`;
+    const sectionId = sectionTitle.toLowerCase().replace(/\s+/g, '');
+    const sectionClass = sectionTitle === 'Publications' ? '' : ' class="content-section--spaced"';
+    let html = `<h2 id="${sectionId}"${sectionClass}>${escapeHtml(sectionTitle)}</h2>\n`;
 
-    sectionData.forEach((item, index) => {
+    sectionData.forEach((item) => {
       html += '<div class="paper-card">\n';
       html += this.renderItem(item, { showImages, expandAbstracts });
       html += '</div>\n';
@@ -154,160 +24,198 @@ class AcademicContentRenderer {
 
   renderItem(item, options = {}) {
     const { showImages = false, expandAbstracts = false } = options;
-    let html = '';
-    
-    html += this.renderTitle(item);
-    html += this.renderAuthors(item.authors);
-    html += this.renderJournal(item);
-    html += this.renderAdditionalInfo(item);
-    html += this.renderAbstract(item, expandAbstracts);
-    html += this.renderPress(item);
-    html += this.renderImage(item, showImages);
-    
-    return html;
+
+    return [
+      this.renderTitle(item),
+      this.renderAuthors(item.authors),
+      this.renderJournal(item),
+      this.renderAdditionalInfo(item),
+      this.renderAbstract(item, expandAbstracts),
+      this.renderPress(item),
+      this.renderImage(item, showImages)
+    ].join('');
   }
 
   renderTitle(item) {
-    const titleStyle = "margin:1.25rem 0 0.3125rem; hyphens: manual; word-break: keep-all; overflow-wrap: normal;";
+    const title = escapeHtml(item.title);
+
     if (item.url) {
-      return `<h3 class="paper-title" style="${titleStyle}"><a href="${item.url}" target="_blank" rel="noopener" style="hyphens: manual; word-break: keep-all;">${item.title}</a></h3>\n`;
+      return `<h3 class="paper-title"><a href="${escapeAttr(item.url)}" target="_blank" rel="noopener">${title}</a></h3>\n`;
     }
-    return `<h3 class="paper-title" style="${titleStyle}">${item.title}</h3>\n`;
+
+    return `<h3 class="paper-title">${title}</h3>\n`;
   }
 
   renderAuthors(authors) {
     if (!authors || authors.length === 0) return '';
-    
-    // Filter out Thomas Lloyd from the co-authors list
-    const coAuthors = authors.filter(author => author.name !== 'Thomas Lloyd');
-    
+
+    const coAuthors = authors.filter((author) => author.name !== 'Thomas Lloyd');
     if (coAuthors.length === 0) return '';
-    
-    const authorLinks = coAuthors.map(author => {
+
+    const authorLinks = coAuthors.map((author) => {
+      const name = escapeHtml(author.name);
       if (author.url) {
-        return `<a href="${author.url}" target="_blank" rel="noopener">${author.name}</a>`;
+        return `<a href="${escapeAttr(author.url)}" target="_blank" rel="noopener">${name}</a>`;
       }
-      return author.name;
+      return name;
     });
-    
-    const authorsText = authorLinks.join(' & ');
-    return `<p style="margin:0 0 5px;">(with ${authorsText})</p>\n`;
+
+    return `<p class="paper-meta">(with ${authorLinks.join(' & ')})</p>\n`;
   }
 
   renderJournal(item) {
     if (!item.journal) return '';
-    return `<p style="margin:0 0 5px;"><em>${item.journal}, ${item.year}</em></p>\n`;
+    return `<p class="paper-meta"><em>${escapeHtml(item.journal)}, ${escapeHtml(item.year)}</em></p>\n`;
   }
 
   renderAdditionalInfo(item) {
     let html = '';
-    
+
     if (item.workingPaperUrl) {
-      html += `<p style="margin:0 0 5px;"><em><a href="${item.workingPaperUrl}" target="_blank" rel="noopener">[${item.workingPaperText}]</a></em></p>\n`;
+      html += `<p class="paper-meta"><em><a href="${escapeAttr(item.workingPaperUrl)}" target="_blank" rel="noopener">[${escapeHtml(item.workingPaperText)}]</a></em></p>\n`;
     }
-    
+
     if (item.wpSeriesUrl) {
       const newLabel = item.isNew ? '<span class="badge-new">NEW</span> ' : '';
-      html += `<p style="margin:0 0 5px;"><em>${newLabel}<a href="${item.wpSeriesUrl}" target="_blank" rel="noopener">${item.wpSeriesText}</a></em>, ${item.date}</p>\n`;
+      html += `<p class="paper-meta"><em>${newLabel}<a href="${escapeAttr(item.wpSeriesUrl)}" target="_blank" rel="noopener">${escapeHtml(item.wpSeriesText)}</a></em>, ${escapeHtml(item.date)}</p>\n`;
     }
-    
+
     if (item.presentation) {
-      html += `<p style="margin:0 0 5px;"><em>${item.presentation}</em></p>\n`;
+      html += `<p class="paper-meta"><em>${escapeHtml(item.presentation)}</em></p>\n`;
     }
-    
+
     return html;
   }
 
   renderPress(item) {
     if (!item.press || !Array.isArray(item.press) || item.press.length === 0) return '';
-    
-    const pressLinks = item.press.map(outlet => 
-      `<a href="${outlet.url}" target="_blank" rel="noopener">${outlet.name}</a>`
+
+    const pressLinks = item.press.map((outlet) =>
+      `<a href="${escapeAttr(outlet.url)}" target="_blank" rel="noopener">${escapeHtml(outlet.name)}</a>`
     ).join(', ');
-    
-    return `<p style="margin:0 0 5px;"><b>Press:</b> ${pressLinks}</p>\n`;
+
+    return `<p class="paper-meta"><b>Press:</b> ${pressLinks}</p>\n`;
   }
 
   renderAbstract(item, expandAbstracts) {
     if (!item.abstract) return '';
 
+    const abstract = escapeHtml(item.abstract);
+
     if (expandAbstracts) {
-      return `<p style="margin:0 0 5px;">${item.abstract}</p>\n`;
-    } else {
-      const toggleId = this.toggleCounter++;
-      return `<p style="margin:0 0 5px;"><button onclick="toggle(${toggleId})" role="button" aria-expanded="false" aria-controls="pubabs_${toggleId}" style="background:none;border:none;padding:0;margin:0;font:inherit;color:var(--color-link, #2b6cb0);cursor:pointer;text-align:left;display:inline;vertical-align:baseline;">Abstract <span id="pubabslink_${toggleId}" style="font-size:0.75em;display:inline;">&#9660;</span></button><span id="pubabs_${toggleId}" style="display:none;" aria-hidden="true">: ${item.abstract}</span></p>\n`;
+      return `<p class="paper-meta">${abstract}</p>\n`;
     }
+
+    const toggleId = this.toggleCounter++;
+    return [
+      '<p class="paper-meta">',
+      `<button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="pubabs_${toggleId}" data-abstract-toggle="${toggleId}">`,
+      'Abstract <span class="abstract-toggle-icon" aria-hidden="true">&#9660;</span>',
+      '</button>',
+      `<span id="pubabs_${toggleId}" class="abstract-text" hidden>: ${abstract}</span>`,
+      '</p>\n'
+    ].join('');
   }
 
   renderImage(item, showImages) {
     if (!showImages || !item.image) return '';
+
+    const widthClass = item.imageWidth === '80%' ? 'paper-image--medium' : 'paper-image--full';
     const altText = `Figure from "${item.title}"`;
-    
-    // Use imageWidth attribute or default to 100%
-    const width = item.imageWidth || '100%';
-    const marginStyle = width === '100%' ? 'margin:10px 0;' : 'margin:10px auto;';
 
-    // ↓ add an explicit width to trump the global rule
-    const imageStyle = `
-      width:${width} !important;
-      max-width:${width} !important;   /* extra safety */
-      height:auto;
-      display:block;
-      ${marginStyle}
-    `.trim();
-
-    return `<img src="${item.image}" alt="${altText}" style="${imageStyle}" loading="lazy">\n`;
+    return `<img src="${escapeAttr(item.image)}" alt="${escapeAttr(altText)}" class="paper-image ${widthClass}" loading="lazy">\n`;
   }
 
-  renderAll(containerId, options = {}) {
-    const container = document.getElementById(containerId);
+  renderAll(containerOrId, options = {}) {
+    const container = typeof containerOrId === 'string'
+      ? document.getElementById(containerOrId)
+      : containerOrId;
+
     if (!container) return;
 
-    let html = '';
+    const sections = [
+      [this.content.publications, 'Publications'],
+      [this.content.workingPapers, 'Working Papers'],
+      [this.content.workInProgress, 'Work in Progress']
+    ];
 
-    if (academicContent.publications.length > 0) {
-      html += this.renderSection(academicContent.publications, 'Publications', options);
-    }
+    container.innerHTML = sections
+      .map(([sectionData, sectionTitle]) => this.renderSection(sectionData, sectionTitle, options))
+      .join('');
 
-    if (academicContent.workingPapers.length > 0) {
-      html += this.renderSection(academicContent.workingPapers, 'Working Papers', options);
-    }
+    this.bindAbstractToggles(container);
+  }
 
-    if (academicContent.workInProgress.length > 0) {
-      html += this.renderSection(academicContent.workInProgress, 'Work in Progress', options);
-    }
+  bindAbstractToggles(container) {
+    container.querySelectorAll('.abstract-toggle').forEach((button) => {
+      button.addEventListener('click', function() {
+        const targetId = button.getAttribute('aria-controls');
+        const abstract = document.getElementById(targetId);
+        const icon = button.querySelector('.abstract-toggle-icon');
 
-    container.innerHTML = html;
+        if (!abstract) return;
+
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        abstract.hidden = expanded;
+        if (icon) icon.innerHTML = expanded ? '&#9660;' : '&#9650;';
+      });
+    });
   }
 }
 
-function toggle(pid) {
-  const objid = "pubabs_" + pid.toString();
-  const linkid = "pubabslink_" + pid.toString();
-  const absobj = document.getElementById(objid);
-  const linkobj = document.getElementById(linkid);
-  const button = document.querySelector(`[aria-controls="${objid}"]`);
-  
-  // Error handling - ensure elements exist
-  if (!absobj || !linkobj) {
-    console.warn(`Toggle elements not found for ID: ${pid}`);
-    return;
-  }
-  
-  if (absobj.style.display === "none") {
-    absobj.style.display = "inline";
-    absobj.setAttribute('aria-hidden', 'false');
-    linkobj.innerHTML = '&#9650;';
-    linkobj.style.display = "inline";
-    if (button) button.setAttribute('aria-expanded', 'true');
-  } else {
-    absobj.style.display = "none";
-    absobj.setAttribute('aria-hidden', 'true');
-    linkobj.innerHTML = '&#9660;';
-    linkobj.style.display = "inline";
-    if (button) button.setAttribute('aria-expanded', 'false');
+async function loadAcademicContent() {
+  if (window.academicContent) return window.academicContent;
+
+  const response = await fetch('./js/content.json');
+  if (!response.ok) throw new Error('Failed to load academic content');
+
+  window.academicContent = await response.json();
+  return window.academicContent;
+}
+
+async function renderAcademicContent(containerOrId, options = {}) {
+  const container = typeof containerOrId === 'string'
+    ? document.getElementById(containerOrId)
+    : containerOrId;
+
+  if (!container) return;
+
+  try {
+    const content = await loadAcademicContent();
+    const renderer = new AcademicContentRenderer(content);
+    renderer.renderAll(container, options);
+  } catch (error) {
+    console.warn(error);
+    container.textContent = 'Research content could not be loaded.';
   }
 }
 
-window.academicContent = academicContent;
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, function(character) {
+    return {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[character];
+  });
+}
+
+function escapeAttr(value) {
+  return escapeHtml(value);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('[data-academic-content]').forEach(function(container) {
+    renderAcademicContent(container, {
+      showImages: container.dataset.showImages === 'true',
+      expandAbstracts: container.dataset.expandAbstracts === 'true'
+    });
+  });
+});
+
 window.AcademicContentRenderer = AcademicContentRenderer;
+window.loadAcademicContent = loadAcademicContent;
+window.renderAcademicContent = renderAcademicContent;

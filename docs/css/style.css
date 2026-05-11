@@ -27,198 +27,6 @@ html { scroll-behavior: smooth; }
   color: var(--color-heading);
 }
 
-.navbar nav {
-  background-color: var(--color-bg);
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar h3 {
-  margin: 0;
-  color: var(--color-heading);
-  font-weight: bold;
-}
-
-.navbar h3 a {
-  text-decoration: none;
-  color: inherit;
-  margin-left: 40px; /* Consider reducing this on smaller screens */
-  padding: 0;
-}
-
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  padding-right: 100px; /* Consider reducing this on smaller screens */
-}
-
-.navbar ul li {
-  margin-right: 10px;
-}
-
-@media (max-width: 768px) {
-  .navbar nav {
-        padding: 12px 8px; /* Better mobile padding */
-    }
-
-    .navbar h3 a {
-        margin-left: 8px; /* Better left margin for readability */
-    }
-
-    .navbar ul {
-        padding-right: 8px; /* Better right padding */
-    }
-
-    .navbar ul li {
-        margin-right: 8px; /* Better spacing between items */
-    }
-
-    .navbar ul li a {
-        padding: 8px 10px; /* Larger touch targets */
-        min-height: 44px; /* iOS recommended touch target size */
-        display: flex;
-        align-items: center;
-    }
-
-    .wrapper {
-        padding-top: 60px; /* Reduced top padding for smaller navbar */
-    }
-}
-
-/* Base styles */
-.sidebar h1, .navbar h3 {
-  font-size: 28px; /* Larger base font size for headers */
-}
-.sidebar p, .navbar p {
-  font-size: 14px; /* Smaller base font size for paragraphs */
-}
-.sidebar li, .navbar li {
-  font-size: 16px; /* Base font size for list items */
-}
-
-#profile-pic {
-  width: 200px; /* Adjust base image size */
-}
-
-.fas, .fab { /* Font Awesome icons */
-  font-size: 16px; /* Adjust base icon size */
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .sidebar h1, .navbar h3 {
-    font-size: 20px; /* Smaller text on tablets */
-  }
-  .sidebar p, .navbar p {
-    font-size: 12px; /* Smaller base font size for paragraphs */
-  }
-  .sidebar li, .navbar li {
-    font-size: 14px; /* Base font size for list items */
-  }
-  #profile-pic {
-    width: 150px; /* Smaller images on tablets */
-  }
-  .fas, .fab {
-    font-size: 14px; /* Smaller icons on tablets */
-  }
-}
-
-@media (max-width: 768px) {
-  .sidebar h1, .navbar h3 {
-    font-size: 18px; /* Readable text on mobile */
-  }
-  .sidebar p, .navbar p {
-    font-size: 14px; /* Readable base font size for paragraphs */
-  }
-  .sidebar li, .navbar li {
-    font-size: 14px; /* Readable base font size for list items */
-  }
-  #profile-pic {
-    width: 100px; /* Smaller images on mobile */
-  }
-  .fas, .fab {
-    font-size: 16px; /* Readable icons on mobile */
-  }
-}
-
-/* General styles for header and its contents */
-header {
-  text-align: center;
-}
-
-
-/* General styles */
-hr {
-  border: 0;
-  height: 1px;
-  background: var(--color-border);
-  width: 100%;
-  margin: 2rem 0;
-}
-
-/* Center <hr> if it's inside <header> */
-header hr {
-  margin: 2rem auto;
-}
-
-#profile-pic {
-  border-radius: 50%;
-  margin-bottom: 10px;
-  border: 3px solid var(--color-border);
-  box-shadow: var(--shadow-md);
-  transition: box-shadow 0.3s ease;
-}
-
-h1 {
-  font-size: 200%;
-}
-
-.contact-container {
-  text-align: left;
-  margin: 0 auto;
-  width: 50%; /* Adjust width in media queries for responsiveness */
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .contact-container {
-    width: 100%; /* Full width on smaller screens */
-    text-align: center; /* Center the contact container on small screens */
-  }
-}
-
-.contactinfo a {
-  text-decoration: none;
-  letter-spacing: .175em;
-  font-size: 12px;
-}
-
-.contactinfo a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  header {
-    padding: 10px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .contact-container {
-    width: 75%; /* Slightly wider on medium screens */
-  }
-}
-
 @font-face {
   font-family: 'Adobe Caslon Pro';
   font-weight: 400;
@@ -294,7 +102,7 @@ h1, h3, h4, h5, h6 {
 
 body {
   background-color: var(--color-bg);
-  padding: 60px;
+  padding: 0;
   margin: 0;
   font: 14px/1.5 "Noto Sans", "Adobe Caslon Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--color-text);
@@ -360,11 +168,6 @@ a small {
 a:hover small {
   color: var(--color-text-muted); }
 
-.wrapper {
-  width: 1060px;
-  margin: 0 auto;
-  padding-top: 80px; }
-
 blockquote {
   border-left: 1px solid var(--color-border);
   margin: 0;
@@ -401,10 +204,8 @@ th {
 img {
   max-width: 100%; }
 
-.sidebar, header {
-  width: 270px;
-  float: left;
-  position: fixed;
+header {
+  text-align: center;
   -webkit-font-smoothing: subpixel-antialiased; }
 
 header ul {
@@ -457,11 +258,6 @@ header ul a strong {
   display: block;
   color: var(--color-heading); }
 
-section, main {
-  width: 700px;
-  float: right;
-  padding-bottom: 50px; }
-
 small {
   font-size: 11px; }
 
@@ -470,40 +266,6 @@ hr {
   background: var(--color-border);
   height: 1px;}
 
-footer {
-  width: 270px;
-  float: left;
-  position: fixed;
-  bottom: 50px;
-  -webkit-font-smoothing: subpixel-antialiased; }
-
-@media print, screen and (max-width: 1160px) {
-  div.wrapper {
-    width: auto;
-    margin: 0;
-    padding-top: 80px; }
-
-  header, section, main, footer {
-    float: none;
-    position: static;
-    width: auto; }
-
-  header {
-    padding-right: 320px; }
-
-  section, main {
-    border: 1px solid var(--color-border);
-    border-width: 1px 0;
-    padding: 20px 0;
-    margin: 0 0 20px; }
-
-  header a small {
-    display: inline; }
-
-  header ul {
-    position: absolute;
-    right: 50px;
-    top: 52px; } }
 @media print, screen and (max-width: 720px) {
   body {
     word-wrap: break-word; }

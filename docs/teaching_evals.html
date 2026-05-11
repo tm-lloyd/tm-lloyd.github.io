@@ -17,8 +17,6 @@
   <meta property="og:image" content="https://thomaslloyd.me/jpg/pfp_Thomas_Lloyd.jpg">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/modern-layout.css">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?v1">
   <!-- Bootstrap Icons CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <!-- Font Awesome CDN -->
@@ -31,38 +29,19 @@
   <!-- PNG fallback for older browsers (optional) -->
   <link rel="icon"   href="/icons/294px-Michigan_Wolverines_logo.png" sizes="32x32" type="image/png">
   <link rel="shortcut icon" href="/icons/294px-Michigan_Wolverines_logo.png">
-  
-  <style>
-    /* Prevent margin collapse and fix whitespace issues */
-    #navbar-placeholder:empty,
-    #sidebar-placeholder:empty {
-      display: none;
-    }
-    
-    /* Prevent margin collapse on main container */
-    .wrapper {
-      overflow: hidden; /* Creates new block formatting context */
-    }
-    
-    /* Reset margins on first child to prevent collapse */
-    main > *:first-child {
-      margin-top: 0 !important;
-    }
-  </style>
-
 </head>
 
-<body>
+<body class="page-tight">
   <div id="navbar-placeholder"></div>
 
   <div class="wrapper">
     <div id="sidebar-placeholder"></div>
 
-    <main id="main-content" role="main" style="margin-top: 0; padding-top: 0;">
+    <main id="main-content" role="main">
 
-      <h2 id="teaching-evaluations" style="margin-top: 0;">Summary of Teaching Evaluations</h2>
+      <h2 id="teaching-evaluations">Summary of Teaching Evaluations</h2>
       
-      <h3 style="color: #003f72;">Selected Written Comments (University of Michigan)</h3>
+      <h3 class="eval-section-heading">Selected Written Comments (University of Michigan)</h3>
       
       <table class="comments-table" role="table" aria-label="Selected written comments from teaching evaluations">
         <thead>
@@ -121,565 +100,36 @@
         </tbody>
       </table>
 
-      <style type="text/css">
-        .comments-table {
-          width: 100%;
-          border-collapse: collapse;
-          margin: 1.25rem 0;
-          font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-        }
-        
-        .comments-table th, 
-        .comments-table td {
-          border: 1px solid #ddd;
-          text-align: left;
-          padding: 0.75rem 0.5rem;
-          vertical-align: top;
-        }
-        
-        .comments-table th {
-          background-color: #f2f2f2;
-          font-weight: bold;
-        }
-        
-        .comments-table tr:nth-child(even) {
-          background-color: #fafafa;
-        }
-        
-        .comments-table tr:hover {
-          background-color: #f0f0f0;
-        }
-        
-        .comments-table td:first-child {
-          width: 20%;
-          min-width: 7.5rem;
-        }
-        
-        .comments-table td:nth-child(2) {
-          white-space: nowrap;
-          width: 10%;
-          min-width: 5rem;
-        }
-        
-        .comments-table td:nth-child(3) {
-          width: 70%;
-        }
-        
-        /* Responsive table styling for tablets */
-        @media (max-width: 768px) and (min-width: 481px) {
-          .comments-table {
-            font-size: 0.9375rem;
-            width: 100%;
-          }
+      <hr class="section-divider">
 
-          .comments-table tbody {
-            padding: 0;
-          }
-
-          .comments-table th,
-          .comments-table td {
-            padding: 0.625rem 0.375rem;
-          }
-        }
-
-        /* Modern mobile-first card design for phones */
-        @media (max-width: 480px) {
-          /* Full-width seamless card layout */
-          .comments-table {
-            display: block;
-            width: 100%;
-            margin: 0;
-            font-size: 16px;
-            background: #fff;
-          }
-
-          .comments-table thead,
-          .comments-table tbody,
-          .comments-table tr,
-          .comments-table th,
-          .comments-table td {
-            display: block;
-            width: 100% !important; /* Override desktop column widths */
-            min-width: 0 !important; /* Remove min-width constraints */
-          }
-
-          .comments-table thead tr {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
-          }
-
-          .comments-table tbody {
-            padding: 0;
-            margin: 0;
-            width: 100%;
-          }
-
-          /* Each row is a full-width card with divider */
-          .comments-table tr {
-            border: none;
-            border-bottom: 1px solid #e0e0e0;
-            margin: 0;
-            padding: 1.25rem 1rem;
-            background: #fff;
-            width: 100% !important;
-            box-sizing: border-box;
-          }
-
-          .comments-table tr:last-child {
-            border-bottom: none;
-          }
-
-          /* Remove all ::before labels - we'll style directly */
-          .comments-table td::before {
-            display: none;
-          }
-
-          /* All cells - reset everything to full width */
-          .comments-table td {
-            border: none;
-            padding: 0;
-            margin: 0;
-            width: 100% !important; /* Force full width */
-            max-width: 100% !important;
-            white-space: normal !important;
-            overflow-wrap: break-word;
-            word-break: normal;
-            box-sizing: border-box;
-          }
-
-          /* Metadata header - compact, one line */
-          .comments-table td[data-label="Course"] {
-            font-size: 0.8125rem; /* 13px */
-            color: #666;
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-            line-height: 1.4;
-          }
-
-          .comments-table td[data-label="Term"] {
-            font-size: 0.75rem; /* 12px */
-            color: #999;
-            font-weight: 400;
-            margin-bottom: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.025em;
-          }
-
-          /* Comment - the star of the show */
-          .comments-table td[data-label="Comment"] {
-            font-size: 1rem; /* 16px - highly readable */
-            line-height: 1.7; /* Excellent readability */
-            color: #222;
-            margin: 0;
-            padding: 0;
-            font-weight: 400;
-          }
-        }
-      </style>
-
-      <hr style="border: none; height: 0.0625rem; background-color: #e8e8e8; margin: 2.5rem 0 1.875rem 0;">
-
-      <h3 style="color: #003f72;">Average Median Scores Across Courses (University of Michigan)</h3>
+      <h3 class="eval-section-heading">Average Median Scores Across Courses (University of Michigan)</h3>
       
-      <div id="chart-container">
-        <svg id="bar-chart" width="800" height="400" viewBox="0 0 800 400" role="img" aria-label="Bar chart comparing average median teaching evaluation scores across three questions: overall teaching effectiveness, explaining material clearly, and treating students with respect. Compares personal scores to college and university averages.">
+      <div id="chart-container" class="chart-container">
+        <svg id="bar-chart" class="chart-svg" width="800" height="400" viewBox="0 0 800 400" role="img" aria-label="Bar chart comparing average median teaching evaluation scores across three questions: overall teaching effectiveness, explaining material clearly, and treating students with respect. Compares personal scores to college and university averages.">
           <!-- Chart will be generated by JavaScript -->
         </svg>
       </div>
 
-      <style type="text/css">
-        #chart-container {
-          margin: 1.875rem 0;
-          text-align: center;
-        }
-        
-        #bar-chart {
-          max-width: 100%;
-          height: auto;
-          font-family: 'Noto Sans', sans-serif;
-        }
-        
-        .bar-personal { fill: #2c3e50; }
-        .bar-college { fill: #7f8c8d; }
-        .bar-university { fill: #bdc3c7; }
-        
-        .axis-line { 
-          stroke: #2c3e50; 
-          stroke-width: 1; 
-        }
-        
-        .grid-line { 
-          stroke: #ecf0f1; 
-          stroke-width: 0.5; 
-        }
-        
-        .axis-text { 
-          fill: #2c3e50; 
-          font-size: 0.75rem; 
-          font-family: 'Noto Sans', sans-serif; 
-        }
-        
-        .question-text { 
-          fill: #2c3e50; 
-          font-size: 0.6875rem; 
-          font-family: 'Noto Sans', sans-serif; 
-        }
-        
-        .legend-text { 
-          fill: #2c3e50; 
-          font-size: 0.6875rem; 
-          font-family: 'Noto Sans', sans-serif; 
-        }
-        
-        @media (max-width: 768px) {
-          #bar-chart {
-            width: 100%;
-            height: 18.75rem;
-          }
-          
-          .axis-text { font-size: 0.625rem; }
-          .question-text { font-size: 0.5625rem; }
-          .legend-text { font-size: 0.5625rem; }
-        }
-      </style>
+      <hr class="section-divider">
 
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          const svg = document.getElementById('bar-chart');
-          const width = 800;
-          const height = 400;
-          const margin = { top: 40, right: 150, bottom: 120, left: 60 };
-          const chartWidth = width - margin.left - margin.right;
-          const chartHeight = height - margin.top - margin.bottom;
-
-          // Data
-          const data = [
-            {
-              question: "Seemed well prepared\nfor class meetings",
-              shortLabel: "Well Prepared",
-              personal: 4.93,
-              college: 4.825,
-              university: 4.8
-            },
-            {
-              question: "Explained material\nclearly",
-              shortLabel: "Clear Explanation", 
-              personal: 4.89,
-              college: 4.725,
-              university: 4.7
-            },
-            {
-              question: "Treated students\nwith respect",
-              shortLabel: "Respectful",
-              personal: 4.91,
-              college: 4.825,
-              university: 4.8
-            }
-          ];
-
-          // Scales
-          const yMin = 4.5;
-          const yMax = 5.0;
-          const yScale = (value) => margin.top + chartHeight - ((value - yMin) / (yMax - yMin)) * chartHeight;
-          
-          const barWidth = 40;
-          const groupWidth = barWidth * 3 + 20;
-          const totalGroupsWidth = groupWidth * data.length;
-          const startX = margin.left + (chartWidth - totalGroupsWidth) / 2;
-
-          // Clear SVG
-          svg.innerHTML = '';
-
-          // Y-axis grid lines and labels
-          for (let i = 0; i <= 10; i++) {
-            const value = yMin + (i / 10) * (yMax - yMin);
-            const y = yScale(value);
-            
-            // Grid line
-            const gridLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            gridLine.setAttribute('x1', margin.left);
-            gridLine.setAttribute('y1', y);
-            gridLine.setAttribute('x2', margin.left + chartWidth);
-            gridLine.setAttribute('y2', y);
-            gridLine.setAttribute('class', 'grid-line');
-            svg.appendChild(gridLine);
-            
-            // Y-axis label
-            if (i % 2 === 0) {
-              const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-              label.setAttribute('x', margin.left - 10);
-              label.setAttribute('y', y + 4);
-              label.setAttribute('text-anchor', 'end');
-              label.setAttribute('class', 'axis-text');
-              label.textContent = value.toFixed(1);
-              svg.appendChild(label);
-            }
-          }
-
-          // Y-axis line
-          const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-          yAxis.setAttribute('x1', margin.left);
-          yAxis.setAttribute('y1', margin.top);
-          yAxis.setAttribute('x2', margin.left);
-          yAxis.setAttribute('y2', margin.top + chartHeight);
-          yAxis.setAttribute('class', 'axis-line');
-          svg.appendChild(yAxis);
-
-          // X-axis line
-          const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-          xAxis.setAttribute('x1', margin.left);
-          xAxis.setAttribute('y1', margin.top + chartHeight);
-          xAxis.setAttribute('x2', margin.left + chartWidth);
-          xAxis.setAttribute('y2', margin.top + chartHeight);
-          xAxis.setAttribute('class', 'axis-line');
-          svg.appendChild(xAxis);
-
-          // Bars and labels
-          data.forEach((item, i) => {
-            const groupX = startX + i * groupWidth;
-            
-            // Personal score bar
-            const personalBar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            personalBar.setAttribute('x', groupX);
-            personalBar.setAttribute('y', yScale(item.personal));
-            personalBar.setAttribute('width', barWidth);
-            personalBar.setAttribute('height', yScale(yMin) - yScale(item.personal));
-            personalBar.setAttribute('class', 'bar-personal');
-            svg.appendChild(personalBar);
-            
-            // College score bar
-            const collegeBar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            collegeBar.setAttribute('x', groupX + barWidth + 5);
-            collegeBar.setAttribute('y', yScale(item.college));
-            collegeBar.setAttribute('width', barWidth);
-            collegeBar.setAttribute('height', yScale(yMin) - yScale(item.college));
-            collegeBar.setAttribute('class', 'bar-college');
-            svg.appendChild(collegeBar);
-            
-            // University score bar
-            const universityBar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            universityBar.setAttribute('x', groupX + 2 * barWidth + 10);
-            universityBar.setAttribute('y', yScale(item.university));
-            universityBar.setAttribute('width', barWidth);
-            universityBar.setAttribute('height', yScale(yMin) - yScale(item.university));
-            universityBar.setAttribute('class', 'bar-university');
-            svg.appendChild(universityBar);
-            
-            // Value labels on top of bars
-            const personalValue = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            personalValue.setAttribute('x', groupX + barWidth / 2);
-            personalValue.setAttribute('y', yScale(item.personal) - 5);
-            personalValue.setAttribute('text-anchor', 'middle');
-            personalValue.setAttribute('class', 'axis-text');
-            personalValue.setAttribute('style', 'font-size: 10px; font-weight: bold;');
-            personalValue.textContent = item.personal.toFixed(2);
-            svg.appendChild(personalValue);
-            
-            const collegeValue = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            collegeValue.setAttribute('x', groupX + barWidth + 5 + barWidth / 2);
-            collegeValue.setAttribute('y', yScale(item.college) - 5);
-            collegeValue.setAttribute('text-anchor', 'middle');
-            collegeValue.setAttribute('class', 'axis-text');
-            collegeValue.setAttribute('style', 'font-size: 10px; font-weight: bold;');
-            collegeValue.textContent = item.college.toFixed(3);
-            svg.appendChild(collegeValue);
-            
-            const universityValue = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            universityValue.setAttribute('x', groupX + 2 * barWidth + 10 + barWidth / 2);
-            universityValue.setAttribute('y', yScale(item.university) - 5);
-            universityValue.setAttribute('text-anchor', 'middle');
-            universityValue.setAttribute('class', 'axis-text');
-            universityValue.setAttribute('style', 'font-size: 10px; font-weight: bold;');
-            universityValue.textContent = item.university.toFixed(1);
-            svg.appendChild(universityValue);
-            
-            // Question label
-            const lines = item.question.split('\n');
-            lines.forEach((line, lineIndex) => {
-              const questionLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-              questionLabel.setAttribute('x', groupX + groupWidth / 2 - 10);
-              questionLabel.setAttribute('y', margin.top + chartHeight + 20 + lineIndex * 14);
-              questionLabel.setAttribute('text-anchor', 'middle');
-              questionLabel.setAttribute('class', 'question-text');
-              questionLabel.textContent = line;
-              svg.appendChild(questionLabel);
-            });
-          });
-
-          // Legend
-          const legendX = margin.left + chartWidth + 20;
-          const legendY = margin.top + 50;
-          
-          const legendItems = [
-            { label: 'Thomas Lloyd', class: 'bar-personal' },
-            { label: 'College Median', class: 'bar-college' },
-            { label: 'University Median', class: 'bar-university' }
-          ];
-          
-          legendItems.forEach((item, i) => {
-            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            rect.setAttribute('x', legendX);
-            rect.setAttribute('y', legendY + i * 25);
-            rect.setAttribute('width', 15);
-            rect.setAttribute('height', 15);
-            rect.setAttribute('class', item.class);
-            svg.appendChild(rect);
-            
-            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            text.setAttribute('x', legendX + 20);
-            text.setAttribute('y', legendY + i * 25 + 12);
-            text.setAttribute('class', 'legend-text');
-            text.textContent = item.label;
-            svg.appendChild(text);
-          });
-        });
-      </script>
-
-      <hr style="border: none; height: 0.0625rem; background-color: #e8e8e8; margin: 2.5rem 0 1.875rem 0;">
-
-      <h3 style="color: #003f72;">Average Score - Introductory Economics (École Polytechnique)</h3>
+      <h3 class="eval-section-heading">Average Score - Introductory Economics (École Polytechnique)</h3>
       
-      <div id="chart-container-2">
-        <svg id="bar-chart-2" width="400" height="350" viewBox="0 0 400 350" role="img" aria-label="Bar chart showing teaching evaluation scores at Ecole Polytechnique, comparing personal scores to course averages.">
+      <div id="chart-container-2" class="chart-container">
+        <svg id="bar-chart-2" class="chart-svg" width="400" height="350" viewBox="0 0 400 350" role="img" aria-label="Bar chart showing teaching evaluation scores at Ecole Polytechnique, comparing personal scores to course averages.">
           <!-- Chart will be generated by JavaScript -->
         </svg>
       </div>
       
-      <p style="font-style: italic; color: #666; text-align: center; margin-top: 5px; font-family: 'Noto Sans', sans-serif;">
+      <p class="eval-note">
         Ranked best instructor by ECO 361 students in Spring 2021 (by Ingénieurs Polytechniciens).
       </p>
-
-      <style type="text/css">
-        #chart-container-2 {
-          margin: 1.875rem 0;
-          text-align: center;
-        }
-        
-        #bar-chart-2 {
-          max-width: 100%;
-          height: auto;
-          font-family: 'Noto Sans', sans-serif;
-        }
-      </style>
-
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          // École Polytechnique chart
-          const svg2 = document.getElementById('bar-chart-2');
-          const width2 = 400;
-          const height2 = 350;
-          const margin2 = { top: 40, right: 40, bottom: 100, left: 60 };
-          const chartWidth2 = width2 - margin2.left - margin2.right;
-          const chartHeight2 = height2 - margin2.top - margin2.bottom;
-
-          // Data for École Polytechnique
-          const data2 = [
-            { label: 'Thomas Lloyd', value: 4.55, class: 'bar-personal' },
-            { label: 'Course Average\nAcross Instructors', value: 3.85, class: 'bar-college' }
-          ];
-
-          // Scales (3.0 to 5.0 range)
-          const yMin2 = 3.0;
-          const yMax2 = 5.0;
-          const yScale2 = (value) => margin2.top + chartHeight2 - ((value - yMin2) / (yMax2 - yMin2)) * chartHeight2;
-          
-          const barWidth2 = 40; // Same width as previous chart
-          const groupSpacing2 = 80;
-          const totalWidth2 = barWidth2 * 2 + groupSpacing2;
-          const startX2 = margin2.left + (chartWidth2 - totalWidth2) / 2;
-
-          // Clear SVG
-          svg2.innerHTML = '';
-
-          // Y-axis grid lines and labels
-          for (let i = 0; i <= 8; i++) {
-            const value = yMin2 + (i / 8) * (yMax2 - yMin2);
-            const y = yScale2(value);
-            
-            // Grid line
-            const gridLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            gridLine.setAttribute('x1', margin2.left);
-            gridLine.setAttribute('y1', y);
-            gridLine.setAttribute('x2', margin2.left + chartWidth2);
-            gridLine.setAttribute('y2', y);
-            gridLine.setAttribute('class', 'grid-line');
-            svg2.appendChild(gridLine);
-            
-            // Y-axis label
-            if (i % 2 === 0) {
-              const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-              label.setAttribute('x', margin2.left - 10);
-              label.setAttribute('y', y + 4);
-              label.setAttribute('text-anchor', 'end');
-              label.setAttribute('class', 'axis-text');
-              label.textContent = value.toFixed(1);
-              svg2.appendChild(label);
-            }
-          }
-
-          // Y-axis line
-          const yAxis2 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-          yAxis2.setAttribute('x1', margin2.left);
-          yAxis2.setAttribute('y1', margin2.top);
-          yAxis2.setAttribute('x2', margin2.left);
-          yAxis2.setAttribute('y2', margin2.top + chartHeight2);
-          yAxis2.setAttribute('class', 'axis-line');
-          svg2.appendChild(yAxis2);
-
-          // X-axis line
-          const xAxis2 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-          xAxis2.setAttribute('x1', margin2.left);
-          xAxis2.setAttribute('y1', margin2.top + chartHeight2);
-          xAxis2.setAttribute('x2', margin2.left + chartWidth2);
-          xAxis2.setAttribute('y2', margin2.top + chartHeight2);
-          xAxis2.setAttribute('class', 'axis-line');
-          svg2.appendChild(xAxis2);
-
-          // Bars and labels
-          data2.forEach((item, i) => {
-            const barX = startX2 + i * (barWidth2 + groupSpacing2);
-            
-            // Bar
-            const bar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            bar.setAttribute('x', barX);
-            bar.setAttribute('y', yScale2(item.value));
-            bar.setAttribute('width', barWidth2);
-            bar.setAttribute('height', yScale2(yMin2) - yScale2(item.value));
-            bar.setAttribute('class', item.class);
-            svg2.appendChild(bar);
-            
-            // Value label on top of bar
-            const valueLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            valueLabel.setAttribute('x', barX + barWidth2 / 2);
-            valueLabel.setAttribute('y', yScale2(item.value) - 5);
-            valueLabel.setAttribute('text-anchor', 'middle');
-            valueLabel.setAttribute('class', 'axis-text');
-            valueLabel.setAttribute('style', 'font-size: 10px; font-weight: bold;');
-            valueLabel.textContent = item.value.toFixed(2);
-            svg2.appendChild(valueLabel);
-            
-            // Label below bar
-            const lines = item.label.split('\n');
-            lines.forEach((line, lineIndex) => {
-              const barLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-              barLabel.setAttribute('x', barX + barWidth2 / 2);
-              barLabel.setAttribute('y', margin2.top + chartHeight2 + 20 + lineIndex * 14);
-              barLabel.setAttribute('text-anchor', 'middle');
-              barLabel.setAttribute('class', 'question-text');
-              barLabel.textContent = line;
-              svg2.appendChild(barLabel);
-            });
-          });
-        });
-      </script>
-
     </main>
     <footer>
     </footer>
   </div>
 
 
+  <script src="./js/teaching-evals.js"></script>
   <script src="./js/component-loader.js"></script>
 
 </body>

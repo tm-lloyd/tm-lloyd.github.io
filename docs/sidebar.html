@@ -1,127 +1,37 @@
-<!-- Sidebar-specific styles -->
-<style>
-  .sidebar .contact-container {
-    width: 100%;
-    max-width: 220px;
-    margin: 0 auto;
-    padding-left: 20px;
-  }
-
-  .contactinfo {
-    display: flex;
-    align-items: center;
-    margin: 0 0 10px 0;
-    line-height: 1.5;
-    font-size: 14px;
-  }
-
-  .contactinfo:last-child {
-    margin-bottom: 0;
-  }
-
-  .contactinfo i {
-    width: 20px;
-    min-width: 20px;
-    text-align: center;
-    flex-shrink: 0;
-    font-size: 15px;
-    margin-right: 12px;
-    color: var(--color-text-muted, #718096);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Academicons are slightly larger, adjust size */
-  .contactinfo i.ai {
-    font-size: 17px;
-  }
-
-  .contactinfo a {
-    flex: 1;
-    text-align: left;
-    color: var(--color-link, #2b6cb0);
-    text-decoration: none;
-    font-weight: 400;
-    transition: color 0.2s ease;
-    letter-spacing: 0.01em;
-  }
-
-  .contactinfo a:hover {
-    color: var(--color-link-hover, #1a4971);
-    text-decoration: none;
-  }
-
-  /* Plain text (location, email without link) */
-  .contactinfo:not(:has(a)) {
-    color: var(--color-text, #2d3748);
-    letter-spacing: 0.01em;
-  }
-
-  /* Email display at top */
-  .sidebar header > p.contactinfo {
-    font-size: 14px;
-    text-align: center;
-    margin: 10px 0 0 0;
-    display: block;
-    letter-spacing: 0;
-  }
-
-  .sidebar hr {
-    margin: 16px 0;
-    opacity: 0.6;
-  }
-</style>
-
-<!-- Desktop Sidebar (hidden on mobile) -->
 <div class="sidebar desktop-only">
   <header>
-    <img src="./jpg/pfp_Thomas_Lloyd.jpg" alt="Thomas Lloyd - PhD Candidate in Economics at University of Michigan" id="profile-pic" loading="lazy" />
+    <img src="./jpg/pfp_Thomas_Lloyd.jpg" alt="Thomas Lloyd - PhD Candidate in Economics at University of Michigan" id="profile-pic" loading="lazy">
     <h1>Thomas Lloyd</h1>
     <p>PhD Candidate in Economics
       <br><i class="fa-solid fa-building-columns" aria-hidden="true"></i> University of Michigan</p>
-    <p class="contactinfo">tmlloyd@umich.edu</p>
+    <p class="contactinfo contactinfo-plain sidebar-email">tmlloyd@umich.edu</p>
     <hr>
 
     <div class="contact-container">
-      <!-- Location -->
-      <p class="contactinfo">
+      <p class="contactinfo contactinfo-plain">
         <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ann Arbor, MI
       </p>
-      <!-- Home institution -->
-      <!-- <p class="contactinfo">
-        <a href="https://lsa.umich.edu/econ.html" target="_blank" rel="noopener">
-          <i class="fa-solid fa-building-columns" aria-hidden="true"></i> University of Michigan
-        </a>
-      </p>-->
 
-      <!-- Email -->
       <p class="contactinfo">
         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
         <a href="mailto:tmlloyd@umich.edu">Email</a>
       </p>
 
-      <!-- Google Scholar (Academicons) -->
       <p class="contactinfo">
         <i class="ai ai-google-scholar" aria-hidden="true"></i>
         <a href="https://scholar.google.com/citations?user=KY4az6YAAAAJ&hl=en&oi=sra" target="_blank" rel="noopener">Google Scholar</a>
       </p>
 
-      <!-- ORCID (Academicons) -->
       <p class="contactinfo">
         <i class="ai ai-orcid" aria-hidden="true"></i>
         <a href="https://orcid.org/0009-0008-9821-9962" target="_blank" rel="noopener">ORCID</a>
       </p>
 
-      <!-- Bluesky -->
       <p class="contactinfo">
         <i class="fa-brands fa-bluesky" aria-hidden="true"></i>
         <a href="https://bsky.app/profile/thomaslloyd.bsky.social" target="_blank" rel="noopener">Bluesky</a>
       </p>
 
-      <!-- X (formerly Twitter) -->
       <p class="contactinfo">
         <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
         <a href="https://x.com/tml_lloyd" target="_blank" rel="noopener">X (Twitter)</a>

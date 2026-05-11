@@ -1,249 +1,25 @@
-<!-- ───────────────────── NAVBAR ───────────────────── -->
 <div class="navbar">
-
-  <!-- Skip-link for keyboard / screen-reader users -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav class="main-nav" aria-label="Main navigation">
-    <!-- Left side: Profile pic + Name (on mobile) -->
     <div class="nav-left">
       <img src="./jpg/pfp_Thomas_Lloyd.jpg" alt="Thomas Lloyd" class="nav-profile-pic">
       <h3 class="brand">
-        <a href="index.html" aria-label="Thomas Lloyd – homepage">Thomas&nbsp;Lloyd</a>
+        <a href="index.html" aria-label="Thomas Lloyd homepage">Thomas&nbsp;Lloyd</a>
       </h3>
     </div>
 
-    <!-- Hamburger menu button (mobile only) -->
-    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
 
-    <!-- Navigation menu -->
-    <ul id="navbar" role="menubar">
-      <li role="none"><a role="menuitem" href="index.html">Home</a></li>
-      <li role="none"><a role="menuitem" href="./research.html">Research</a></li>
-      <li role="none"><a role="menuitem" href="./teaching.html">Teaching</a></li>
-      <li role="none"><a role="menuitem" href="./pdf/CV_Thomas_Lloyd.pdf" target="_blank" rel="noopener" aria-label="Download CV (PDF)">CV</a></li>
+    <ul id="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="./research.html">Research</a></li>
+      <li><a href="./teaching.html">Teaching</a></li>
+      <li><a href="./pdf/CV_Thomas_Lloyd.pdf" target="_blank" rel="noopener" aria-label="Download CV PDF">CV</a></li>
     </ul>
   </nav>
-
-  <!-- ─────────── NAVBAR CSS (inline for brevity) ─────────── -->
-  <style>
-    /* ── Skip-link ────────────────────────────────────────── */
-    .skip-link{
-      position:absolute;top:-40px;left:6px;background:#000;color:#fff;
-      padding:8px;border-radius:4px;text-decoration:none;z-index:1000;
-    }
-    .skip-link:focus{top:6px;}
-
-    /* ── Base nav – mobile-first (flexible height) ────────── */
-    .main-nav{
-      background:rgba(255,255,255,0.85);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-      position:fixed;top:0;left:0;width:100%;
-      display:flex;justify-content:space-between;align-items:center;
-      flex-wrap:nowrap;padding:8px 12px;
-      box-shadow:0 2px 4px rgba(0,0,0,.1);z-index:9999;
-    }
-
-    /* Left side container with profile pic + name */
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* Profile picture - mobile only */
-    .nav-profile-pic {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .brand{
-      margin:0;font:600 16px/1 'Noto Sans',sans-serif;
-      white-space:nowrap;
-    }
-    .brand a{text-decoration:none;color:#333;}
-
-    /* Hamburger menu button - mobile only */
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 25px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 10000;
-    }
-
-    .hamburger span {
-      width: 100%;
-      height: 3px;
-      background: #333;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-      transform-origin: center;
-    }
-
-    /* Hamburger animation when open */
-    .hamburger.active span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* Mobile menu - hidden by default, dropdown when open */
-    #navbar{
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background: #fff;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      width: 200px;
-      box-shadow: 0 4px 8px rgba(0,0,0,.15);
-      border-radius: 0 0 0 8px;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      max-height: calc(100vh - 50px);
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column; /* Stack items vertically */
-    }
-
-    #navbar.active {
-      transform: translateX(0);
-    }
-
-    #navbar li {
-      margin: 0;
-      border-bottom: 1px solid #f0f0f0;
-      width: 100%; /* Full width for each item */
-    }
-
-    #navbar li:last-child {
-      border-bottom: none;
-    }
-
-    #navbar a {
-      display: block;
-      padding: 16px 20px;
-      text-decoration: none;
-      color: #333;
-      font-size: 16px;
-      font-family: 'Noto Sans', sans-serif;
-      transition: background-color 0.2s ease;
-      width: 100%; /* Full width links */
-      box-sizing: border-box;
-    }
-
-    #navbar a:hover,
-    #navbar a:focus {
-      background-color: #f5f5f5;
-      font-weight: 600;
-    }
-
-    /* ── Desktop ≥ 769px — traditional horizontal nav ─────────────────── */
-    @media (min-width: 769px) {
-      .main-nav {
-        height: 50px;
-        padding: 0 20px;
-      }
-
-      .nav-left {
-        gap: 0; /* No gap on desktop */
-      }
-
-      /* Hide profile pic on desktop */
-      .nav-profile-pic {
-        display: none;
-      }
-
-      .brand {
-        font-size: 18px;
-        line-height: 50px;
-      }
-
-      /* Hide hamburger on desktop */
-      .hamburger {
-        display: none;
-      }
-
-      /* Show horizontal menu on desktop */
-      #navbar {
-        position: static;
-        display: flex;
-        flex-direction: row; /* Override mobile column layout */
-        align-items: center;
-        flex-wrap: nowrap;
-        width: auto;
-        max-height: none; /* Override mobile max-height */
-        overflow-y: visible; /* Override mobile overflow */
-        box-shadow: none;
-        transform: none;
-        transition: none; /* Remove mobile transition */
-        padding: 0 24px 0 0;
-        background: transparent;
-        border-radius: 0;
-      }
-
-      #navbar li {
-        margin: 0;
-        margin-right: 8px;
-        border-bottom: none;
-        flex: 0 0 auto;
-        width: auto; /* Override mobile 100% width */
-      }
-
-      #navbar a {
-        position: relative;
-        display: inline-block; /* Override mobile block */
-        padding: 0 12px;
-        font-size: 15px;
-        line-height: 50px;
-        white-space: nowrap;
-        width: auto; /* Override mobile 100% width */
-        box-sizing: content-box;
-      }
-
-      /* Underline animation for desktop */
-      #navbar a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 12px;
-        width: 100%;
-        height: 3px;
-        background: #727272;
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
-
-      #navbar a:hover {
-        background-color: transparent;
-        font-weight: bold;
-      }
-
-      #navbar a:hover::after {
-        transform: scaleX(1);
-      }
-    }
-  </style>
 </div>
-<!-- ─────────────────── END NAVBAR ─────────────────── -->

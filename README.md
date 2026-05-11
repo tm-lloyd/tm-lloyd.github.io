@@ -4,7 +4,7 @@ A clean, responsive academic website built with HTML, CSS, and JavaScript. This 
 
 ## 🌟 Features
 
-- **Dynamic Content System**: Research publications, working papers, and work-in-progress automatically rendered from a single JavaScript content file
+- **Dynamic Content System**: Research publications, working papers, and work-in-progress automatically rendered from a single JSON content file
 - **Responsive Design**: Mobile-friendly layout that works across all devices
 - **Modular Architecture**: Navbar and sidebar are separate components loaded dynamically with sessionStorage caching
 - **Performance Optimized**: Components cached per session to eliminate reload flicker between pages
@@ -20,17 +20,20 @@ docs/
 ├── index.html              # Homepage with bio and research overview
 ├── research.html           # Detailed research page with images and expanded abstracts
 ├── teaching.html           # Teaching experience and courses
-├── navbar.html            # Navigation bar component
-├── sidebar.html           # Sidebar with contact info and links
+├── teaching_evals.html     # Teaching evaluation comments and charts
+├── navbar.html             # Navigation bar component
+├── sidebar.html            # Sidebar with contact info and links
 ├── js/
-│   ├── content.js         # Main content database (EDIT THIS FOR MODIFYING PAPER ENTRIES AND ATTRIBUTES)
+│   ├── content.json        # Main research content database
+│   ├── content.js          # Renders research content from content.json
 │   ├── component-loader.js # Loads navbar/sidebar with sessionStorage caching
-│   └── navbar.js          # Hamburger menu functionality for mobile navigation
-├── css/                   # Stylesheets
-├── pdf/                   # CV and paper PDFs
-├── jpg/                   # Images and figures
-├── icons/                 # Website icons and logos
-└── fonts/                 # Custom fonts
+│   ├── navbar.js           # Hamburger menu functionality for mobile navigation
+│   └── teaching-evals.js   # Teaching evaluation chart rendering
+├── css/                    # Stylesheets
+├── pdf/                    # CV and paper PDFs
+├── jpg/                    # Images and figures
+├── icons/                  # Website icons and logos
+└── fonts/                  # Custom fonts
 ```
 
 ## ✏️ How to Edit Content
@@ -39,64 +42,64 @@ docs/
 
 The research content (publications, working papers, work in progress) is managed through a single file:
 
-**File to edit: `docs/js/content.js`**
+**File to edit: `docs/js/content.json`**
 
-This file contains a JavaScript object `academicContent` with three main sections:
+This file contains a JSON object with three main sections:
 
 #### 1. Publications
-```javascript
-publications: [
+```json
+"publications": [
   {
-    id: 'pub1',
-    title: 'Your Paper Title',
-    authors: [
+    "id": "pub1",
+    "title": "Your Paper Title",
+    "authors": [
       {
-        name: 'Thomas Lloyd',
-        url: null  // Your URL (usually null for yourself)
+        "name": "Thomas Lloyd",
+        "url": null
       },
       {
-        name: 'Co-Author Name',
-        url: 'https://coauthor-website.com/'  // Co-author's website
+        "name": "Co-Author Name",
+        "url": "https://coauthor-website.com/"
       }
     ],
-    journal: 'Journal Name',
-    year: '2025',
-    url: 'https://journal-link.com',  // Link to published paper
-    workingPaperUrl: '/pdf/paper.pdf',  // Link to working paper version
-    workingPaperText: 'Working Paper Version, Date',
-    abstract: 'Your abstract text here...',
-    image: './jpg/your-figure.png'  // Optional: figure from your paper
+    "journal": "Journal Name",
+    "year": "2025",
+    "url": "https://journal-link.com",
+    "workingPaperUrl": "./pdf/paper.pdf",
+    "workingPaperText": "Working Paper Version, Date",
+    "abstract": "Your abstract text here...",
+    "image": "./jpg/your-figure.png"
   }
 ]
 ```
 
 #### 2. Working Papers
-```javascript
-workingPapers: [
+```json
+"workingPapers": [
   {
-    id: 'wp1',
-    title: 'Working Paper Title',
-    authors: [/* same structure as publications */],
-    url: '/pdf/working-paper.pdf',
-    nberUrl: 'https://www.nber.org/papers/w12345',  // Optional NBER link
-    nberText: 'NBER Working Paper No. 12345',
-    date: 'Month Year',
-    isNew: true,  // Shows "NEW!" badge
-    presentation: 'Presented at Conference Name',  // Optional
-    abstract: 'Abstract text...',
-    image: './jpg/figure.png'
+    "id": "wp1",
+    "title": "Working Paper Title",
+    "authors": [],
+    "url": "./pdf/working-paper.pdf",
+    "wpSeriesUrl": "https://www.nber.org/papers/w12345",
+    "wpSeriesText": "NBER Working Paper No. 12345",
+    "date": "Month Year",
+    "isNew": true,
+    "presentation": "Presented at Conference Name",
+    "abstract": "Abstract text...",
+    "image": "./jpg/figure.png"
   }
 ]
 ```
 
 #### 3. Work in Progress
-```javascript
-workInProgress: [
+```json
+"workInProgress": [
   {
-    id: 'wip1',
-    title: 'Work in Progress Title',
-    authors: [/* same structure */],
-    abstract: 'Abstract or description...'  // Can be null if no abstract yet
+    "id": "wip1",
+    "title": "Work in Progress Title",
+    "authors": [],
+    "abstract": "Abstract or description..."
   }
 ]
 ```
@@ -111,14 +114,11 @@ workInProgress: [
 
 **File to edit: `docs/index.html`**
 
-Look for the bio section around line 38:
+Look for the bio section in `docs/index.html`:
 ```html
 <p id="bio">
-  <p>I am a 4th year PhD candidate in the Department of Economics at the 
-  <a href="https://lsa.umich.edu/econ/people/faculty.directory.html">University of Michigan</a>. 
-  My research interests span Development Economics, and Public Economics with a focus on 
-  education, inequality, externalities, and the design and evaluation of public policies.
-  <!-- Edit this text to update your bio -->
+  I am a PhD candidate in the Department of Economics at the
+  <a href="https://lsa.umich.edu/econ/people/faculty.directory.html">University of Michigan</a>.
 </p>
 ```
 
@@ -163,7 +163,7 @@ Update the site title and navigation links:
   <li><a href="https://yourwebsite.com/">Home</a></li>
   <li><a href="./research.html">Research</a></li>
   <li><a href="./teaching.html">Teaching</a></li>
-  <li><a href="/pdf/CV_current.pdf">CV</a></li>
+  <li><a href="./pdf/CV_current.pdf" target="_blank" rel="noopener">CV</a></li>
 </ul>
 ```
 
@@ -173,21 +173,21 @@ Update the site title and navigation links:
 1. Add your new CV to `docs/pdf/` folder
 2. Update the link in `docs/navbar.html`:
    ```html
-   <a href="/pdf/CV_MMDDYYYY.pdf" target="_blank">CV</a>
+   <a href="./pdf/CV_MMDDYYYY.pdf" target="_blank" rel="noopener">CV</a>
    ```
-3. Update the CV button on homepage in `docs/index.html`:
+3. Update the CV link on homepage in `docs/index.html`:
    ```html
-   <button onclick="window.open('/pdf/CV_MMDDYYYY.pdf')">
+   <a class="button-2" href="./pdf/CV_MMDDYYYY.pdf" target="_blank" rel="noopener">
    ```
 
 ### Paper PDFs
 - Add paper PDFs to `docs/pdf/` folder
-- Reference them in `content.js` using relative paths: `/pdf/paper-name.pdf`
+- Reference them in `content.json` using relative paths: `./pdf/paper-name.pdf`
 - Working paper versions and published versions can both be linked
 
 ### Images and Figures
 - Add images to `docs/jpg/` folder
-- Reference in `content.js`: `./jpg/figure-name.png`
+- Reference in `content.json`: `./jpg/figure-name.png`
 - Supported formats: PNG, JPG, JPEG
 - Images show on research page but not on index page
 
@@ -228,7 +228,7 @@ This site is designed for GitHub Pages deployment:
    - Clone your fork: `git clone https://github.com/yourusername/repository-name.git`
 
 2. **Customize Your Content**
-   - Edit `docs/js/content.js` for research content
+   - Edit `docs/js/content.json` for research content
    - Update `docs/index.html` for bio
    - Modify `docs/teaching.html` for teaching experience
    - Update `docs/sidebar.html` for contact info
@@ -246,6 +246,17 @@ This site is designed for GitHub Pages deployment:
 
 ## 🛠️ Technical Details
 
+### Local Preview
+
+Because the site fetches `navbar.html`, `sidebar.html`, and `js/content.json`, preview it through a local HTTP server rather than opening `index.html` directly from the filesystem:
+
+```bash
+cd docs
+python -m http.server 3000
+```
+
+Then open `http://127.0.0.1:3000/`.
+
 ### Performance Features
 - **Component Caching**: Navbar and sidebar HTML is cached in sessionStorage after first load
 - **Static Loading**: Components persist across page navigation without re-fetching
@@ -253,7 +264,7 @@ This site is designed for GitHub Pages deployment:
 - **Optimized Assets**: Card layout with minimal padding and efficient hover states
 
 ### JavaScript Functionality
-- **Dynamic Content Rendering**: The `AcademicContentRenderer` class in `content.js` automatically generates HTML from the content database
+- **Dynamic Content Rendering**: The `AcademicContentRenderer` class in `content.js` automatically generates HTML from `content.json`
 - **Abstract Toggling**: Click "Abstract" links to expand/collapse paper abstracts
 - **Cached Component Loading**: Navbar and sidebar use sessionStorage caching for instant page transitions
 - **Mobile Navigation**: Hamburger menu with event management and bfcache support
