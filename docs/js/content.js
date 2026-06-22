@@ -7,13 +7,15 @@ class AcademicContentRenderer {
   renderSection(sectionData, sectionTitle, options = {}) {
     const { showImages = false, expandAbstracts = false } = options;
 
-    if (!sectionData || sectionData.length === 0) return '';
+    // Items flagged "hidden": true stay in content.json but are not rendered.
+    const items = (sectionData || []).filter((item) => !item.hidden);
+    if (items.length === 0) return '';
 
     const sectionId = sectionTitle.toLowerCase().replace(/\s+/g, '');
     const sectionClass = sectionTitle === 'Publications' ? '' : ' class="content-section--spaced"';
     let html = `<h2 id="${sectionId}"${sectionClass}>${escapeHtml(sectionTitle)}</h2>\n`;
 
-    sectionData.forEach((item) => {
+    items.forEach((item) => {
       html += '<div class="paper-card">\n';
       html += this.renderItem(item, { showImages, expandAbstracts });
       html += '</div>\n';

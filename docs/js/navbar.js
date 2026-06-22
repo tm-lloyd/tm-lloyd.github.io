@@ -17,6 +17,10 @@
       document.removeEventListener('click', manager.closeMenuHandler);
     }
 
+    if (manager.resizeHandler) {
+      window.removeEventListener('resize', manager.resizeHandler);
+    }
+
     manager.linkClickHandlers = manager.linkClickHandlers || [];
     navMenu.querySelectorAll('a').forEach(function(link, index) {
       const handler = manager.linkClickHandlers[index];
@@ -62,6 +66,12 @@
     };
 
     document.addEventListener('click', manager.closeMenuHandler);
+
+    manager.resizeHandler = function() {
+      if (window.matchMedia('(min-width: 48rem)').matches) closeMenu();
+    };
+    window.addEventListener('resize', manager.resizeHandler);
+
     manager.initialized = true;
 
     function closeMenu() {

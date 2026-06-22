@@ -23,9 +23,14 @@ The site uses a modular component system with **cached dynamic loading**:
 
 - **Navbar** (`docs/navbar.html`): Navigation bar loaded into `#navbar-placeholder`
 - **Sidebar** (`docs/sidebar.html`): Contact info and profile loaded into `#sidebar-placeholder`
-- Both components are loaded via `docs/js/component-loader.js` using **sessionStorage caching**
-- Components are fetched once per session and reused across page navigation (eliminates reload flicker)
+- Both components are loaded via `docs/js/component-loader.js` using **sessionStorage caching**: fetched once on the first page of a session, then reused on later pages
+- The loader runs **synchronously** and its `<script>` tag sits immediately **after the placeholders** (not at the end of `<body>`). This injects the cached markup *before the first paint*, so navigating between pages shows no flash of an empty navbar/sidebar. **Keep the script in that position** — moving it to the end of `<body>` reintroduces the inter-page flicker.
+- **IMPORTANT:** when you edit `navbar.html` or `sidebar.html`, bump `COMPONENT_CACHE_VERSION` in `component-loader.js`, otherwise returning visitors keep the stale cached markup for the session.
 - Navbar includes hamburger menu functionality (`docs/js/navbar.js`) with mobile-responsive dropdown
+
+### Icons
+
+UI icons are **inline SVG** (in `navbar.html`, `sidebar.html`, and the CV/eval buttons), not icon-font CDNs. The site loads **no external resources** — fonts are self-hosted under `docs/fonts/` and there are no CDN `<link>`s. Add new icons as inline `<svg viewBox=... fill="currentColor">` rather than pulling in Font Awesome/Bootstrap Icons/Academicons.
 
 ### File Organization
 

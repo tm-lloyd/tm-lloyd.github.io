@@ -1,17 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/sections/aboutme/</loc>
-  </url><url>
-    <loc>/sections/attribution/</loc>
-  </url><url>
-    <loc>/categories/</loc>
-  </url><url>
-    <loc>/</loc>
-  </url><url>
-    <loc>/sections/</loc>
-  </url><url>
-    <loc>/tags/</loc>
+    <loc>https://thomaslloyd.me/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://thomaslloyd.me/research.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://thomaslloyd.me/teaching.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://thomaslloyd.me/teaching_evals.html</loc>
+    <lastmod>2026-06-21</lastmod>
   </url>
 </urlset>

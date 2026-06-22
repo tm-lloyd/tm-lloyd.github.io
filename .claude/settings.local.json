@@ -7,7 +7,20 @@
       "WebFetch(domain:ashleycraig.com)",
       "WebFetch(domain:www.dylantmoore.com)",
       "WebSearch",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(cd \"/c/Users/thoma/Documents/GitHub/tm-lloyd.github.io/docs\" && grep -rhoE 'class=\"\\(bi |fa-|ai \\)[^\"]*\"' *.html | sort -u)",
+      "Read(//c/c/Users/thoma/Documents/GitHub/tm-lloyd.github.io/**)",
+      "Bash(node -e ' *)",
+      "Bash('/c/Program Files \\(x86\\)/Microsoft/Edge/Application/msedge.exe' --headless --disable-gpu --hide-scrollbars --virtual-time-budget=9000 --window-size=390,3200 --screenshot=/tmp/shot_index_mobile_full.png http://localhost:8765/index.html)",
+      "Bash(cp /tmp/shot_index_mobile_full.png \"C:/Users/thoma/AppData/Local/Temp/shot_index_mobile_full.png\")",
+      "Bash('/c/Program Files \\(x86\\)/Microsoft/Edge/Application/msedge.exe' --headless --disable-gpu --hide-scrollbars --virtual-time-budget=9000 --window-size=390,2200 --screenshot=/tmp/shot_teaching_mobile.png http://localhost:8765/teaching.html)",
+      "Bash(cp /tmp/shot_teaching_mobile.png \"C:/Users/thoma/AppData/Local/Temp/shot_teaching_mobile.png\")",
+      "Bash(node -e \"require\\('http'\\).get\\('http://localhost:8766/teaching.html',r=>{let d='';r.on\\('data',c=>d+=c\\);r.on\\('end',\\(\\)=>console.log\\('has inject:', d.includes\\('docSW'\\), '| has </body>:', d.includes\\('</body>'\\)\\)\\)}\\)\")",
+      "Bash(node -e \"require\\('http'\\).get\\('http://localhost:8000/',r=>{let n=0;r.on\\('data',c=>n+=c.length\\);r.on\\('end',\\(\\)=>console.log\\('index.html ->',r.statusCode,n,'bytes'\\)\\)}\\).on\\('error',e=>console.log\\('ERR',e.message\\)\\)\")",
+      "Bash(node -e \"require\\('http'\\).get\\('http://localhost:8000/js/content.json',r=>console.log\\('content.json ->',r.statusCode,r.headers['content-type']\\)\\).on\\('error',e=>console.log\\('ERR',e.message\\)\\)\")",
+      "Bash(node -e \"require\\('http'\\).get\\('http://localhost:8000/robots.txt',r=>console.log\\('robots.txt ->',r.statusCode\\)\\).on\\('error',e=>console.log\\('ERR',e.message\\)\\)\")",
+      "Bash(node -e \"const c=JSON.parse\\(require\\('fs'\\).readFileSync\\('docs/js/content.json','utf8'\\)\\); console.log\\('content.json OK'\\); console.log\\('WIP entries:', c.workInProgress.map\\(w=>\\(w.hidden?'[HIDDEN] ':''\\)+w.title.slice\\(0,40\\)\\)\\);\")",
+      "Bash(node -e \"require\\('http'\\).get\\('http://localhost:8000/',r=>console.log\\('server',r.statusCode\\)\\).on\\('error',e=>console.log\\('server down:',e.message\\)\\)\")"
     ],
     "deny": []
   }

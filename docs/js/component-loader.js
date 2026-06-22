@@ -1,5 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const COMPONENT_CACHE_VERSION = '2026-05-11';
+// Loads the shared navbar/sidebar components.
+// This script is placed right after the placeholders (not at the end of <body>) and
+// runs synchronously. On a warm sessionStorage cache the markup is injected BEFORE the
+// first paint, so navigating between pages shows no flash of an empty navbar/sidebar.
+// The first page load of a session still fetches once and populates the cache.
+(function() {
+  const COMPONENT_CACHE_VERSION = '2026-06-22';
 
   loadComponent({
     key: 'navbar',
@@ -21,12 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const cacheKey = `component:${key}:${COMPONENT_CACHE_VERSION}`;
     const cachedHtml = getCachedComponent(cacheKey);
 
+    // Cache hit: inject synchronously (before paint) so navigation is flicker-free.
     if (cachedHtml) {
       placeholder.innerHTML = cachedHtml;
       if (onLoad) onLoad();
       return;
     }
 
+    // Cache miss (first page of the session): fetch once, then reuse for later pages.
     fetch(url)
       .then(function(response) {
         if (!response.ok) throw new Error(`Failed to load ${url}`);
@@ -71,4 +78,4 @@ document.addEventListener('DOMContentLoaded', function() {
       // Component caching is an optimization; rendering must still work when storage is blocked.
     }
   }
-});
+})();

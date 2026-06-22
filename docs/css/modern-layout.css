@@ -204,6 +204,7 @@ table:not(.teaching-table):not(.comments-table) td {
 }
 
 .navbar .hamburger {
+  position: relative;
   width: 1.875rem;
   height: 1.5625rem;
   padding: 0;
@@ -213,6 +214,17 @@ table:not(.teaching-table):not(.comments-table) td {
   justify-content: space-around;
   background: transparent;
   cursor: pointer;
+}
+
+/* Extend the touch target to ~44px without changing the visible bars */
+.navbar .hamburger::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.75rem;
+  height: 2.75rem;
+  transform: translate(-50%, -50%);
 }
 
 .navbar .hamburger span {
@@ -376,6 +388,14 @@ table:not(.teaching-table):not(.comments-table) td {
   text-align: center;
 }
 
+.sidebar-name {
+  margin: 0 0 20px;
+  font-family: var(--font-serif);
+  font-size: 28px;
+  line-height: 1.1;
+  color: var(--color-heading);
+}
+
 #profile-pic {
   width: 12.5rem;
   max-width: 100%;
@@ -420,6 +440,30 @@ table:not(.teaching-table):not(.comments-table) td {
 
 .contactinfo i.ai {
   font-size: 1.0625rem;
+}
+
+/* Inline SVG icons (replace former icon-font CDNs) */
+.contactinfo svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  min-width: 1.05rem;
+  margin-right: 0.7rem;
+  fill: var(--color-text-muted);
+}
+
+.inline-bio-icon {
+  width: 0.85em;
+  height: 0.85em;
+  margin-right: 0.15em;
+  fill: var(--color-text-muted);
+  vertical-align: -0.06em;
+}
+
+.button-2 svg {
+  flex: 0 0 auto;
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
 }
 
 .sidebar .contactinfo a {
@@ -530,6 +574,12 @@ table:not(.teaching-table):not(.comments-table) td {
 
 #academic-content {
   padding-top: 1rem;
+}
+
+/* Cap the reading measure on prose only (images, tables, cards keep full width) */
+main p,
+section p {
+  max-width: 42rem;
 }
 
 @media (max-width: 47.99rem) {
@@ -688,6 +738,11 @@ table:not(.teaching-table):not(.comments-table) td {
     flex-wrap: wrap;
     align-items: center;
     white-space: normal;
+  }
+
+  .teaching-table a {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .institution-logo--umich {
@@ -967,7 +1022,7 @@ table:not(.teaching-table):not(.comments-table) td {
 
   .comments-table td[data-label="Term"] {
     margin-bottom: 0.875rem;
-    color: #999;
+    color: #767676;
     font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.025em;

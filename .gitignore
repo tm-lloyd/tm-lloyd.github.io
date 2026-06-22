@@ -10,3 +10,9 @@ docs/sheets/
 node_modules/
 dist/
 package-lock.json
+
+# macOS metadata
+.DS_Store
+
+# Non-deployed archive of replaced/oversized assets
+xx. old/

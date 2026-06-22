@@ -1,7 +1,7 @@
 /* ── Design Tokens ─────────────────────────────────── */
 :root {
   --color-text:        #2d3748;
-  --color-text-muted:  #718096;
+  --color-text-muted:  #5a6b80;
   --color-heading:     #1a202c;
   --color-link:        #2b6cb0;
   --color-link-hover:  #1a4971;
@@ -25,6 +25,36 @@ html { scroll-behavior: smooth; }
 ::selection {
   background: var(--color-accent-light);
   color: var(--color-heading);
+}
+
+/* ── Visible keyboard focus (mouse clicks unaffected) ─ */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Visually-hidden, screen-reader-only ──────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Respect reduced-motion preferences ───────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @font-face {
@@ -104,7 +134,7 @@ body {
   background-color: var(--color-bg);
   padding: 0;
   margin: 0;
-  font: 14px/1.5 "Noto Sans", "Adobe Caslon Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 15px/1.6 "Noto Sans", "Adobe Caslon Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--color-text);
   font-weight: 400; }
 
@@ -307,13 +337,15 @@ main h2, section h2 {
 .paper-card {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--color-border);
-  transition: background-color 0.2s ease;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 .paper-card:last-child {
   border-bottom: none;
 }
 .paper-card:hover {
   background-color: var(--color-bg-subtle);
+  box-shadow: inset 3px 0 0 var(--color-accent);
 }
 
 /* ── NEW badge ────────────────────────────────────── */

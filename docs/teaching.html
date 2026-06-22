@@ -15,20 +15,22 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thomaslloyd.me/teaching.html">
   <meta property="og:image" content="https://thomaslloyd.me/jpg/pfp_Thomas_Lloyd.jpg">
+  <meta property="og:image:alt" content="Portrait of Thomas Lloyd">
+  <meta property="og:site_name" content="Thomas Lloyd">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Teaching - Thomas Lloyd | PhD Candidate in Economics">
+  <meta name="twitter:description" content="Teaching experience of Thomas Lloyd as Graduate Student Instructor at University of Michigan and Teaching Assistant at Ecole Polytechnique.">
+  <meta name="twitter:image" content="https://thomaslloyd.me/jpg/pfp_Thomas_Lloyd.jpg">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/modern-layout.css">
-  <!-- Bootstrap Icons CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <!-- Academicons CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
-  <!-- Your custom styles here -->
+  <!-- Icons are inlined as SVG; no external icon-font libraries required -->
+
   <!-- FAVICONS: Wolverines logo as tab icon -->
-  <link rel="icon"   href="/icons/Michigan_Wolverines_logo.svg" type="image/svg+xml">
-  <!-- PNG fallback for older browsers (optional) -->
-  <link rel="icon"   href="/icons/294px-Michigan_Wolverines_logo.png" sizes="32x32" type="image/png">
-  <link rel="shortcut icon" href="/icons/294px-Michigan_Wolverines_logo.png">
+  <link rel="icon" href="./icons/Michigan_Wolverines_logo.svg" type="image/svg+xml">
+  <!-- PNG fallback for older browsers -->
+  <link rel="icon" href="./icons/294px-Michigan_Wolverines_logo.png" sizes="32x32" type="image/png">
+  <link rel="shortcut icon" href="./icons/294px-Michigan_Wolverines_logo.png">
 </head>
 
 <body>
@@ -36,13 +38,16 @@
 
   <div class="wrapper">
     <div id="sidebar-placeholder"></div>
+    <script src="./js/component-loader.js"></script>
 
     <main id="main-content" role="main">
+
+      <h1 class="sr-only">Teaching</h1>
 
       <h2 id="teaching">Teaching</h2>
 
       <a class="button-2" href="./teaching_evals.html">
-        <i class="bi bi-file-earmark-text"></i>
+        <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/><path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/></svg>
         <strong>Summary of Teaching Evaluations</strong>
       </a>
 
@@ -133,9 +138,6 @@
     <footer>
     </footer>
   </div>
-
-
-  <script src="./js/component-loader.js"></script>
 
 </body>
 
