@@ -215,7 +215,7 @@ class AcademicContentRenderer {
 async function loadAcademicContent() {
   if (window.academicContent) return window.academicContent;
 
-  const response = await fetch('./js/content.json?v=2026-09-04-2');
+  const response = await fetch('./js/content.json?v=2026-09-04-3');
   if (!response.ok) throw new Error('Failed to load academic content');
 
   window.academicContent = await response.json();
