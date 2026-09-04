@@ -32,6 +32,8 @@ class AcademicContentRenderer {
       this.renderAuthors(item.authors),
       this.renderJournal(item),
       this.renderAdditionalInfo(item),
+      this.renderPresentations(item),
+      this.renderNews(item),
       this.renderAbstract(item, expandAbstracts),
       this.renderPress(item),
       this.renderImage(item, showImages)
@@ -82,11 +84,38 @@ class AcademicContentRenderer {
       html += `<p class="paper-meta"><em>${newLabel}<a href="${escapeAttr(item.wpSeriesUrl)}" target="_blank" rel="noopener">${escapeHtml(item.wpSeriesText)}</a></em>, ${escapeHtml(item.date)}</p>\n`;
     }
 
-    if (item.presentation) {
-      html += `<p class="paper-meta"><em>${escapeHtml(item.presentation)}</em></p>\n`;
-    }
-
     return html;
+  }
+
+  renderPresentations(item) {
+    const presentations = normalizeEntries(item.presentations ?? item.presentation);
+
+    return presentations.map((presentation) => {
+      const entry = normalizeEntry(presentation);
+      if (!entry) return '';
+
+      const text = entry.url
+        ? `<a href="${escapeAttr(entry.url)}" target="_blank" rel="noopener">${escapeHtml(entry.text)}</a>`
+        : escapeHtml(entry.text);
+      const coauthorMarker = entry.byCoauthor
+        ? ' <sup class="coauthor-marker" aria-hidden="true">*</sup><span class="sr-only"> (presentation by a co-author)</span>'
+        : '';
+
+      return `<p class="paper-meta"><em>${text}${coauthorMarker}</em></p>\n`;
+    }).join('');
+  }
+
+  renderNews(item) {
+    return normalizeEntries(item.news).map((newsItem) => {
+      const entry = normalizeEntry(newsItem);
+      if (!entry) return '';
+
+      const text = entry.url
+        ? `<a href="${escapeAttr(entry.url)}" target="_blank" rel="noopener">${escapeHtml(entry.text)}</a>`
+        : escapeHtml(entry.text);
+
+      return `<p class="paper-meta paper-news"><em>${text}</em></p>\n`;
+    }).join('');
   }
 
   renderPress(item) {
@@ -141,9 +170,23 @@ class AcademicContentRenderer {
       [this.content.workInProgress, 'Work in Progress']
     ];
 
-    container.innerHTML = sections
+    const visibleItems = sections.flatMap(([sectionData]) =>
+      (sectionData || []).filter((item) => !item.hidden)
+    );
+    const hasCoauthorPresentation = visibleItems.some((item) =>
+      normalizeEntries(item.presentations ?? item.presentation).some((presentation) =>
+        typeof presentation === 'object' && presentation !== null && presentation.byCoauthor
+      )
+    );
+
+    const sectionsHtml = sections
       .map(([sectionData, sectionTitle]) => this.renderSection(sectionData, sectionTitle, options))
       .join('');
+    const presentationFootnote = hasCoauthorPresentation
+      ? '<p class="presentation-footnote" role="note">* Presentation by a co-author</p>'
+      : '';
+
+    container.innerHTML = sectionsHtml + presentationFootnote;
 
     this.bindAbstractToggles(container);
   }
@@ -169,7 +212,7 @@ class AcademicContentRenderer {
 async function loadAcademicContent() {
   if (window.academicContent) return window.academicContent;
 
-  const response = await fetch('./js/content.json');
+  const response = await fetch('./js/content.json?v=2026-09-04');
   if (!response.ok) throw new Error('Failed to load academic content');
 
   window.academicContent = await response.json();
@@ -207,6 +250,17 @@ function escapeHtml(value) {
 
 function escapeAttr(value) {
   return escapeHtml(value);
+}
+
+function normalizeEntries(value) {
+  if (value == null) return [];
+  return Array.isArray(value) ? value : [value];
+}
+
+function normalizeEntry(value) {
+  if (typeof value === 'string') return { text: value };
+  if (!value || typeof value !== 'object' || !value.text) return null;
+  return value;
 }
 
 document.addEventListener('DOMContentLoaded', function() {

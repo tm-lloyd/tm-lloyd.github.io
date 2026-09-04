@@ -168,7 +168,7 @@ table:not(.teaching-table):not(.comments-table) td {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(251, 250, 247, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -260,7 +260,7 @@ table:not(.teaching-table):not(.comments-table) td {
   flex-direction: column;
   list-style: none;
   overflow-y: auto;
-  background: #fff;
+  background: var(--color-bg);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 0 0 0 var(--radius-md);
   transform: translateX(100%);
@@ -527,6 +527,18 @@ table:not(.teaching-table):not(.comments-table) td {
 
 .paper-meta {
   margin: 0 0 0.3125rem;
+}
+
+.coauthor-marker {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+.presentation-footnote {
+  margin: 1.5rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.6875rem;
+  line-height: 1.4;
 }
 
 .abstract-toggle {

@@ -85,7 +85,19 @@ This file contains a JSON object with three main sections:
     "wpSeriesText": "NBER Working Paper No. 12345",
     "date": "Month Year",
     "isNew": true,
-    "presentation": "Presented at Conference Name",
+    "presentations": [
+      {
+        "text": "Presented at Conference Name (City, Year)",
+        "url": "https://conference.example.com",
+        "byCoauthor": false
+      }
+    ],
+    "news": [
+      {
+        "text": "Prize or other paper news",
+        "url": "https://award.example.com"
+      }
+    ],
     "abstract": "Abstract text...",
     "image": "./jpg/figure.png"
   }
@@ -107,6 +119,9 @@ This file contains a JSON object with three main sections:
 **Important Notes:**
 - Thomas Lloyd is automatically filtered out of the "(with ...)" display
 - Co-authors without URLs will still display correctly
+- `presentations` and `news` accept multiple entries; each optional `url` turns its text into a link
+- Set `byCoauthor` to `true` to add an asterisk and display the co-author presentation footnote
+- The legacy singular `presentation` string is still supported
 - The content automatically appears on both index.html and research.html
 - Research page shows images and expanded abstracts, index page shows collapsed abstracts
 
@@ -117,8 +132,8 @@ This file contains a JSON object with three main sections:
 Look for the bio section in `docs/index.html`:
 ```html
 <p id="bio">
-  I am a PhD candidate in the Department of Economics at the
-  <a href="https://lsa.umich.edu/econ/people/faculty.directory.html">University of Michigan</a>.
+  I am an Assistant Professor of Economics in the Department of Quantitative Finance &amp; Economics at
+  <a href="https://em-lyon.com/en">emlyon business school</a>.
 </p>
 ```
 

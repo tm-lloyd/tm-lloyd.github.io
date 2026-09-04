@@ -46,7 +46,15 @@
       "wpSeriesText": "CESifo Working Paper No. 12317",
       "date": "December 2025",
       "isNew": true,
-      "presentation": "Presented at the 2025 Annual Congress of the International Institute of Public Finance (IIPF)",
+      "presentations": [
+        {
+          "text": "Presented at the 118th Annual Conference on Taxation, National Tax Association (NTA) (Boston, 2025)",
+          "byCoauthor": true
+        },
+        {
+          "text": "Presented at the 81st Annual Congress of the International Institute of Public Finance (IIPF) (Nairobi, 2025)"
+        }
+      ],
       "abstract": "How should taxes on externality-generating activities be adjusted if they are regressive? In our model, the government raises revenue using distortionary income and commodity taxes. If more or less productive people have identical tastes for externality-generating consumption, the government optimally imposes a Pigouvian tax equal to the marginal damage from the externality. This is true regardless of whether the tax is regressive. But, if regressivity reflects different preferences of people with different incomes rather than solely income effects, the optimal tax differs from the Pigouvian benchmark. We derive sufficient statistics for optimal policy, and use them to study carbon taxation in the United States. Our empirical results suggest an optimal carbon tax that is remarkably close to the Pigouvian level, but with higher carbon taxes for very high-income households if this is feasible. When we allow for heterogeneity in preferences at each income level as well as across the income distribution, our optimal tax schedules are further attenuated toward the Pigouvian benchmark.",
       "image": "./jpg/fig_pareto_efficient_corrective_tax_rate_dirty_eti_0.33.png",
       "imageWidth": "80%"
@@ -91,7 +99,25 @@
           "url": null
         }
       ],
-      "presentation": "Presented at the 118th (2025) National Tax Association (NTA) Annual Conference, Boston",
+      "presentations": [
+        {
+          "text": "Presented at the 82nd Annual Congress of the International Institute of Public Finance (IIPF) (Lisbon, 2026)"
+        },
+        {
+          "text": "Presented at the 2026 ZEW Public Finance Conference (Mannheim)"
+        },
+        {
+          "text": "Presented at the CESifo Area Conference on Public Economics 2026 (Munich)"
+        },
+        {
+          "text": "Presented at the 118th Annual Conference on Taxation, National Tax Association (NTA) (Boston, 2025)"
+        }
+      ],
+      "news": [
+        {
+          "text": "Best Ph.D. Student Paper Award, International Tax and Public Finance (2026)"
+        }
+      ],
       "abstract": null
     },
     {
@@ -105,6 +131,12 @@
         {
           "name": "Laston Manja",
           "url": "https://laston-manja.github.io/"
+        }
+      ],
+      "presentations": [
+        {
+          "text": "Presented at the 23rd Midwest International Economic Development Conference (MWIEDC) (Madison, 2026)",
+          "byCoauthor": true
         }
       ],
       "abstract": "This paper examines the long-run economic impact of differential European colonial rule in Africa, by exploiting differences arising from the arbitrary borders established during the Scramble for Africa (1876-1912). Using a regression discontinuity design along the full set of British-French colonial borders in West and Central Africa, we explore the impact of colonizer identity on local measures of economic development. We find that areas formerly under British rule exhibit higher nighttime light intensity (2-6%), which translates into substantially higher local GDP per capita (USD 1,620-2,220). At the individual level, these areas display higher educational attainment, lower unemployment rates, and improved public good provision. We explore mechanisms and find sharp institutional discontinuities at colonial borders. Areas formerly under British rule display lower perceived corruption in formal government institutions, particularly local government, and higher trust in parliaments. Perceived judicial corruption is lower, while agreement that court decisions must be obeyed is stronger, in line with differences in legal origin. However, traditional leaders show higher perceived corruption on the British side, consistent with indirect rule empowering traditional authorities as intermediaries. Colonial legacies also shape nation-building. British areas show weaker national identity and lower colonial language use, alongside lower perception of unfair treatment of one's ethnic group. These findings indicate that differential colonial governance strategies created persistent institutional divergences that continue to shape economic development in contemporary Africa."
