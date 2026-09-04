@@ -87,7 +87,7 @@ This file contains a JSON object with three main sections:
     "isNew": true,
     "presentations": [
       {
-        "text": "Presented at Conference Name (City, Year)",
+        "text": "Conference Abbreviation 2026",
         "url": "https://conference.example.com",
         "byCoauthor": false
       }
@@ -119,7 +119,7 @@ This file contains a JSON object with three main sections:
 **Important Notes:**
 - Thomas Lloyd is automatically filtered out of the "(with ...)" display
 - Co-authors without URLs will still display correctly
-- `presentations` and `news` accept multiple entries; each optional `url` turns its text into a link
+- `presentations` and `news` accept multiple entries; presentations are combined into one line and each optional `url` turns its text into a link
 - Set `byCoauthor` to `true` to add an asterisk and display the co-author presentation footnote
 - The legacy singular `presentation` string is still supported
 - The content automatically appears on both index.html and research.html
@@ -132,7 +132,7 @@ This file contains a JSON object with three main sections:
 Look for the bio section in `docs/index.html`:
 ```html
 <p id="bio">
-  I am an Assistant Professor of Economics in the Department of Quantitative Finance &amp; Economics at
+  I am an Assistant Professor in the Department of Quantitative Finance &amp; Economics at
   <a href="https://em-lyon.com/en">emlyon business school</a>.
 </p>
 ```

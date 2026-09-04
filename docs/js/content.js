@@ -89,20 +89,23 @@ class AcademicContentRenderer {
 
   renderPresentations(item) {
     const presentations = normalizeEntries(item.presentations ?? item.presentation);
-
-    return presentations.map((presentation) => {
+    const venues = presentations.map((presentation) => {
       const entry = normalizeEntry(presentation);
-      if (!entry) return '';
+      if (!entry) return null;
 
+      const venue = entry.text.replace(/^Presented at\s+(?:the\s+)?/i, '');
       const text = entry.url
-        ? `<a href="${escapeAttr(entry.url)}" target="_blank" rel="noopener">${escapeHtml(entry.text)}</a>`
-        : escapeHtml(entry.text);
+        ? `<a href="${escapeAttr(entry.url)}" target="_blank" rel="noopener">${escapeHtml(venue)}</a>`
+        : escapeHtml(venue);
       const coauthorMarker = entry.byCoauthor
-        ? ' <sup class="coauthor-marker" aria-hidden="true">*</sup><span class="sr-only"> (presentation by a co-author)</span>'
+        ? '<sup class="coauthor-marker" aria-hidden="true">*</sup><span class="sr-only"> (presentation by a co-author)</span>'
         : '';
 
-      return `<p class="paper-meta"><em>${text}${coauthorMarker}</em></p>\n`;
-    }).join('');
+      return `${text}${coauthorMarker}`;
+    }).filter(Boolean);
+
+    if (venues.length === 0) return '';
+    return `<p class="paper-meta"><em>Presented at ${formatList(venues)}</em></p>\n`;
   }
 
   renderNews(item) {
@@ -212,7 +215,7 @@ class AcademicContentRenderer {
 async function loadAcademicContent() {
   if (window.academicContent) return window.academicContent;
 
-  const response = await fetch('./js/content.json?v=2026-09-04');
+  const response = await fetch('./js/content.json?v=2026-09-04-2');
   if (!response.ok) throw new Error('Failed to load academic content');
 
   window.academicContent = await response.json();
@@ -261,6 +264,12 @@ function normalizeEntry(value) {
   if (typeof value === 'string') return { text: value };
   if (!value || typeof value !== 'object' || !value.text) return null;
   return value;
+}
+
+function formatList(items) {
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(', ')}, and ${items.at(-1)}`;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
