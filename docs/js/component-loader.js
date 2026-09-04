@@ -4,7 +4,7 @@
 // first paint, so navigating between pages shows no flash of an empty navbar/sidebar.
 // The first page load of a session still fetches once and populates the cache.
 (function() {
-  const COMPONENT_CACHE_VERSION = '2026-09-04-3';
+  const COMPONENT_CACHE_VERSION = '2026-09-04-4';
 
   loadComponent({
     key: 'navbar',
