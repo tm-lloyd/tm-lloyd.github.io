@@ -48,11 +48,11 @@
       "isNew": true,
       "presentations": [
         {
-          "text": "NTA 2025",
+          "text": "NTA 2025 (Boston)",
           "byCoauthor": true
         },
         {
-          "text": "IIPF 2025"
+          "text": "IIPF 2025 (Nairobi)"
         }
       ],
       "abstract": "How should taxes on externality-generating activities be adjusted if they are regressive? In our model, the government raises revenue using distortionary income and commodity taxes. If more or less productive people have identical tastes for externality-generating consumption, the government optimally imposes a Pigouvian tax equal to the marginal damage from the externality. This is true regardless of whether the tax is regressive. But, if regressivity reflects different preferences of people with different incomes rather than solely income effects, the optimal tax differs from the Pigouvian benchmark. We derive sufficient statistics for optimal policy, and use them to study carbon taxation in the United States. Our empirical results suggest an optimal carbon tax that is remarkably close to the Pigouvian level, but with higher carbon taxes for very high-income households if this is feasible. When we allow for heterogeneity in preferences at each income level as well as across the income distribution, our optimal tax schedules are further attenuated toward the Pigouvian benchmark.",
@@ -79,7 +79,7 @@
       "isNew": true,
       "presentations": [
         {
-          "text": "NEUDC 2024"
+          "text": "NEUDC 2024 (Boston)"
         }
       ],
       "press": [
@@ -105,16 +105,16 @@
       ],
       "presentations": [
         {
-          "text": "IIPF 2026"
+          "text": "IIPF 2026 (Lisbon)"
         },
         {
-          "text": "ZEW Public Finance 2026"
+          "text": "ZEW Public Finance 2026 (Mannheim)"
         },
         {
-          "text": "CESifo Public Economics 2026"
+          "text": "CESifo Public Economics 2026 (Munich)"
         },
         {
-          "text": "NTA 2025"
+          "text": "NTA 2025 (Boston)"
         }
       ],
       "news": [
@@ -139,7 +139,7 @@
       ],
       "presentations": [
         {
-          "text": "MWIEDC 2026",
+          "text": "MWIEDC 2026 (Madison)",
           "byCoauthor": true
         }
       ],
@@ -165,7 +165,7 @@
       ],
       "presentations": [
         {
-          "text": "ASREC Europe 2025"
+          "text": "ASREC Europe 2025 (Copenhagen)"
         }
       ],
       "abstract": null
